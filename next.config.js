@@ -3,6 +3,12 @@ module.exports = {
   swcMinify: true,
   images: {
     domains: ["cdn.sanity.io", "cdn.simpleicons.org"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
+    ],
   },
   async headers() {
     return [
