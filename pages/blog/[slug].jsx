@@ -37,6 +37,7 @@ const Post = ({ post = {} }) => {
     body = [],
   } = post
   return (
+
     <article>
       <h1>{title}</h1>
       <span>By {name}</span>
@@ -58,6 +59,8 @@ const Post = ({ post = {} }) => {
       )}
       <PortableText value={body} components={ptComponents} />
     </article>
+
+    
   )
 }
 

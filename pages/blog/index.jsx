@@ -21,20 +21,21 @@ const Blog = ({ posts }) => {
 
       <main>
         <h1>Blogs</h1>
-        <ul>
+        <div className="flex flex-col">
           {posts.length > 0 &&
             posts.map(
-              ({ _id, title = "", slug = "", publishedAt= "" }) =>
+              ({ _id, title = "", slug = "", publishedAt = "", authorName="", }) =>
                 slug && (
-                  <li key={_id}>
+                  <div key={_id} className="flex">
                     <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
                       <h2 className="text-stablesOrange">{title}</h2>
-                      <span className="font-thin"></span>
+                      <span className="font-thin">{publishedAt}</span>
+                      <span className="font-thin">{authorName}</span>
                     </Link>
-                  </li>
+                  </div>
                 )
             )}
-        </ul>
+        </div>
       </main>
 
       <Footer />
@@ -44,7 +45,11 @@ const Blog = ({ posts }) => {
 
 export async function getStaticProps() {
   const posts = await client.fetch(groq`
-      *[_type == "post"] | order(publishedAt desc)
+      *[_type == "post"] | order(publishedAt desc){
+          title,
+          "authorName": author->name,
+          publishedAt,
+      }
     `)
   return {
     props: {
@@ -54,4 +59,3 @@ export async function getStaticProps() {
 }
 
 export default Blog
-
