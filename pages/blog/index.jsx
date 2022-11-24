@@ -24,13 +24,21 @@ const Blog = ({ posts }) => {
         <div className="flex flex-col">
           {posts.length > 0 &&
             posts.map(
-              ({ _id, title = "", slug = "", publishedAt = "", authorName="", }) =>
+              ({
+                _id,
+                title = "",
+                slug = "",
+                publishedAt = "",
+                authorName = "",
+                authorImage = "",
+              }) =>
                 slug && (
                   <div key={_id} className="flex">
                     <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
                       <h2 className="text-stablesOrange">{title}</h2>
                       <span className="font-thin">{publishedAt}</span>
                       <span className="font-thin">{authorName}</span>
+                      
                     </Link>
                   </div>
                 )
@@ -48,7 +56,9 @@ export async function getStaticProps() {
       *[_type == "post"] | order(publishedAt desc){
           title,
           "authorName": author->name,
+          "authorImage": author->image,
           publishedAt,
+          slug
       }
     `)
   return {

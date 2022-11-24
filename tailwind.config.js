@@ -19,7 +19,10 @@ module.exports = {
       mono: ["Roboto Mono", "monospace"],
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
   corePlugins: {
     fontFamily: true,
   },
