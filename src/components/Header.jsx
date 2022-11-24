@@ -4,7 +4,7 @@ import Link from "next/link"
 const Header = () => {
   return (
     <header>
-      <nav className="container">
+      <nav className="w-100">
         <div className="">
           <Link
             href="/"
@@ -35,10 +35,10 @@ const Header = () => {
             </svg>
           </button>
           <div
-            className="hidden w-full md:block md:w-full md:mx-auto "
+            className="hidden w-full space-y-4 md:flex md:space-y-0 md:space-x-8 md:w-auto"
             id="navbar-default"
           >
-            <ul className="flex flex-col p-4 md:flex-row">
+            <ul className="flex flex-col p-4 md:flex-row mx-auto w-max">
               <li>
                 <Link href="/about" className="block py-2 px-4 font-regular">
                   About

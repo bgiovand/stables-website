@@ -8,16 +8,15 @@ module.exports = {
     colors: {
       stablesOrange: "#F05A28",
       stablesBlue: "#0A3D62",
+      stablesYellow: "#EAEEB5",
+      stablesBrown: "#603813",
     },
   },
   darkmode: "media",
   extend: {
-    colors: {
-      stablesOrange: "#F05A28",
-      stablesBlue: "#C3E4D9",
-    },
     fontFamily: {
       mellow: ["Mellow", "sans-serif"],
+      mono: ["Roboto Mono", "monospace"],
     },
   },
   plugins: [require("@tailwindcss/forms")],

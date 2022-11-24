@@ -27,7 +27,7 @@ const ptComponents = {
   },
 }
 
-const Product = ({ product }) => {
+const Product = ({ product = {} }) => {
   const {
     title = "Missing",
     industryName,
@@ -49,7 +49,7 @@ const Product = ({ product }) => {
           <div>
             <h2>Cone &middot; {industryName}</h2>
             <h1 className="text-stablesOrange text-7xl font-ultralight text-left m-8">
-              {product.title}
+              {title}
             </h1>
           </div>
           <section className="container flex flex-wrap justify-between items-center mx-auto">

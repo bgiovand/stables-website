@@ -1,4 +1,3 @@
-
 import Head from "next/head"
 import Image from "next/image"
 import Header from "../../src/components/Header"
@@ -29,7 +28,7 @@ const ptComponents = {
   },
 }
 
-const Post = ({ post }) => {
+const Post = ({ post = {} }) => {
   const {
     title = "Missing title",
     name = "Missing name",
@@ -39,7 +38,7 @@ const Post = ({ post }) => {
   } = post
   return (
     <article>
-      <h1>{post.title}</h1>
+      <h1>{title}</h1>
       <span>By {name}</span>
       {categories && (
         <ul>
