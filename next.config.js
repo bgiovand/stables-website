@@ -6,7 +6,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.simpleicons.org",
+        hostname: "cdn.simpleicons.org/**",
       },
     ],
   },
