@@ -25,7 +25,7 @@ const Product = ({ products }) => {
           <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
             <h2 className="sr-only">Products</h2>
 
-            <div className="grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            <div className="grid grid-cols-4 bg-yellow-400">
               {products.length > 0 &&
                 products.map(
                   ({
@@ -39,27 +39,29 @@ const Product = ({ products }) => {
                     _id && (
                       <div
                         key={_id}
-                        className="aspect-w-1 aspect-h-1 w-full rounded-lg bg-stablesBlue xl:aspect-w-7 xl:aspect-h-8 border-1 border-stablesOrange border-2"
+                        className="p-4 bg-cyan-400 rounded-md flex items-center justify-center"
                       >
-                        <Link
-                          href="/product/[slug]"
-                          as={`/product/${slug.current}`}
-                        >
-                          <h3 className="mt-4 text-sm text-gray-700">
-                            {title}
-                          </h3>
-                          <p className="mt-1 text-lg font-medium text-gray-900">
-                            {lengthFull} / {lengthFilter}
-                          </p>
-                          <div className="w-full h-48 bg-stablesOrange">
-                          <Image
-                            src={image ? image : ""}
-                            alt={title}
-                            width={40}
-                            height={40}
-                          />
-                          </div>
-                        </Link>
+                        <div>
+                          <Link
+                            href="/product/[slug]"
+                            as={`/product/${slug.current}`}
+                          >
+                            <h3 className="mt-4 text-sm text-gray-700">
+                              {title}
+                            </h3>
+                            <p className="mt-1 text-lg font-medium text-gray-900">
+                              {lengthFull} / {lengthFilter}
+                            </p>
+                            <div className="w-full h-48 bg-stablesOrange">
+                              <Image
+                                src={image ? image : ""}
+                                alt={title}
+                                width={40}
+                                height={40}
+                              />
+                            </div>
+                          </Link>
+                        </div>
                       </div>
                     )
                 )}
