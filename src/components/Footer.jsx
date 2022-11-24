@@ -3,6 +3,10 @@ import { useRouter } from "next/router"
 import React from "react"
 import Image from "next/image"
 
+const simpleIconLoader = ({ src, color }) => {
+  return `https://cdn.simpleicons.org/${src}/grey`
+}
+
 const Footer = () => {
   return (
     <footer className="">
@@ -62,8 +66,10 @@ const Footer = () => {
                 className="hover:underline"
               >
                 <Image
+                  loader={simpleIconLoader}
                   className="float-left inline mr-2 mt-1"
-                  src="https://cdn.simpleicons.org/discord/gray"
+                  src="discord"
+                  color="gray"
                   alt="Discord"
                   width={18}
                   height={18}
@@ -74,8 +80,10 @@ const Footer = () => {
             <li className="mb-4">
               <Link href="/" className="hover:underline">
                 <Image
+                  loader={simpleIconLoader}
                   className="float-left inline mr-2 mt-1"
-                  src="https://cdn.simpleicons.org/twitter/gray"
+                  src="twitter"
+                  color="gray"
                   alt="Discord"
                   width={18}
                   height={18}
@@ -86,8 +94,10 @@ const Footer = () => {
             <li className="mb-4">
               <Link href="/" className="hover:underline">
                 <Image
+                  loader={simpleIconLoader}
                   className="float-left inline mr-2 mt-1"
-                  src="https://cdn.simpleicons.org/tiktok/gray"
+                  src="tiktok"
+                  color="gray"
                   alt="Discord"
                   width={18}
                   height={18}
@@ -98,8 +108,10 @@ const Footer = () => {
             <li className="mb-4">
               <Link href="/" className="hover:underline">
                 <Image
+                  loader={simpleIconLoader}
                   className="float-left inline mr-2 mt-1"
-                  src="https://cdn.simpleicons.org/instagram/gray"
+                  src="instagram"
+                  color="gray"
                   alt="Discord"
                   width={18}
                   height={18}
