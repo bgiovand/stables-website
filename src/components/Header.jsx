@@ -57,7 +57,7 @@ const Header = () => {
                 <li
                   key={index}
                   className={` align-bottom  border-transparent hover:border-stablesOrange flex
-                      ${page.name === "Home" ? "order-4" : `order-${index}`}
+                      ${page.name === "Home" ? "order-2" : `order-${index}`}
                     `}
                 >
                   <Link
