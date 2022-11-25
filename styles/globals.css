@@ -55,7 +55,7 @@ body {
 }
 
 a {
-  color: @apply text-stablesOrange;
+  color: @apply text-stablesBlue;
   text-decoration: none;
 }
 

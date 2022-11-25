@@ -1,7 +1,21 @@
 import React from "react"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 const Header = () => {
+  const menu = [
+    { name: "Home", url: "/", alt: "Stables" },
+    { name: "About", url: "/about" },
+    { name: "Blog", url: "/blog" },
+    { name: "Contact", url: "/contact" },
+    { name: "Cones", url: "/product" },
+    { name: "Blunts", url: "/blunts" },
+    { name: "Custom", url: "/custom" },
+  ]
+
+  const router = useRouter()
+  const currentRoute = router.pathname
+
   return (
     <header>
       <nav className="w-100">
@@ -38,42 +52,30 @@ const Header = () => {
             className="hidden w-full space-y-4 md:flex md:space-y-0 md:space-x-8 md:w-auto"
             id="navbar-default"
           >
-            <ul className="flex flex-col p-4 md:flex-row mx-auto w-max">
-              <li>
-                <Link href="/about" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <h1 className="self-center text-4xl font-semibold whitespace-nowrap text-stablesOrange mx-10">
-                  <Link href="/">Stables</Link>
-                </h1>
-              </li>
-              <li>
-                <Link href="/product" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
-                  Cones
-                </Link>
-              </li>
-              <li>
-                <Link href="/blunts" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
-                  Blunts
-                </Link>
-              </li>
-              <li>
-                <Link href="/custom" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
-                  Custom
-                </Link>
-              </li>
+            <ul className="flex flex-col p-4 md:flex-row mx-auto w-max align-text-baseline">
+              {menu.map((page, index) => (
+                <li
+                  key={index}
+                  className={` align-bottom  border-transparent hover:border-stablesOrange flex
+                      ${page.name === "Home" ? "order-4" : `order-${index}`}
+                    `}
+                >
+                  <Link
+                    href={page.url}
+                    className={`pb-0 px-10 hover:text-stablesOrange font-regular text-lg align-bottom flex justify-end flex-col ${
+                      currentRoute === page.url
+                        ? "text-stablesOrange"
+                        : "text-stablesBlue"
+                    } ${page.name === "Home" ? "text-4xl" : ""} 
+                    `}
+                  >
+                    {page.alt ? page.alt : page.name}
+                    {currentRoute === page.url && (
+                      <span className="sr-only">(current)</span>
+                    )}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
