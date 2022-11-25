@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     colors: {
       stablesOrange: "#F05A28",
-      stablesBlue: "#0A3D62",
+      stablesBlue: "#C3E4D9",
       stablesYellow: "#EAEEB5",
       stablesBrown: "#603813",
       black: colors.black,

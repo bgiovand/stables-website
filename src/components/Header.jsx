@@ -40,17 +40,17 @@ const Header = () => {
           >
             <ul className="flex flex-col p-4 md:flex-row mx-auto w-max">
               <li>
-                <Link href="/about" className="block py-2 px-4 font-regular">
+                <Link href="/about" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="block py-2 px-4 font-regular">
+                <Link href="/blog" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="block py-2 px-4 font-regular">
+                <Link href="/contact" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
                   Contact
                 </Link>
               </li>
@@ -60,17 +60,17 @@ const Header = () => {
                 </h1>
               </li>
               <li>
-                <Link href="/product" className="block py-2 px-4 font-regular">
+                <Link href="/product" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
                   Cones
                 </Link>
               </li>
               <li>
-                <Link href="/blunts" className="block py-2 px-4 font-regular">
+                <Link href="/blunts" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
                   Blunts
                 </Link>
               </li>
               <li>
-                <Link href="/custom" className="block py-2 px-4 font-regular">
+                <Link href="/custom" className="block py-2 px-10 hover:text-stablesOrange font-regular text-lg">
                   Custom
                 </Link>
               </li>

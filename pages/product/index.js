@@ -21,11 +21,11 @@ const Product = ({ products }) => {
       <Header />
 
       <main>
-        <div className="bg-white">
+        <div className="">
           <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
             <h2 className="sr-only">Products</h2>
 
-            <div className="grid grid-cols-4 bg-yellow-400">
+            <div className="flex">
               {products.length > 0 &&
                 products.map(
                   ({
@@ -39,25 +39,26 @@ const Product = ({ products }) => {
                     _id && (
                       <div
                         key={_id}
-                        className="p-4 bg-cyan-400 rounded-md flex items-center justify-center"
+                        className="p-4 bg-stablesBlue rounded-md flex items-center justify-center"
                       >
                         <div>
                           <Link
                             href="/product/[slug]"
                             as={`/product/${slug.current}`}
                           >
-                            <h3 className="mt-4 text-sm text-gray-700">
+                            <h3 className="mt-4 text-2xl text-stablesOrange">
                               {title}
                             </h3>
-                            <p className="mt-1 text-lg font-medium text-gray-900">
-                              {lengthFull} / {lengthFilter}
-                            </p>
-                            <div className="w-full h-48 bg-stablesOrange">
+                            <div className="mt-1 text-lg text-stablesBlue font-light">
+                              <span className="">{lengthFull}</span>
+                              <span className="">{lengthFilter}</span>
+                            </div>
+                            <div className="block bg-stablesBlue">
                               <Image
                                 src={image ? image : ""}
                                 alt={title}
-                                width={40}
-                                height={40}
+                                width={300}
+                                height={300}
                               />
                             </div>
                           </Link>

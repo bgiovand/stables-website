@@ -33,6 +33,8 @@ export default function Home() {
           </svg>
         </h1>
 
+        
+
         <section className="max-w-max min-w-full">
           <h2 className="text-stablesOrange text-7xl font-ultralight text-center">
             Smoke Easy
@@ -117,7 +119,7 @@ export default function Home() {
             <div class="mb-6">
               <button
                 type="button"
-                class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800"
+                class="text-white bg-stablesOrange hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800"
               >
                 Sign Up
               </button>
