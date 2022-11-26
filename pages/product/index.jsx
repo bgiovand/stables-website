@@ -6,6 +6,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Header from "../../src/components/Header"
 import Footer from "../../src/components/Footer"
+import { H1, H2, H3 } from "../../src/components/Typography"
 
 const Product = ({ products }) => {
   const router = useRouter()
@@ -22,10 +23,10 @@ const Product = ({ products }) => {
 
       <main>
         <div className="">
-          <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-            <h2 className="sr-only">Products</h2>
+          <div className="mx-auto max-w-7xl">
+            <H1 title="Products" />
 
-            <div className="flex">
+            <div className="flex flex-wrap justify-center">
               {products.length > 0 &&
                 products.map(
                   ({
@@ -39,7 +40,7 @@ const Product = ({ products }) => {
                     _id && (
                       <div
                         key={_id}
-                        className="p-4 bg-stablesBlue rounded-md flex items-center justify-center"
+                        className="p-4 bg-stablesBlue rounded-md flex items-center justify-center m-10"
                       >
                         <div>
                           <Link

@@ -294,7 +294,7 @@ export default function About() {
               {certifications.map((cert) => (
                 <li
                   key={cert.name}
-                  className="flex flex-col items-center justify-top text-center m-5 md:w-2/12"
+                  className="flex flex-col items-center justify-top text-center m-5 md:w-2/12 bg-black/10 h-max p-10 my-5 rounded-2xl max-h-max"
                 >
                   {/* {cert.type} */}
                   <svg
