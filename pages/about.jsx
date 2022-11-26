@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css"
 import Header from "../src/components/Header"
 import Footer from "../src/components/Footer"
 import Link from "next/link"
-import { H1, H2, H3 } from "../src/components/Typography"
+import { H1, H2, H3, H4 } from "../src/components/Typography"
 
 export default function About() {
   const compatibility = [
@@ -116,6 +116,16 @@ export default function About() {
       logo: "alefia.svg",
       link: "https://aleafiahealth.com/",
     },
+    {
+      name: "Alefia Health",
+      logo: "alefia.svg",
+      link: "https://aleafiahealth.com/",
+    },
+    {
+      name: "Alefia Health",
+      logo: "alefia.svg",
+      link: "https://aleafiahealth.com/",
+    },
   ]
 
   const testimonials = [
@@ -209,6 +219,57 @@ export default function About() {
               <li key={value.name} className="flex flex-col items-center m-5">
                 <H3 title={value.name} />
                 <p className="">{value.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <H2 title="Clients" />
+          <ul className="flex flex-col md:flex-row justify-center">
+            {clients.map((client) => (
+              <li key={client.name} className="flex flex-col items-center m-5">
+                <Link href={client.link}>
+                  <Image
+                    src={client.logo ? "/brands/" + client.logo : ""}
+                    alt={client.name}
+                    width={240}
+                    height={200}
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <H2 title="Testimonials" />
+          <ul className="flex flex-col md:flex-row justify-center">
+            {testimonials.map((testimonial) => (
+              <li
+                key={testimonial.name}
+                className="flex flex-col items-center m-5 w-1/3"
+              >
+                <p className="text-2xl italic font-light text-stablesBlue my-3">
+                  &#8220;{testimonial.quote}&#8221;
+                </p>
+                <Image
+                  src={
+                    testimonial.image ? testimonial.image : "placeholder.png"
+                  }
+                  alt={testimonial.name}
+                  width={60}
+                  height={60}
+                  className="rounded-full bg-stablesYellow"
+                />
+                <div className="m-2 text-center">
+                  <span className="text-stablesYellow text-2xl block">
+                    {testimonial.name}
+                  </span>
+                  <span className="">
+                    {testimonial.company}
+                  </span>
+                </div>
               </li>
             ))}
           </ul>

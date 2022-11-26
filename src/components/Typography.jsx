@@ -24,4 +24,12 @@ const H3 = (props) => {
   )
 }
 
-export { H1, H2, H3 }
+const H4 = (props) => {
+  return (
+    <h4 className="text-stablesOrange text-4xl  text-center font-normal mb-10">
+      {props.title}
+    </h4>
+  )
+}
+
+export { H1, H2, H3, H4 }
