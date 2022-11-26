@@ -25,8 +25,9 @@ const Product = ({ products }) => {
         <div className="">
           <div className="mx-auto max-w-7xl">
             <H1 title="Products" />
+            <H2 title="Cones" />
 
-            <div className="flex flex-wrap justify-center">
+            <div className="grid grid-cols-1 gap-8 py-8 px-6 md:grid-cols-3">
               {products.length > 0 &&
                 products.map(
                   ({
@@ -40,7 +41,7 @@ const Product = ({ products }) => {
                     _id && (
                       <div
                         key={_id}
-                        className="p-4 bg-stablesBlue rounded-md flex items-center justify-center m-10"
+                        className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-lg dark:bg-gray-800"
                       >
                         <div>
                           <Link
@@ -52,6 +53,7 @@ const Product = ({ products }) => {
                             </h3>
                             <div className="mt-1 text-lg text-stablesBlue font-light">
                               <span className="">{lengthFull}</span>
+                              <span>/</span>
                               <span className="">{lengthFilter}</span>
                             </div>
                             <div className="block bg-stablesBlue">
