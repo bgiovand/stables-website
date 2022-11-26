@@ -115,17 +115,7 @@ export default function About() {
       name: "Alefia Health",
       logo: "alefia.svg",
       link: "https://aleafiahealth.com/",
-    },
-    {
-      name: "Alefia Health",
-      logo: "alefia.svg",
-      link: "https://aleafiahealth.com/",
-    },
-    {
-      name: "Alefia Health",
-      logo: "alefia.svg",
-      link: "https://aleafiahealth.com/",
-    },
+    }
   ]
 
   const testimonials = [
@@ -251,8 +241,8 @@ export default function About() {
                 key={testimonial.name}
                 className="flex flex-col items-center m-5 md:w-1/3"
               >
-                <p className="text-2xl italic font-light text-stablesBlue my-3">
-                  &#8220;{testimonial.quote}&#8221;
+                <p className="text-2xl italic font-light text-stablesBlue my-3 before:content-['❝'] relative before:absolute before:-top-2 before:-left-2 before:block before:-translate-x-0 before:scale-[4] before:text-stablesBrown before:-z-10 before:opacity-20">
+                  {testimonial.quote}
                 </p>
                 <Image
                   src={
