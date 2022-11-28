@@ -1,12 +1,11 @@
 import Head from "next/head"
 import Image from "next/image"
-import styles from "../styles/Home.module.css"
-import Header from "../src/components/Header"
-import Footer from "../src/components/Footer"
+import Header from "../../src/components/Header"
+import Footer from "../../src/components/Footer"
 
 export default function Blunts() {
   return (
-    <div className={styles.container}>
+    <div className="first-letter:">
       <Head>
         <title>Blunts</title>
         <meta name="description" content="Stables is The Cone Company" />
@@ -15,8 +14,8 @@ export default function Blunts() {
 
       <Header />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+      <main className="">
+        <h1 className="">
           {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 301.7552 70.3059"
@@ -32,9 +31,9 @@ export default function Blunts() {
           </svg> */}
           Blunts
         </h1>
-        <section className={styles.grid}>
+        <section className="">
           
-          <p className={styles.description}>
+          <p className="">
             Exercitation incididunt occaecat deserunt deserunt. Aute cillum nisi
             cupidatat exercitation veniam proident deserunt laboris ad ex enim
             enim esse dolor voluptate. Occaecat excepteur pariatur consectetur

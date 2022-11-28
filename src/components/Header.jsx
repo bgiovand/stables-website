@@ -9,8 +9,8 @@ const Header = () => {
     { name: "Blog", url: "/blog" },
     { name: "Contact", url: "/contact" },
     { name: "Cones", url: "/product" },
-    { name: "Blunts", url: "/blunts" },
-    { name: "Custom", url: "/custom" },
+    { name: "Blunts", url: "/product/blunts" },
+    { name: "Custom", url: "/product/custom" },
   ]
 
   const router = useRouter()

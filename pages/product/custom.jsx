@@ -1,6 +1,8 @@
 import Head from "next/head"
-import Header from "../src/components/Header"
-import Footer from "../src/components/Footer"
+
+import Header from "../../src/components/Header"
+import Footer from "../../src/components/Footer"
+
 import React, { Suspense, useRef, useState, useEffect } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import {
