@@ -5,6 +5,7 @@ import Header from "../../src/components/Header"
 import Footer from "../../src/components/Footer"
 import imageUrlBuilder from "@sanity/image-url"
 import { PortableText } from "@portabletext/react"
+import { H1, H2, H3 } from "../../src/components/Typography"
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -46,89 +47,82 @@ const Product = ({ product = {} }) => {
       <Header />
       <main>
         <article>
-          <div>
-            <h2>Cone &middot; {industryName}</h2>
-            <h1 className="text-stablesOrange text-7xl font-ultralight text-left m-8">
-              {title}
-            </h1>
-          </div>
-          <section className="container flex flex-wrap justify-between items-center mx-auto">
+          <H1 title={title} />
+          <H2 title={industryName} />
+
+          <section className="flex flex-row items-center justify-center p-4">
+            <div className="flex flex-col w-1/2">
+              <Image
+                src={product.image ? product.image : ""}
+                alt={title}
+                width={500}
+                height={500}
+              />
+              <div className="flex flex-col">
+                {product.paperTypes && (
+                  <ul>
+                    Paper Types
+                    {product.paperTypes.map((paper) => (
+                      <li key={paper}>{paper}</li>
+                    ))}
+                  </ul>
+                )}
+
+                <PortableText value={description} components={ptComponents} />
+              </div>
+            </div>
             <div className="flex flex-col">
               <ul>
                 <li>
                   <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
                     Fill Weight Range
                   </h4>
-                  {product.fillWeightRangeLow} &#8594;{" "}
-                  {product.fillWeightRangeHigh} grams
+                  {product.meta.fillWeightRangeLow} &#8594;{" "}
+                  {product.meta.fillWeightRangeHigh} grams
                 </li>
                 <li>
                   <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
                     Burnside Diameter
                   </h4>
-                  {product.burnerDiameter} mm
+                  {product.meta.burnerDiameter} mm
                 </li>
                 <li>
                   <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
                     Mouth Diamter
                   </h4>
-                  {product.mouthDiameter} mm
+                  {product.meta.mouthDiameter} mm
                 </li>
                 <li>
                   <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
                     Filter Style
                   </h4>
-                  {product.filterType}
+                  {product.meta.filterType}
                 </li>
                 <li>
                   <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
                     Length
                   </h4>
-                  {product.lengthFull}
+                  {product.meta.lengthFull}
                 </li>
                 <li>
                   <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
                     Filter Length
                   </h4>
-                  {product.lengthFilter}
+                  {product.meta.lengthFilter}
                 </li>
                 <li>
                   <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
                     Pitch
                   </h4>
-                  {product.pitch}
+                  {product.meta.pitch}
                 </li>
                 <li>
                   <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
                     Pitch Type
                   </h4>
-                  {product.pitchType}
+                  {product.meta.pitchType}
                 </li>
               </ul>
-            </div>
-            <div className="flex flex-col">
-              {/* {paperTypes && (
-                <ul>
-                  Paper Types
-                  {paperTypes.map((paper) => (
-                    <li key={paper}>{paper}</li>
-                  ))}
-                </ul>
-              )} */}
-
-              <PortableText value={description} components={ptComponents} />
-            </div>
-            <div className="flex flex-col">
-              <Image
-                src={urlFor(product.mainImage)
-                  .width(320)
-                  .height(240)
-                  .fit("max")
-                  .auto("format")}
-                width={320}
-                height={240}
-                alt="sd"
-              />
             </div>
           </section>
         </article>
@@ -155,9 +149,30 @@ export async function getStaticProps(context) {
   const { slug = "" } = context.params
   const product = await client.fetch(
     `
-    *[_type == "product" && slug.current == $slug][0]
+    *[_type == "product" && slug.current == $slug][0]{
+      id,
+      slug,
+      title,
+      industryName,
+      "image": mainImage.asset->url,
+      description,
+      paperTypes -> {
+        paperType
+      },
+      "meta": {
+        fillWeightRangeLow,
+        fillWeightRangeHigh,
+        burnerDiameter,
+        mouthDiameter,
+        filterType,
+        lengthFull,
+        lengthFilter,
+        pitch,
+        pitchType,
+      }
+    }
   `,
-    { slug }
+    { slug, meta: {} }
   )
   return {
     props: {
