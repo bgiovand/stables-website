@@ -52,6 +52,10 @@ const Product = ({ product = {} }) => {
           <H1 title={title} />
           <H3 title={industryName} />
 
+          <div className="mx-auto w-8/12 center text-center text-2xl">
+            <PortableText value={description} components={ptComponents} />
+          </div>
+
           <section className="flex flex-row items-center justify-center p-4">
             {/* Link to go back to products page */}
 
@@ -71,78 +75,87 @@ const Product = ({ product = {} }) => {
                     ))}
                   </ul>
                 )}
-
-                <PortableText value={description} components={ptComponents} />
               </div>
             </div>
             <div className="flex flex-col">
               <ul>
                 <li>
-                  <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Fill Weight Range
                   </h4>
-                  {product.meta.fillWeightRangeLow} &#8594;{" "}
-                  {product.meta.fillWeightRangeHigh} grams
+                  <span className="font-mono font-thin ">
+                    {product.meta.fillWeightRangeLow} &#8594;{" "}
+                    {product.meta.fillWeightRangeHigh} grams
+                  </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Burnside Diameter
                   </h4>
-                  {product.meta.burnerDiameter} mm
+                  <span className="font-mono font-thin ">
+                    {product.meta.burnerDiameter} mm
+                  </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Mouth Diamter
                   </h4>
-                  {product.meta.mouthDiameter} mm
+                  <span className="font-mono font-thin ">
+                    {product.meta.mouthDiameter} mm
+                  </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Filter Style
                   </h4>
-                  {product.meta.filterType}
+                  <span className="font-mono font-thin ">
+                    {product.meta.filterType}
+                  </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Length
                   </h4>
-                  {product.meta.lengthFull}
+                  <span className="font-mono font-thin ">
+                    {product.meta.lengthFull}
+                  </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Filter Length
                   </h4>
-                  {product.meta.lengthFilter}
+                  <span className="font-mono font-thin ">
+                    {product.meta.lengthFilter}
+                  </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Pitch
                   </h4>
-                  {product.meta.pitch}
+                  <span className="font-mono font-thin ">
+                    {product.meta.pitch}
+                  </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesOrange text-1xl font-semibold mt-2">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Pitch Type
                   </h4>
-                  {product.meta.pitchType}
+                  <span className="font-mono capitalize">
+                    {product.meta.pitchType}
+                  </span>
                 </li>
               </ul>
             </div>
           </section>
         </article>
 
-                      
-                      
-                    
-                      <Link href="/product/[slug]" as={`/product/${""}`}>
-                        prev product
-                      </Link>
+        <Link href="/product/[slug]" as={`/product/${""}`}>
+          prev product
+        </Link>
 
-                        
-                        <Link href="/product/[slug]" as={`/product/${""}`}>
-                          next product
-                        </Link>
-
+        <Link href="/product/[slug]" as={`/product/${""}`}>
+          next product
+        </Link>
       </main>
 
       <Footer />
