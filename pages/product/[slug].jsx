@@ -29,13 +29,30 @@ const ptComponents = {
   },
 }
 
+const paperTypes = [
+  {
+    title: "White",
+    description: "White paper",
+    image: "/images/white.png",
+  },
+  {
+    title: "Brown",
+    description: "Brown paper",
+    image: "/images/brown.png",
+  },
+  {
+    title: "Black",
+    description: "Black paper",
+    image: "/images/black.png",
+  },
+]
+
 const Product = ({ product = {} }) => {
   const {
     title = "Missing",
     industryName,
     mainImage,
     description = [],
-    paperTypes,
   } = product
   return (
     <div>
@@ -48,7 +65,14 @@ const Product = ({ product = {} }) => {
       <Header />
       <main>
         <article>
-          <Link href="/product">Back to Products</Link>
+          <div className="mx-auto absolute mt-10 flex border-[red] border-[2px] border-solid text-center left-[50%]">
+            <Link
+              href="/product"
+              className="flex flex-col bg-stablesBrown rounded-full bg-opacity-20 pr-8 pl-12 py-3 ml-5 before:content-['←'] before:translate-x-10 hover:before:translate-x-8 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown before:font-bold "
+            >
+              Back to Products
+            </Link>
+          </div>
           <H1 title={title} />
           <H3 title={industryName} />
 
@@ -57,8 +81,6 @@ const Product = ({ product = {} }) => {
           </div>
 
           <section className="flex flex-row items-center justify-center p-4">
-            {/* Link to go back to products page */}
-
             <div className="flex flex-col w-1/2">
               <Image
                 src={product.image ? product.image : ""}
@@ -66,16 +88,6 @@ const Product = ({ product = {} }) => {
                 width={500}
                 height={500}
               />
-              <div className="flex flex-col">
-                {product.paperTypes && (
-                  <ul>
-                    Paper Types
-                    {product.paperTypes.map((paper) => (
-                      <li key={paper}>{paper}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
             </div>
             <div className="flex flex-col">
               <ul>
@@ -84,8 +96,7 @@ const Product = ({ product = {} }) => {
                     Fill Weight Range
                   </h4>
                   <span className="font-mono font-thin ">
-                    {product.meta.fillWeightRangeLow} &#8594;{" "}
-                    {product.meta.fillWeightRangeHigh} grams
+                    {`${product.meta.fillWeightRangeLow} ➜ ${product.meta.fillWeightRangeHigh} grams`}
                   </span>
                 </li>
                 <li>
@@ -144,6 +155,25 @@ const Product = ({ product = {} }) => {
                     {product.meta.pitchType}
                   </span>
                 </li>
+                <li>
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                    Paper Types
+                  </h4>
+                  <ul className="flex flex-row">
+                    {paperTypes.map(({ title, description, image, index }) => (
+                      <li key={index} className="center text-center mr-5">
+                        <Image
+                          src={image}
+                          alt={title}
+                          width={50}
+                          height={50}
+                          className="w-[50px] h-[50px] object-contain object-center rounded-full bg-gray-400 border-[3px] border-stablesBrown"
+                        />
+                        <span>{title}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
               </ul>
             </div>
           </section>
@@ -180,15 +210,12 @@ export async function getStaticProps(context) {
   const product = await client.fetch(
     `
     *[_type == "product" && slug.current == $slug][0]{
-      id,
+      _id,
       slug,
       title,
       industryName,
       "image": mainImage.asset->url,
       description,
-      paperTypes -> {
-        paperType
-      },
       "meta": {
         fillWeightRangeLow,
         fillWeightRangeHigh,
@@ -199,7 +226,8 @@ export async function getStaticProps(context) {
         lengthFilter,
         pitch,
         pitchType,
-      }
+      },
+      // paperTypes->{title},
     }
   `,
     { slug, meta: {} }
