@@ -3,14 +3,73 @@ import { useRouter } from "next/router"
 import React from "react"
 import Image from "next/image"
 
-const simpleIconLoader = ({ src, color }) => {
-  return `https://cdn.simpleicons.org/${src}/grey`
+const simpleIconLoader = ({ src, color = "grey" }) => {
+  return `https://cdn.simpleicons.org/${src}/${color}`
+}
+
+const footerSection = {
+  stables: [
+    {
+      name: "About",
+      href: "/about",
+    },
+    {
+      name: "Blog",
+      href: "/blog",
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+    },
+  ],
+  products: [
+    {
+      name: "Cones",
+      href: "/product",
+    },
+    {
+      name: "Blunts",
+      href: "/product",
+    },
+    {
+      name: "Custom",
+      href: "/product",
+    },
+  ],
+  community: [
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/stables.cones/",
+      icon: "instagram",
+    },
+    {
+      name: "Discord",
+      href: "",
+      icon: "discord",
+    },
+    {
+      name: "TikTok",
+      href: "https://",
+      icon: "tiktok",
+    },
+  ],
 }
 
 const Footer = () => {
   return (
     <footer className="">
       <div className="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
+        {/* <ul className="">
+
+        {footerSection.stables.map(({ name, href, index }) => (
+          <li key={index}>
+            <Link href={href}>
+                {name}
+              </Link>
+          </li>
+        ))}
+        </ul> */}
+
         <div>
           <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">
             Stables

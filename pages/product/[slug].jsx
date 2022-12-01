@@ -6,6 +6,7 @@ import Footer from "../../src/components/Footer"
 import imageUrlBuilder from "@sanity/image-url"
 import { PortableText } from "@portabletext/react"
 import { H1, H2, H3 } from "../../src/components/Typography"
+import Link from "next/link"
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -47,10 +48,13 @@ const Product = ({ product = {} }) => {
       <Header />
       <main>
         <article>
+          <Link href="/product">Back to Products</Link>
           <H1 title={title} />
-          <H2 title={industryName} />
+          <H3 title={industryName} />
 
           <section className="flex flex-row items-center justify-center p-4">
+            {/* Link to go back to products page */}
+
             <div className="flex flex-col w-1/2">
               <Image
                 src={product.image ? product.image : ""}
@@ -126,6 +130,19 @@ const Product = ({ product = {} }) => {
             </div>
           </section>
         </article>
+
+                      
+                      
+                    
+                      <Link href="/product/[slug]" as={`/product/${""}`}>
+                        prev product
+                      </Link>
+
+                        
+                        <Link href="/product/[slug]" as={`/product/${""}`}>
+                          next product
+                        </Link>
+
       </main>
 
       <Footer />
