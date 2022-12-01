@@ -15,6 +15,7 @@ const Header = () => {
 
   const router = useRouter()
   const currentRoute = router.pathname
+  console.log(router.route)
 
   return (
     <header>
@@ -63,7 +64,7 @@ const Header = () => {
                   <Link
                     href={page.url}
                     className={`pb-0 px-10 hover:text-stablesOrange font-regular text-lg align-bottom flex justify-end flex-col ${
-                      currentRoute === page.url
+                      currentRoute == page.url
                         ? "text-stablesOrange"
                         : "text-stablesBlue"
                     } ${page.name === "Home" ? "text-4xl" : ""} 
