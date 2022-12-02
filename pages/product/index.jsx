@@ -27,7 +27,7 @@ const Product = ({ products }) => {
             <H1 title="Products" />
             <H2 title="Cones" />
 
-            <div className="grid grid-cols-1 gap-8 py-8 px-6 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-8 py-8 px-6 md:grid-cols-3 lg:grid-cols-4">
               {products.length > 0 &&
                 products.map(
                   ({
@@ -41,7 +41,7 @@ const Product = ({ products }) => {
                     _id && (
                       <div
                         key={_id}
-                        className="group flex flex-col items-center justify-center rounded-lg shadow-lg bg-stablesBrown/10
+                        className="group flex flex-col justify-center rounded-lg shadow-lg bg-stablesBrown/10
                         hover:bg-stablesBrown/20 transition-all
                         hover:shadow-2xl hover:border-stablesOrange/20 border-2 border-stablesBrown/10"
                       >
@@ -61,13 +61,15 @@ const Product = ({ products }) => {
                               </div>
                             </div>
 
-                            <Image
-                              src={image ? image : ""}
-                              alt={title}
-                              width={300}
-                              height={300}
-                              className="rotate-45  leading-0 group-hover:scale-105 ease-in-out duration-200  transition-all"
-                            />
+                            <div className="flex justify-center">
+                              <Image
+                                src={image ? image : ""}
+                                alt={title}
+                                width={300}
+                                height={300}
+                                className="rotate-45 leading-0 group-hover:scale-105 ease-in-out duration-200  transition-all"
+                              />
+                            </div>
                           </Link>
                         </div>
                       </div>
