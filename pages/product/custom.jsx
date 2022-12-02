@@ -1,7 +1,8 @@
 import Head from "next/head"
 
-import Header from "../../src/components/Header"
-import Footer from "../../src/components/Footer"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+import { H1, H2, H4 } from "@/components/Typography"
 
 import React, { Suspense, useRef, useState, useEffect } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
@@ -17,14 +18,14 @@ import { proxy, useSnapshot } from "valtio"
 const state = proxy({
   current: null,
   items: {
-    laces: "#ffffff",
-    mesh: "#ffffff",
-    caps: "#ffffff",
-    inner: "#ffffff",
-    sole: "#ffffff",
-    stripes: "#ffffff",
-    band: "#ffffff",
-    patch: "#ffffff",
+    laces: "red",
+    mesh: "red",
+    caps: "blue",
+    inner: "green",
+    sole: "red",
+    stripes: "purple",
+    band: "red",
+    patch: "red",
   },
 })
 
@@ -155,46 +156,92 @@ export default function Custom() {
 
       <Header />
 
-      <main className="w-screen h-screen">
-        <div className="w-screen text-center">
-        <h1 className="justify-center mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Build your perfect cone.
-        </h1>
+      <main className="w-screen h-screen bg-stablesBlue">
+        <H1 title="Conefigurator" />
+        <H2 title="Build your perfect cone" />
+
+        <div className="flex flex-row">
+          <div className="flex flex-col w-9/12 h-screen">
+            <Canvas
+              shadows
+              dpr={[1, 2]}
+              camera={{ position: [0, 0, 4], fov: 50 }}
+              className="-mt-60 overflow-visible z-100"
+            >
+              <ambientLight intensity={0.7} />
+
+              <spotLight
+                intensity={0.5}
+                angle={0.2}
+                penumbra={1}
+                position={[10, 15, 10]}
+                castShadow
+              />
+
+              <Suspense fallback={null}>
+                <Cone />
+                <Environment preset="city" />
+                <ContactShadows
+                  rotation-x={Math.PI / 2}
+                  position={[0, -0.8, 0]}
+                  opacity={0.6}
+                  width={10}
+                  height={3}
+                  blur={1.5}
+                  far={0.8}
+                />
+              </Suspense>
+
+              <OrbitControls
+                minPolarAngle={Math.PI / 2}
+                maxPolarAngle={Math.PI / 2}
+                enableZoom={false}
+                enablePan={false}
+              />
+            </Canvas>
+          </div>
+          <div className="flex flex-col w-3/12">
+            <Picker />
+            <div className="flex flex-row">
+              <div className="flex flex-col w-1/2 ">
+                <H4 title="Cone" />
+                Cone Color
+                <button
+                  onClick={() => {
+                    state.items.mesh = "red"
+                  }}
+                  className="bg-black text-white font-bold py-2 px-4 rounded"
+                  style={{ backgroundColor: state.items.mesh }}
+                >
+                  Reset
+                </button>
+                <button
+                  onClick={() => {
+                    state.items.cone = "#ffffff"
+                  }}
+                >
+                  White
+                </button>
+
+                {/* Reset Button */}
+                <button
+                  onClick={() => {
+                    state.items.mesh = "red"
+                    state.items.band = "red"
+                    state.items.stripes = "blue"
+                    state.items.patch = "green"
+                    state.items.laces = "black"
+                    state.items.inner = "purple"
+                    state.items.sole = "red"
+                    state.items.caps = "red"
+                  }}
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <Picker />
-        <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
-          <ambientLight intensity={0.7} />
-
-          <spotLight
-            intensity={0.5}
-            angle={0.1}
-            penumbra={1}
-            position={[10, 15, 10]}
-            castShadow
-          />
-
-          <Suspense fallback={null}>
-            <Cone />
-            <Environment preset="city" />
-            <ContactShadows
-              rotation-x={Math.PI / 2}
-              position={[0, -0.8, 0]}
-              opacity={0.25}
-              width={10}
-              height={3}
-              blur={1.5}
-              far={0.8}
-            />
-          </Suspense>
-
-          <OrbitControls
-            minPolarAngle={Math.PI / 2}
-            maxPolarAngle={Math.PI / 2}
-            enableZoom={false}
-            enablePan={false}
-          />
-        </Canvas>
       </main>
 
       <Footer />

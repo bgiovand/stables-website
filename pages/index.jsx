@@ -1,11 +1,11 @@
 import Head from "next/head"
 import Image from "next/image"
 import styles from "../styles/Home.module.css"
-import Header from "../src/components/Header"
-import Footer from "../src/components/Footer"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 import Link from "next/link"
-import { H1, H2, H4 } from "../src/components/Typography"
-import { Badge } from "../src/components/svg/Badge"
+import { H1, H2, H4 } from "@/components/Typography"
+import { Badge } from "@/components/svg/Badge"
 
 export default function Home() {
   return (

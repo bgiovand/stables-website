@@ -11,6 +11,7 @@ module.exports = {
       stablesBlue: "#C3E4D9",
       stablesYellow: "#EAEEB5",
       stablesBrown: "#603813",
+      stablesBlack: "#1e1a16",
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
@@ -29,7 +30,6 @@ module.exports = {
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
-    require("autoprefixer"),
   ],
   corePlugins: {
     fontFamily: true,
