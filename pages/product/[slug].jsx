@@ -248,14 +248,14 @@ const Product = ({ product = {} }) => {
           </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center">
+        <section className="flex flex-col items-center justify-center bg-stablesBlue bgTexture my-20 pb-16">
           <div className="mt-20">
             <H3 title="Ready to order?" />
-            <H4 title="Contact us today to get started!" />
+            <H4 title="Get in touch today and let's get started!" />
             <div className="flex flex-row justify-center">
               <Link
                 href="/contact"
-                className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-white bg-stablesBrown rounded-full"
+                className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-2xl text-white bg-stablesOrange rounded-full"
               >
                 Contact Us
               </Link>
