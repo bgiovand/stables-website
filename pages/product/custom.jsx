@@ -18,15 +18,15 @@ import Image from "next/image"
 import Link from "next/link"
 
 const items = {
-    laces: "red",
-    mesh: "red",
-    caps: "blue",
-    inner: "green",
-    sole: "red",
-    stripes: "purple",
-    band: "red",
-    patch: "red",
-  }
+  laces: "#eff6ff",
+  mesh: "#3a4759",
+  caps: "#1e3a8a",
+  inner: "#93c5fd",
+  sole: "#60a5fa",
+  stripes: "#3b82f6",
+  band: "#2563eb",
+  patch: "#1d4ed8",
+}
 
 const state = proxy({
   current: null,
@@ -162,27 +162,25 @@ export default function Custom() {
 
       <Header />
 
-      <main
-        className={`w-screen h-screen bg-stablesBlue ${snap.current} bgTexture`}
-      >
+      <main className={`bg-stablesBlue ${snap.current} bgTexture`}>
         <Image
           src="/colorwheel.svg"
           alt="Hemp"
           width={80}
           height={80}
-          className="w-[80px] h-[80px] object-contain object-center rounded-full bg-gray-400 border-4 border-stablesBlue/80 mx-auto translate-y-16"
+          className="w-[120px] h-[120px] object-contain object-center rounded-full bg-gray-400 border-4 border-stablesBlue/80 mx-auto translate-y-[4em] -z-100"
         />
         <H1 title="Conefigurator" />
         <H3 title="Build your perfect cone" />
 
-        <div className="flex flex-row">
+        <div className="flex flex-row ">
           <div className="flex flex-col w-9/12 h-screen relative">
             <div className="relative w-full h-full">
               <Canvas
                 shadows
                 dpr={[1, 2]}
                 camera={{ position: [0, 0, 4], fov: 50 }}
-                className="-mt-60 overflow-visible z-0"
+                className="-mt-80 overflow-visible z-0"
               >
                 <ambientLight intensity={0.7} />
 
@@ -238,7 +236,9 @@ export default function Custom() {
                         <div
                           className={`w-8 h-8 border flex rounded-full mr-2 border-4 border-red transition-border duration-300 ease-in-out border-outline
                           ${
-                            state.current == item ? "border-white" : "border-white/50"
+                            state.current == item
+                              ? "border-white"
+                              : "border-white/50"
                           }`}
                           style={{ backgroundColor: `${snap.items[item]}` }}
                         ></div>
@@ -259,14 +259,14 @@ export default function Custom() {
                   <div className="flex text-center w-full">
                     <div
                       onClick={() => {
-                        state.items.mesh = "red"
-                        state.items.band = "yellow"
-                        state.items.stripes = "blue"
-                        state.items.patch = "green"
-                        state.items.laces = "black"
-                        state.items.inner = "purple"
-                        state.items.sole = "red"
-                        state.items.caps = "red"
+                        state.items.laces = "#eff6ff"
+                        state.items.mesh = "#3a4759"
+                        state.items.caps = "#1e3a8a"
+                        state.items.inner = "#93c5fd"
+                        state.items.sole = "#60a5fa"
+                        state.items.stripes = "#3b82f6"
+                        state.items.band = "#2563eb"
+                        state.items.patch = "#1d4ed8"
                       }}
                       className="flex flex-col w-full bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all bg-opacity-20 pr-6 pl-12 py-3 
                       before:transition-all before:content-['↻'] before:translate-x-5 hover:before:rotate-180 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-45"
@@ -279,6 +279,19 @@ export default function Custom() {
             </div>
           </div>
         </div>
+        <section className="flex flex-col w-full mb-20 -mt-[50em] py-44">
+          <div className="flex flex-row mx-auto">
+            <div className="flex flex-row justify-center ">
+              <Link
+                href="/contact"
+                className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-2xl text-white bg-stablesOrange rounded-full"
+              >
+                Share your cone creation!
+              </Link>
+            </div>
+          </div>
+          <div></div>
+        </section>
       </main>
 
       <Footer />

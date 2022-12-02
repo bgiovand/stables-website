@@ -241,7 +241,7 @@ const Product = ({ product = {} }) => {
             <ul className="flex flex-row justify-center">
               {[...Array(3)].map((e, i) => (
                 <li key={i} className="center text-center mx-5">
-                  <li key={i} className="center text-center mx-5">
+                  
                     <Image
                       src="/colorwheel.svg"
                       alt="Hemp"
@@ -250,7 +250,7 @@ const Product = ({ product = {} }) => {
                       className="w-[120px] h-[120px] object-contain object-center rounded-full bg-gray-400 border-8 border-stablesBrown/80 mb-2"
                     />
                     <span>Color</span>
-                  </li>
+                  
                 </li>
               ))}
             </ul>
