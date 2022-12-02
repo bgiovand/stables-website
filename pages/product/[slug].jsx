@@ -49,9 +49,22 @@ const paperTypes = [
 
 const Product = ({ product = {} }) => {
   const {
+    _id,
+    slug,
     title = "Missing",
     industryName,
-    mainImage,
+    image,
+    meta = {
+      fillWeightRangeLow: 0,
+      fillWeightRangeHigh: 0,
+      burnerDiameter: 0,
+      mouthDiameter: 0,
+      filterType: "",
+      lengthFull: 0,
+      lengthFilter: 0,
+      pitch: 0,
+      pitchType: " ",
+    },
     description = [],
   } = product
   return (
@@ -71,7 +84,7 @@ const Product = ({ product = {} }) => {
             <div className="mx-auto flex absolute text-center left-[50%] transform -translate-x-1/2">
               <Link
                 href="/product"
-                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown before:font-bold "
+                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold "
               >
                 Back to Products
               </Link>
@@ -84,7 +97,7 @@ const Product = ({ product = {} }) => {
           <section className="flex flex-row items-center justify-center p-4">
             <div className="flex flex-col w-1/2">
               <Image
-                src={product.image ? product.image : ""}
+                src={image ? image : ""}
                 alt={title}
                 width={500}
                 height={500}
@@ -97,7 +110,7 @@ const Product = ({ product = {} }) => {
                     Fill Weight Range
                   </h4>
                   <span className="font-mono font-thin ">
-                    {`${product.meta.fillWeightRangeLow} ➜ ${product.meta.fillWeightRangeHigh} grams`}
+                    {`${meta.fillWeightRangeLow} ➜ ${meta.fillWeightRangeHigh} grams`}
                   </span>
                 </li>
                 <li>
@@ -105,7 +118,7 @@ const Product = ({ product = {} }) => {
                     Burnside Diameter
                   </h4>
                   <span className="font-mono font-thin ">
-                    {product.meta.burnerDiameter} mm
+                    {meta.burnerDiameter} mm
                   </span>
                 </li>
                 <li>
@@ -113,7 +126,7 @@ const Product = ({ product = {} }) => {
                     Mouth Diamter
                   </h4>
                   <span className="font-mono font-thin ">
-                    {product.meta.mouthDiameter} mm
+                    {meta.mouthDiameter} mm
                   </span>
                 </li>
                 <li>
@@ -121,7 +134,7 @@ const Product = ({ product = {} }) => {
                     Filter Style
                   </h4>
                   <span className="font-mono font-thin ">
-                    {product.meta.filterType}
+                    {meta.filterType}
                   </span>
                 </li>
                 <li>
@@ -129,7 +142,7 @@ const Product = ({ product = {} }) => {
                     Length
                   </h4>
                   <span className="font-mono font-thin ">
-                    {product.meta.lengthFull}
+                    {meta.lengthFull}
                   </span>
                 </li>
                 <li>
@@ -137,24 +150,20 @@ const Product = ({ product = {} }) => {
                     Filter Length
                   </h4>
                   <span className="font-mono font-thin ">
-                    {product.meta.lengthFilter}
+                    {meta.lengthFilter}
                   </span>
                 </li>
                 <li>
                   <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Pitch
                   </h4>
-                  <span className="font-mono font-thin ">
-                    {product.meta.pitch}
-                  </span>
+                  <span className="font-mono font-thin ">{meta.pitch}</span>
                 </li>
                 <li>
                   <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
                     Pitch Type
                   </h4>
-                  <span className="font-mono capitalize">
-                    {product.meta.pitchType}
-                  </span>
+                  <span className="font-mono capitalize">{meta.pitchType}</span>
                 </li>
                 <li>
                   <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
@@ -217,17 +226,15 @@ export async function getStaticProps(context) {
       industryName,
       "image": mainImage.asset->url,
       description,
-      "meta": {
-        fillWeightRangeLow,
-        fillWeightRangeHigh,
-        burnerDiameter,
-        mouthDiameter,
-        filterType,
-        lengthFull,
-        lengthFilter,
-        pitch,
-        pitchType,
-      },
+      fillWeightRangeLow,
+      fillWeightRangeHigh,
+      burnerDiameter,
+      mouthDiameter,
+      filterType,
+      lengthFull,
+      lengthFilter,
+      pitch,
+      pitchType,
       // paperTypes->{title},
     }
   `,
