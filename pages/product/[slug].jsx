@@ -80,11 +80,11 @@ const Product = ({ product = {} }) => {
         <article>
           <H1 title={title} />
           <H3 title={industryName} />
-          <div className="flex mb-[80px] -mt-0">
+          <div className="block h-20">
             <div className="mx-auto flex absolute text-center left-[50%] transform -translate-x-1/2">
               <Link
                 href="/product"
-                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold "
+                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-0"
               >
                 Back to Products
               </Link>
@@ -235,7 +235,7 @@ export async function getStaticProps(context) {
       lengthFilter,
       pitch,
       pitchType,
-      // paperTypes->{title},
+      paperTypes->{title},
     }
   `,
     { slug, meta: {} }
