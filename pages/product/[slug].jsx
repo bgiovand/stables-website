@@ -65,17 +65,18 @@ const Product = ({ product = {} }) => {
       <Header />
       <main>
         <article>
-          <div className="mx-auto absolute mt-10 flex border-[red] border-[2px] border-solid text-center left-[50%]">
-            <Link
-              href="/product"
-              className="flex flex-col bg-stablesBrown rounded-full bg-opacity-20 pr-8 pl-12 py-3 ml-5 before:content-['←'] before:translate-x-10 hover:before:translate-x-8 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown before:font-bold "
-            >
-              Back to Products
-            </Link>
-          </div>
           <H1 title={title} />
           <H3 title={industryName} />
-
+          <div className="flex mb-[80px] -mt-0">
+            <div className="mx-auto flex absolute text-center left-[50%] transform -translate-x-1/2">
+              <Link
+                href="/product"
+                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown before:font-bold "
+              >
+                Back to Products
+              </Link>
+            </div>
+          </div>
           <div className="mx-auto w-8/12 center text-center text-2xl">
             <PortableText value={description} components={ptComponents} />
           </div>

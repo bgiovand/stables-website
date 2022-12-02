@@ -18,7 +18,7 @@ export default function Blunts() {
       <main className="">
         <H1 title="Products" />
         <H2 title="Blunts" />
-        <div className="absolute top-[120px] right-[250px] text-[red] border-[1px] border-[red] p-5 px-6 rotate-6 rounded-lg font-mono z-50 uppercase font-black bg-[red] bg-opacity-10 leading-tight">
+        <div className="absolute top-[120px] right-[250px] text-[red] border-[1px] border-dashed border-[red] p-5 px-6 rotate-6 rounded-lg font-mono z-50 uppercase font-black bg-[red] bg-opacity-10 leading-tight -tracking-tight">
           Research & Development
         </div>
         <section className="w-8/12 mx-auto mb-20">
@@ -47,7 +47,7 @@ export default function Blunts() {
                     alt="Hemp"
                     width={50}
                     height={50}
-                    className="w-[120px] h-[120px] rounded-full bg-gray-400 border-8 border-stablesBrown p-3 mb-2"
+                    className="w-[120px] h-[120px] rounded-full bg-gray-400 border-8 border-stablesBrown mb-2"
                   />
                   <span>50 gsm</span>
                 </li>
