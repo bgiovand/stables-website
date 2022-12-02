@@ -3,6 +3,7 @@
 const colors = require("tailwindcss/colors")
 
 module.exports = {
+  mode: "jit",
   content: ["./src/**/*.{html,jsx}", "./pages/**/*.{html,jsx}"],
   theme: {
     colors: {
@@ -28,6 +29,7 @@ module.exports = {
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
+    require("autoprefixer"),
   ],
   corePlugins: {
     fontFamily: true,

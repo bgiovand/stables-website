@@ -5,7 +5,7 @@ import Header from "../../src/components/Header"
 import Footer from "../../src/components/Footer"
 import imageUrlBuilder from "@sanity/image-url"
 import { PortableText } from "@portabletext/react"
-import { H1, H2, H3 } from "../../src/components/Typography"
+import { H1, H2, H3, H4 } from "../../src/components/Typography"
 import Link from "next/link"
 
 function urlFor(source) {
@@ -31,19 +31,22 @@ const ptComponents = {
 
 const paperTypes = [
   {
-    title: "White",
+    title: "Refined\nWhite\n(Ultrathin)",
     description: "White paper",
     image: "/images/white.png",
+    color: "#E2E3DE",
   },
   {
-    title: "Brown",
+    title: "White\nHemp",
     description: "Brown paper",
     image: "/images/brown.png",
+    color: "#FFFFFF",
   },
   {
-    title: "Black",
+    title: "Natural\nBrown",
     description: "Black paper",
     image: "/images/black.png",
+    color: "#776D5B",
   },
 ]
 
@@ -84,7 +87,7 @@ const Product = ({ product = {} }) => {
             <div className="mx-auto flex absolute text-center left-[50%] transform -translate-x-1/2">
               <Link
                 href="/product"
-                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-0"
+                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-45"
               >
                 Back to Products
               </Link>
@@ -170,18 +173,31 @@ const Product = ({ product = {} }) => {
                     Paper Types
                   </h4>
                   <ul className="flex flex-row">
-                    {paperTypes.map(({ title, description, image, index }) => (
-                      <li key={index} className="center text-center mr-5">
-                        <Image
+                    {paperTypes.map(
+                      ({ title, description, image, color, index }) => (
+                        <li
+                          key={index}
+                          className="center text-center mr-5 w-2/12"
+                        >
+                          {/* <Image
                           src={image}
                           alt={title}
                           width={50}
                           height={50}
                           className="w-[50px] h-[50px] object-contain object-center rounded-full bg-gray-400 border-[3px] border-stablesBrown"
-                        />
-                        <span>{title}</span>
-                      </li>
-                    ))}
+                        /> */}
+                          <div
+                            className={`w-[50px] h-[50px] object-contain object-center rounded-full bgTexture border-[3px] border-stablesBrown/90 mx-auto`}
+                            style={{
+                              backgroundColor: color, // becuse i had to
+                            }}
+                          ></div>
+                          <span className="font-light font-sm text-gray-300">
+                            {title}
+                          </span>
+                        </li>
+                      )
+                    )}
                   </ul>
                 </li>
               </ul>
@@ -189,13 +205,63 @@ const Product = ({ product = {} }) => {
           </section>
         </article>
 
-        <Link href="/product/[slug]" as={`/product/${""}`}>
-          prev product
-        </Link>
+        <section className="flex relative my-10">
+          <div className="flex flex-row w-1/3 mx-auto">
+            <div className="flex flex-col relative mx-auto">
+              <Link
+                href="/product/[slug]"
+                as={`/product/${""}`}
+                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-0"
+              >
+                Previous
+              </Link>
+            </div>
+            <div className="flex flex-col relative mx-auto">
+              <Link
+                href="/product/[slug]"
+                as={`/product/${""}`}
+                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-180"
+              >
+                Next
+              </Link>
+            </div>
+          </div>
+        </section>
+        <br />
+        <section className="flex flex-col items-center justify-center">
+          <h2 className="text-3xl font-bold text-center text-stablesBrown">
+            Related Products
+          </h2>
+          <div className="flex flex-row flex-wrap justify-center"></div>
+        </section>
 
-        <Link href="/product/[slug]" as={`/product/${""}`}>
-          next product
-        </Link>
+        <section className="flex flex-col items-center justify-center">
+          <div className="mt-20">
+            <H3 title="Customize This Cone" />
+            <ul className="flex flex-row justify-center">
+              {[...Array(3)].map((e, i) => (
+                <li key={i} className="center text-center mx-5">
+                  s
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="flex flex-col items-center justify-center">
+          <div className="mt-20">
+            <H3 title="Ready to order?" />
+            <H4 title="Contact us today to get started!" />
+            <div className="flex flex-row justify-center">
+              <Link
+                href="/contact"
+                className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-white bg-stablesBrown rounded-full"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
