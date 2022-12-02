@@ -25,7 +25,7 @@ const Product = ({ products }) => {
         <div className="">
           <div className="mx-auto max-w-7xl">
             <H1 title="Products" />
-            <H2 title="Cones" />
+            <H3 title="Cones" />
 
             <div className="grid grid-cols-1 gap-8 py-8 px-6 md:grid-cols-3 lg:grid-cols-4">
               {products.length > 0 &&
