@@ -28,6 +28,10 @@ const items = {
   patch: "#1d4ed8",
 }
 
+const simpleIconLoader = ({ src, color = "white" }) => {
+  return `https://cdn.simpleicons.org/${src}/${color}`
+}
+
 const state = proxy({
   current: null,
   items,
@@ -280,13 +284,38 @@ export default function Custom() {
           </div>
         </div>
         <section className="flex flex-col w-full mb-20 -mt-[50em] py-44">
+          <H3 title="Share your cone creation!" />
           <div className="flex flex-row mx-auto">
             <div className="flex flex-row justify-center ">
               <Link
-                href="/contact"
-                className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-2xl text-white bg-stablesOrange rounded-full"
+                href="/"
+                className=" bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all bg-opacity-20 p-5 mx-2"
               >
-                Share your cone creation!
+                <Image
+                  loader={simpleIconLoader}
+                  className="block w-10 h-10"
+                  src="twitter"
+                  color="white"
+                  alt="Discord"
+                  width={32}
+                  height={32}
+                />
+                <span className="sr-only">Twitter</span>
+              </Link>
+              <Link
+                href="/"
+                className=" bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all bg-opacity-20 p-5 mx-2"
+              >
+                <Image
+                  loader={simpleIconLoader}
+                  className="block w-10 h-10"
+                  src="facebook"
+                  color="white"
+                  alt="Discord"
+                  width={32}
+                  height={32}
+                />
+                <span className="sr-only">Twitter</span>
               </Link>
             </div>
           </div>
