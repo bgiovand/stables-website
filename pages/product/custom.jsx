@@ -2,7 +2,7 @@ import Head from "next/head"
 
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-import { H1, H2, H4 } from "@/components/Typography"
+import { H1, H2, H3, H4 } from "@/components/Typography"
 
 import React, { Suspense, useRef, useState, useEffect } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
@@ -14,10 +14,10 @@ import {
 } from "@react-three/drei"
 import { HexColorPicker } from "react-colorful"
 import { proxy, useSnapshot } from "valtio"
+import Image from "next/image"
+import Link from "next/link"
 
-const state = proxy({
-  current: null,
-  items: {
+const items = {
     laces: "red",
     mesh: "red",
     caps: "blue",
@@ -26,7 +26,11 @@ const state = proxy({
     stripes: "purple",
     band: "red",
     patch: "red",
-  },
+  }
+
+const state = proxy({
+  current: null,
+  items,
 })
 
 function Cone() {
@@ -132,8 +136,8 @@ function Picker() {
   const snap = useSnapshot(state)
   return (
     <div
-      style={{ display: snap.current ? "block" : "none" }}
-      className="absolute float-right m-20"
+      // style={{ display: snap.current ? "block" : "none" }}
+      className="absolute float-right m-20 z-10 top-0 right-0"
     >
       <h1>{snap.current}</h1>
       <HexColorPicker
@@ -146,6 +150,8 @@ function Picker() {
 }
 
 export default function Custom() {
+  const snap = useSnapshot(state)
+  const items = Object.keys(snap.items)
   return (
     <>
       <Head>
@@ -156,88 +162,119 @@ export default function Custom() {
 
       <Header />
 
-      <main className="w-screen h-screen bg-stablesBlue">
+      <main
+        className={`w-screen h-screen bg-stablesBlue ${snap.current} bgTexture`}
+      >
+        <Image
+          src="/colorwheel.svg"
+          alt="Hemp"
+          width={80}
+          height={80}
+          className="w-[80px] h-[80px] object-contain object-center rounded-full bg-gray-400 border-4 border-stablesBlue/80 mx-auto translate-y-16"
+        />
         <H1 title="Conefigurator" />
-        <H2 title="Build your perfect cone" />
+        <H3 title="Build your perfect cone" />
 
         <div className="flex flex-row">
-          <div className="flex flex-col w-9/12 h-screen">
-            <Canvas
-              shadows
-              dpr={[1, 2]}
-              camera={{ position: [0, 0, 4], fov: 50 }}
-              className="-mt-60 overflow-visible z-100"
-            >
-              <ambientLight intensity={0.7} />
+          <div className="flex flex-col w-9/12 h-screen relative">
+            <div className="relative w-full h-full">
+              <Canvas
+                shadows
+                dpr={[1, 2]}
+                camera={{ position: [0, 0, 4], fov: 50 }}
+                className="-mt-60 overflow-visible z-0"
+              >
+                <ambientLight intensity={0.7} />
 
-              <spotLight
-                intensity={0.5}
-                angle={0.2}
-                penumbra={1}
-                position={[10, 15, 10]}
-                castShadow
-              />
-
-              <Suspense fallback={null}>
-                <Cone />
-                <Environment preset="city" />
-                <ContactShadows
-                  rotation-x={Math.PI / 2}
-                  position={[0, -0.8, 0]}
-                  opacity={0.6}
-                  width={10}
-                  height={3}
-                  blur={1.5}
-                  far={0.8}
+                <spotLight
+                  intensity={0.5}
+                  angle={0.2}
+                  penumbra={1}
+                  position={[10, 15, 10]}
+                  castShadow
                 />
-              </Suspense>
 
-              <OrbitControls
-                minPolarAngle={Math.PI / 2}
-                maxPolarAngle={Math.PI / 2}
-                enableZoom={false}
-                enablePan={false}
-              />
-            </Canvas>
+                <Suspense fallback={null}>
+                  <Cone />
+                  <Environment preset="city" />
+                  <ContactShadows
+                    rotation-x={Math.PI / 2}
+                    position={[0, -0.8, 0]}
+                    opacity={0.6}
+                    width={10}
+                    height={3}
+                    blur={1.5}
+                    far={0.8}
+                  />
+                </Suspense>
+
+                <OrbitControls
+                  minPolarAngle={Math.PI / 2}
+                  maxPolarAngle={Math.PI / 2}
+                  enableZoom={false}
+                  enablePan={false}
+                />
+              </Canvas>
+              <Picker />
+            </div>
           </div>
           <div className="flex flex-col w-3/12">
-            <Picker />
             <div className="flex flex-row">
               <div className="flex flex-col w-1/2 ">
-                <H4 title="Cone" />
-                Cone Color
-                <button
-                  onClick={() => {
-                    state.items.mesh = "red"
-                  }}
-                  className="bg-black text-white font-bold py-2 px-4 rounded"
-                  style={{ backgroundColor: state.items.mesh }}
-                >
-                  Reset
-                </button>
-                <button
-                  onClick={() => {
-                    state.items.cone = "#ffffff"
-                  }}
-                >
-                  White
-                </button>
+                <ul className="text-black">
+                  {items.map((item, index) => (
+                    <li
+                      className={`group my-3 rounded-full p-2`}
+                      key={index}
+                      onClick={() => (state.current = item)}
+                      style={{
+                        backgroundColor:
+                          state.current == item
+                            ? "hsla(193, 100%, 0%, 0.1)"
+                            : "transparent",
+                      }}
+                    >
+                      <h3 className="capitalize font-bold flex flex-row ">
+                        <div
+                          className={`w-8 h-8 border flex rounded-full mr-2 border-4 border-red transition-border duration-300 ease-in-out border-outline
+                          ${
+                            state.current == item ? "border-white" : "border-white/50"
+                          }`}
+                          style={{ backgroundColor: `${snap.items[item]}` }}
+                        ></div>
+                        <div
+                          className={`h-8 leading-7 font-light ${
+                            state.current == item ? "font-medium" : ""
+                          }`}
+                        >
+                          {item}
+                        </div>
+                      </h3>
+                    </li>
+                  ))}
+                </ul>
 
                 {/* Reset Button */}
-                <button
-                  onClick={() => {
-                    state.items.mesh = "red"
-                    state.items.band = "red"
-                    state.items.stripes = "blue"
-                    state.items.patch = "green"
-                    state.items.laces = "black"
-                    state.items.inner = "purple"
-                    state.items.sole = "red"
-                    state.items.caps = "red"
-                  }}
-                >
-                  Reset
-                </button>
+                <div className="flex flex-row relative">
+                  <div className="flex text-center w-full">
+                    <div
+                      onClick={() => {
+                        state.items.mesh = "red"
+                        state.items.band = "yellow"
+                        state.items.stripes = "blue"
+                        state.items.patch = "green"
+                        state.items.laces = "black"
+                        state.items.inner = "purple"
+                        state.items.sole = "red"
+                        state.items.caps = "red"
+                      }}
+                      className="flex flex-col w-full bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all bg-opacity-20 pr-6 pl-12 py-3 
+                      before:transition-all before:content-['↻'] before:translate-x-5 hover:before:rotate-180 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-45"
+                    >
+                      Reset
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
