@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html {
+  scroll-behavior: smooth;
+  word-break: break-word;
+}
+
+::selection {
+  color: #FFF;
+  background-color: #F05A28;
+}
+
 @font-face {
   font-family: "Mellow";
   src: url("/fonts/made-mellow-black.woff2") format("woff2");

@@ -132,7 +132,7 @@ function Picker() {
   return (
     <div
       style={{ display: snap.current ? "block" : "none" }}
-      class="absolute float-right m-20"
+      className="absolute float-right m-20"
     >
       <h1>{snap.current}</h1>
       <HexColorPicker
@@ -155,9 +155,9 @@ export default function Custom() {
 
       <Header />
 
-      <main class="w-screen h-screen">
-        <div class="w-screen text-center">
-        <h1 class="justify-center mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      <main className="w-screen h-screen">
+        <div className="w-screen text-center">
+        <h1 className="justify-center mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Build your perfect cone.
         </h1>
         </div>
