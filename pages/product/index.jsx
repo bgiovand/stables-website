@@ -50,14 +50,12 @@ const Product = ({ products }) => {
                             href="/product/[slug]"
                             as={`/product/${slug.current}`}
                           >
-                            <div className="p-4 flex justify-between">
+                            <div className="p-4 flex justify-between align-baseline">
                               <h3 className="text-2xl text-white/80 group-hover:text-stablesOrange">
                                 {title}
                               </h3>
                               <div className=" text-lg text-stablesBrown/100 font-light">
-                                <span className="">{lengthFull}</span>
-                                <span>/</span>
-                                <span className="">{lengthFilter}</span>
+                                <span className="">{lengthFull + "/" +lengthFilter}</span>
                               </div>
                             </div>
 
