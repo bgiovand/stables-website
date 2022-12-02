@@ -41,29 +41,32 @@ const Product = ({ products }) => {
                     _id && (
                       <div
                         key={_id}
-                        className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-lg dark:bg-gray-800"
+                        className="flex flex-col items-center justify-center bg-white rounded-lg shadow-lg dark:bg-stablesBrown/10"
                       >
                         <div>
                           <Link
                             href="/product/[slug]"
                             as={`/product/${slug.current}`}
                           >
-                            <h3 className="mt-4 text-2xl text-stablesOrange">
-                              {title}
-                            </h3>
-                            <div className="mt-1 text-lg text-stablesBlue font-light">
-                              <span className="">{lengthFull}</span>
-                              <span>/</span>
-                              <span className="">{lengthFilter}</span>
+                            <div className="p-4 flex justify-between">
+                              <h3 className="text-2xl text-white/80">
+                                {title}
+                              </h3>
+                              <div className=" text-lg text-stablesBrown/100 font-light">
+                                <span className="">{lengthFull}</span>
+                                <span>/</span>
+                                <span className="">{lengthFilter}</span>
+                              </div>
                             </div>
-                            <div className="block bg-stablesBlue">
+                            
                               <Image
                                 src={image ? image : ""}
                                 alt={title}
                                 width={300}
                                 height={300}
+                                className="rotate-45  leading-0"
                               />
-                            </div>
+                            
                           </Link>
                         </div>
                       </div>
