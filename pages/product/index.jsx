@@ -41,7 +41,9 @@ const Product = ({ products }) => {
                     _id && (
                       <div
                         key={_id}
-                        className="flex flex-col items-center justify-center bg-white rounded-lg shadow-lg dark:bg-stablesBrown/10"
+                        className="group flex flex-col items-center justify-center rounded-lg shadow-lg bg-stablesBrown/10
+                        hover:bg-stablesBrown/20 transition-all
+                        hover:shadow-2xl hover:border-stablesOrange/20 border-2 border-stablesBrown/10"
                       >
                         <div>
                           <Link
@@ -49,7 +51,7 @@ const Product = ({ products }) => {
                             as={`/product/${slug.current}`}
                           >
                             <div className="p-4 flex justify-between">
-                              <h3 className="text-2xl text-white/80">
+                              <h3 className="text-2xl text-white/80 group-hover:text-stablesOrange">
                                 {title}
                               </h3>
                               <div className=" text-lg text-stablesBrown/100 font-light">
@@ -58,15 +60,14 @@ const Product = ({ products }) => {
                                 <span className="">{lengthFilter}</span>
                               </div>
                             </div>
-                            
-                              <Image
-                                src={image ? image : ""}
-                                alt={title}
-                                width={300}
-                                height={300}
-                                className="rotate-45  leading-0"
-                              />
-                            
+
+                            <Image
+                              src={image ? image : ""}
+                              alt={title}
+                              width={300}
+                              height={300}
+                              className="rotate-45  leading-0 group-hover:scale-105 ease-in-out duration-200  transition-all"
+                            />
                           </Link>
                         </div>
                       </div>
