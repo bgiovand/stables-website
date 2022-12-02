@@ -227,28 +227,45 @@ const Product = ({ product = {} }) => {
             </div>
           </div>
         </section>
-        <br />
-        <section className="flex flex-col items-center justify-center">
+
+        <section className="flex flex-col items-center justify-center  py-20">
           <h2 className="text-3xl font-bold text-center text-stablesBrown">
             Related Products
           </h2>
-          <div className="flex flex-row flex-wrap justify-center"></div>
+          <div className="flex flex-row flex-wrap justify-center">lorem</div>
         </section>
 
-        <section className="flex flex-col items-center justify-center">
+        <section className="flex flex-col items-center justify-center bg-stablesBrown/20 pb-16 bgTexture">
           <div className="mt-20">
             <H3 title="Customize This Cone" />
             <ul className="flex flex-row justify-center">
               {[...Array(3)].map((e, i) => (
                 <li key={i} className="center text-center mx-5">
-                  s
+                  <li key={i} className="center text-center mx-5">
+                    <Image
+                      src="/colorwheel.svg"
+                      alt="Hemp"
+                      width={100}
+                      height={100}
+                      className="w-[120px] h-[120px] object-contain object-center rounded-full bg-gray-400 border-8 border-stablesBrown/80 mb-2"
+                    />
+                    <span>Color</span>
+                  </li>
                 </li>
               ))}
             </ul>
+            <div className="flex flex-row justify-center">
+              <Link
+                href="/contact"
+                className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-2xl text-white bg-stablesOrange rounded-full"
+              >
+                See all options
+              </Link>
+            </div>
           </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center bg-stablesBlue bgTexture my-20 pb-16">
+        <section className="flex flex-col items-center justify-center bg-stablesBlue bgTexture pb-16">
           <div className="mt-20">
             <H3 title="Ready to order?" />
             <H4 title="Get in touch today and let's get started!" />

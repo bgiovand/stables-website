@@ -3,10 +3,11 @@ import Image from "next/image"
 import styles from "../styles/Home.module.css"
 import Header from "../src/components/Header"
 import Footer from "../src/components/Footer"
+import { H1, H2 } from "../src/components/Typography"
 
 export default function Contact() {
   return (
-    <div className={styles.container}>
+    <div className="bgTexture">
       <Head>
         <title>Stables</title>
         <meta name="description" content="Stables is The Cone Company" />
@@ -15,98 +16,63 @@ export default function Contact() {
 
       <Header />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 301.7552 70.3059"
-            className={styles.svg}
-          >
-            <path d="M0,55.5816c0-7.4608,.4905-10.896,3.5335-10.896,2.749,0,2.749,1.5706,4.5153,5.3989,4.6136,10.1107,10.9943,14.5277,17.6698,14.5277,6.7729,0,11.2882-3.73,11.2882-8.9323,0-18.1603-33.9638-6.3807-33.9638-34.4551C3.043,9.7391,13.3494,.0207,27.1909,.0207,39.9523,.0207,46.8235,4.6351,46.8235,11.9968c0,5.8902-.1965,7.9513-2.6507,7.9513-2.2576,0-2.9447-.9818-4.8101-4.3188-4.1222-7.6573-7.46-10.3072-13.1537-10.3072-5.8894,0-10.3072,3.8283-10.3072,8.9323,0,16.394,35.2405,7.0677,35.2405,33.5724,0,13.0554-9.8159,22.479-26.3073,22.479-13.4484,0-24.835-5.4971-24.835-14.7243Z" />
-            <path d="M57.654,54.698V29.9605h-1.6689c-1.4723,0-2.749-1.2758-2.749-2.8464,0-1.4723,1.2766-2.7482,2.749-2.7482h1.2758c5.1049,0,7.166-2.5524,10.4055-8.8349,1.3741-2.6507,4.8101-2.0619,4.8101,1.0793v7.7556h6.3807c1.5706,0,2.8464,1.2758,2.8464,2.7482,0,1.5706-1.2758,2.8464-2.8464,2.8464h-6.3807v23.3634c0,3.1412,1.0801,6.1842,5.2023,6.1842,4.0248,0,5.4971-3.8283,7.6565-3.043,3.436,1.2758-.687,13.8407-13.3494,13.8407-9.0314,0-14.332-6.6747-14.332-15.6078Z" />
-            <path d="M90.4607,57.2505c0-12.4666,11.0925-14.332,26.7986-14.332v-3.436c0-4.5153-1.1775-10.896-5.7919-10.896-5.6928,0-3.2387,12.0744-11.4848,12.0744-3.73,0-6.3807-1.9637-6.3807-5.5954,0-6.1842,6.1842-11.3873,17.4732-11.3873,21.0067,0,21.0067,15.3139,21.0067,20.1239v11.4848c0,6.0859,2.1602,3.8283,3.2395,5.5954,1.3741,2.2576-1.0793,9.3254-8.4418,9.3254-4.8101,0-7.853-2.3559-9.0314-7.0677-1.6689,3.2395-6.0859,7.166-12.5649,7.166-8.8341,0-14.8225-5.2023-14.8225-13.0554Zm19.7309,4.5153c4.6136,0,7.0677-4.3196,7.0677-8.4418v-5.3014c-8.8349,0-13.0554,3.1412-13.0554,8.0496,0,4.0248,2.3559,5.6937,5.9876,5.6937Z" />
-            <path d="M140.477,64.6122V10.3279c0-5.1041-2.1594-4.7118-2.1594-6.4782,0-.6879,.4905-1.3749,1.2766-1.4723L151.9626,.1189c2.4534-.4905,3.436,.5896,3.436,2.2585V31.0406c2.9447-4.3196,7.46-7.3625,14.1338-7.3625,11.6821,0,20.4196,9.5219,20.4196,23.2652,0,13.939-8.8357,23.3626-20.4196,23.3626-9.8151,0-13.0546-5.0066-17.9629-5.0066-4.7118,0-5.6928,5.0066-8.7358,5.0066-1.9637,0-2.3567-1.6689-2.3567-5.6937Zm24.4419-1.7671c5.3014,0,9.8167-6.0859,9.8167-15.5096,0-9.3254-4.1222-15.5096-10.0116-15.5096-5.6945,0-9.3254,6.2824-9.3254,15.4113,0,9.5219,4.2205,15.6078,9.5203,15.6078Z" />
-            <path d="M193.9498,68.5387c0-2.0611,2.1586-1.8646,2.1586-6.9695V10.3279c0-5.1041-2.1586-4.7118-2.1586-6.4782,0-.6879,.4897-1.2766,1.2758-1.4723,1.2758-.1965,9.6202-1.7671,12.3683-2.2585,2.5516-.3922,3.436,.5896,3.436,2.2585V61.5692c0,5.1049,2.1586,4.9084,2.1586,6.9695,0,.687-.4897,.9818-1.2758,.9818h-16.6871c-.6879,0-1.2758-.2948-1.2758-.9818Z" />
-            <path d="M216.4002,47.3355c0-13.5459,9.7185-23.6574,23.0678-23.6574,13.2527,0,18.8473,9.1297,18.8473,17.9646,0,3.1412-1.4723,4.5153-5.4963,4.5153h-22.7747c1.7671,7.6565,7.5583,12.8589,16.1974,12.8589,7.5583,0,9.2271-4.8093,11.484-3.4352,3.7308,2.0611-2.7482,14.7243-17.6681,14.7243-13.8423,0-23.6574-9.3254-23.6574-22.9704Zm28.0744-8.147c.2948-6.872-2.3567-10.602-6.2824-10.602-4.1222,0-8.5409,4.8101-8.6392,12.0744l14.9216-1.4723Z" />
-            <path d="M262.9797,60.2934c0-5.6937,.8844-7.6565,2.8481-7.6565,1.7671,0,2.4534,.1957,4.024,4.024,1.9637,4.7118,6.3807,8.4426,12.1718,8.4426,3.5343,0,5.7927-1.5706,5.7927-4.3196,0-8.7366-22.9712-5.0058-22.9712-21.792,0-8.7366,6.5772-15.3139,18.2594-15.3139,8.2445,0,16.2941,3.8291,16.2941,8.6384,0,5.3014-.981,6.7738-2.5516,6.7738-2.455,0-3.1412-1.6689-4.7118-4.3196-2.2585-3.6317-5.0066-5.9876-9.5219-5.9876-2.8464,0-4.9084,1.7671-4.9084,4.5153,0,8.2461,24.0505,6.6755,24.0505,20.3197,0,9.2271-7.7548,16.6879-19.3386,16.6879-9.915,0-19.4369-3.6317-19.4369-10.0124Z" />
-          </svg>
-        </h1>
+      <main className="">
+        <H1 title="Contact" />
+        <H2 title="Get in touch" />
 
-        <section className={styles.grid}>
-          <h2 className={styles.title}>Contact Us</h2>
-          <p className={styles.description}>
-            Exercitation incididunt occaecat deserunt deserunt. Aute cillum nisi
-            cupidatat exercitation veniam proident deserunt laboris ad ex enim
-            enim esse dolor voluptate. Occaecat excepteur pariatur consectetur
-            proident in veniam aliquip commodo ipsum ex. Velit tempor laborum
-            sunt esse duis aliquip et. Qui ad in do. Sunt officia consectetur
-            fugiat. Consequat consequat anim reprehenderit. Laborum culpa ad
-            aliquip est excepteur incididunt ex. Ut ex eu irure anim sint
-            ullamco qui laboris. Reprehenderit consectetur esse aute ex duis sit
-            officia magna sint consectetur excepteur pariatur cillum aliquip
-            aliqua.
-          </p>
-        </section>
-        <section class="bg-white dark:bg-gray-900">
-          <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
-              Contact Us
-            </h2>
-            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-              Got a technical issue? Want to send feedback about a beta feature?
-              Need details about our Business plan? Let us know.
-            </p>
-            <form action="#" class="space-y-8">
-              <div>
-                <label
-                  for="email"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Your email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                  placeholder="name@flowbite.com"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  for="subject"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Subject
+        <section className="">
+          <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <form className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-2">
+                <label for="name" className="text-sm font-medium text-gray-700">
+                  Name
                 </label>
                 <input
                   type="text"
-                  id="subject"
-                  class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                  placeholder="Let us know how we can help you"
-                  required
+                  name="name"
+                  id="name"
+                  placeholder="John Doe"
+                  autoFocus={true}
+                  className="bg-stablesBrown/20 border border-stablesBrown/80 rounded-md px-4 py-2 text-md text-white/80 focus:outline-none outline-0 focus:border-stablesOrange/80 leading-relaxed placeholder-gray-500 tracking-wider"
                 />
-              </div>
-              <div class="sm:col-span-2">
+
+                <label
+                  for="email"
+                  className="text-sm font-medium text-gray-700"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="bg-stablesBrown/20 border border-stablesBrown/80 rounded-md px-4 py-2 text-md text-white/80 focus:outline-none focus:border-stablesOrange/80 leading-relaxed placeholder-gray-500 tracking-wider"
+                />
+
                 <label
                   for="message"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                  className="text-sm font-medium text-gray-700"
                 >
-                  Your message
+                  Message
                 </label>
                 <textarea
+                  name="message"
                   id="message"
-                  rows="6"
-                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="Leave a comment..."
+                  rows={4}
+                  className="bg-stablesBrown/20 border border-stablesBrown/80 rounded-md px-4 py-2 text-md text-white/80 focus:outline-none focus:border-stablesOrange/80 leading-relaxed placeholder-gray-500 tracking-wider"
                 ></textarea>
+
+                <button
+                  type="submit"
+                  className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-2xl text-white bg-stablesOrange rounded-md hover:bg-stablesOrange/80 transition-all"
+                >
+                  Send
+                </button>
+
+                <p className="text-sm text-gray-500">
+                  We'll never share your email with anyone else.
+                </p>
               </div>
-              <button
-                type="submit"
-                class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              >
-                Send message
-              </button>
             </form>
           </div>
         </section>

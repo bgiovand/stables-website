@@ -16,22 +16,21 @@ export default function Blunts() {
       <Header />
 
       <main className="">
-        <H1 title="Products" />
-        <H2 title="Blunts" />
-        <div className="absolute top-[120px] right-[250px] text-[red] border-[1px] border-dashed border-[red] p-5 px-6 rotate-6 rounded-lg font-mono z-50 uppercase font-black bg-[red] bg-opacity-10 leading-tight -tracking-tight">
+        <H1 title="Blunt" />
+        <H2 title="force trauma" />
+        <div className="absolute top-[120px] right-[250px] text-[red] border-[1px] border-dashed border-[red] p-5 px-6 rotate-6 rounded-lg font-mono z-50 uppercase font-black bg-[red] bg-opacity-10 leading-tight ">
           Research & Development
         </div>
         <section className="w-8/12 mx-auto mb-20">
           <div>
-            <p className="text-3xl my-20">
-              Stables is offering a blunt line with premium features including
-              higher weight hemp based paper and terpene infusion.
+            <p className="text-3xl my-20 text-center">
+              Finally, a blunt line with premium features to enhance your smoking experience.
             </p>
           </div>
           <div>
             <H3 title="Terpene Infused" />
-            <p>
-              Stables offers custom terpene infused paper for a more complex
+            <p className="text-center w-6/12 mx-auto">
+              Terpene infused paper for a more complex
               flavour profile when you’re smoking.{" "}
               <Link href="/contact">Reach out to our sales team</Link>
               to learn more.
