@@ -4,7 +4,8 @@ import styles from "../styles/Home.module.css"
 import Header from "../src/components/Header"
 import Footer from "../src/components/Footer"
 import Link from "next/link"
-import { H1, H2 } from "../src/components/Typography"
+import { H1, H2, H4 } from "../src/components/Typography"
+import { Badge } from "../src/components/svg/Badge"
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
                 height={500}
                 className="mx-auto m-10 bgTexture bg-stablesBlue"
               />
+              <Badge title="new" />
             </div>
             <div className="flex justify-center">
               <p className="text-white text-2xl font-light">The Cone Company</p>
@@ -37,8 +39,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section class="md:m-20">
-          <p class="font-normal text-3xl mx-0 md:mx-5 md:text-5xl leading-tight font-mellow">
+        <section className="md:m-20">
+          <p className="font-normal text-3xl mx-0 md:mx-5 md:text-5xl leading-tight font-mellow">
             In Cannabis, the Smokers are represented by two separate, yet
             equally important groups. The Licensed Producers who grow the crop
             and the Cone Manufacturers, who provide the papers. These are their
@@ -58,16 +60,16 @@ export default function Home() {
           </svg>
         </section>
 
-        <section class="m-20">
+        <section className="m-20">
           <h2 className={styles.title}>Sign up for THE FILTER</h2>
           <p className={styles.description}>
             A industry newsletter for the next generation of coneissieurs
           </p>
           <form className={styles.form} action="https" method="POST">
-            <div class="mb-6">
+            <div className="mb-6">
               <label
                 for="email-newsletter"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Email Newsletter
               </label>
@@ -75,34 +77,55 @@ export default function Home() {
                 type="email"
                 id="email-newsletter"
                 aria-describedby="Email address for newsletter"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Your email"
                 autoComplete="email"
                 required
               />
               <p
                 id="helper-text-explanation"
-                class="mt-2 text-sm text-gray-500 dark:text-gray-400"
+                className="mt-2 text-sm text-gray-500 dark:text-gray-400"
               >
                 We’ll never share your details. Read our{" "}
                 <Link
                   href="/privacy"
-                  class="font-medium text-blue-600 hover:underline dark:text-blue-500"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                 >
                   Privacy Policy
                 </Link>
                 .
               </p>
             </div>
-            <div class="mb-6">
+            <div className="mb-6">
               <button
                 type="button"
-                class="text-white bg-stablesOrange hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800"
+                className="text-white bg-stablesOrange hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800"
               >
                 Sign Up
               </button>
             </div>
           </form>
+        </section>
+
+        <section className="py-40 bg-gray-200 bgTexture">
+          <div className="mx-auto px-4 text-[#EB2024] center text-center">
+            <h2
+              className="text-[13rem] font-semibold leading-[260px]
+            before:content-[' '] before:block before:h-2 before:w-[600px] before:bg-[#EB2024] before:mx-auto before:-mb-[50px]"
+            >
+              Stable
+            </h2>
+            <h3
+              className="text-8xl font-semibold leading-3
+            before:content-[' '] before:inline-block before:h-2 before:w-[120px] before:bg-[#EB2024] before:relative before:-translate-y-[60px]
+            after:content-[' '] after:inline-block after:h-2 after:w-[120px] after:bg-[#EB2024] after:top-0 after:-translate-y-[60px]
+            "
+            >
+              THINGS
+            </h3>
+            <H4 title="Merchandise Coming Soon..." />
+
+          </div>
         </section>
 
         {/* <section className="bg-white block w-full p-20">
