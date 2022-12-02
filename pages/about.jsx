@@ -140,7 +140,7 @@ export default function About() {
   }
 
   return (
-    <div className="">
+    <div className="bgTexture">
       <Head>
         <title>Stables</title>
         <meta name="description" content="Stables is The Cone Company" />
@@ -150,8 +150,8 @@ export default function About() {
       <Header />
 
       <main className="max-w-max min-w-full md:max-w-lg">
-        <section className="bg-stablesBlue pb-0 mb-20">
-          <div className="bg-stablesYellow pb-0 mb-20">
+        <section className="pb-0 mb-20">
+          <div className="bg-stablesYellow pb-0 mb-20 bgTexture">
             <H1 title="Built by Coneisseurs" />
             <h2 className="text-center text-3xl font-normal text-stablesBrown">
               for Coneisseurs
@@ -166,7 +166,7 @@ export default function About() {
           </div>
         </section>
 
-        <section>
+        <section className="bgTexture">
           <H2 title="The Principals" />
           <div className="mx-20">
             {team.map((principal, index) => (
@@ -199,7 +199,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center bg-stablesBlue px-10 py-24 text-stablesBrown">
+        <section className="flex flex-col items-center justify-center bgTexture bg-stablesBlue px-10 py-24 text-stablesBrown">
           <p className="font-med text-4xl mx-28 leading-snug">{about.intro}</p>
         </section>
 

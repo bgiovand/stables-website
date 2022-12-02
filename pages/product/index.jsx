@@ -12,7 +12,7 @@ const Product = ({ products }) => {
   const router = useRouter()
 
   return (
-    <div>
+    <div className="bgTexture">
       <Head>
         <title>Stables</title>
         <meta name="description" content="Stables is The Cone Company" />
@@ -55,7 +55,9 @@ const Product = ({ products }) => {
                                 {title}
                               </h3>
                               <div className=" text-lg text-stablesBrown/100 font-light">
-                                <span className="">{lengthFull + "/" +lengthFilter}</span>
+                                <span className="">
+                                  {lengthFull + "/" + lengthFilter}
+                                </span>
                               </div>
                             </div>
 

@@ -68,7 +68,7 @@ const Product = ({ product = {} }) => {
     description = [],
   } = product
   return (
-    <div>
+    <div className="bgTexture">
       <Head>
         <title>Stables</title>
         <meta name="description" content="Stables is The Cone Company" />
@@ -106,7 +106,7 @@ const Product = ({ product = {} }) => {
             <div className="flex flex-col">
               <ul>
                 <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Fill Weight Range
                   </h4>
                   <span className="font-mono font-thin ">
@@ -114,7 +114,7 @@ const Product = ({ product = {} }) => {
                   </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Burnside Diameter
                   </h4>
                   <span className="font-mono font-thin ">
@@ -122,7 +122,7 @@ const Product = ({ product = {} }) => {
                   </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Mouth Diamter
                   </h4>
                   <span className="font-mono font-thin ">
@@ -130,7 +130,7 @@ const Product = ({ product = {} }) => {
                   </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Filter Style
                   </h4>
                   <span className="font-mono font-thin ">
@@ -138,7 +138,7 @@ const Product = ({ product = {} }) => {
                   </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Length
                   </h4>
                   <span className="font-mono font-thin ">
@@ -146,7 +146,7 @@ const Product = ({ product = {} }) => {
                   </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Filter Length
                   </h4>
                   <span className="font-mono font-thin ">
@@ -154,19 +154,19 @@ const Product = ({ product = {} }) => {
                   </span>
                 </li>
                 <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Pitch
                   </h4>
                   <span className="font-mono font-thin ">{meta.pitch}</span>
                 </li>
                 <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Pitch Type
                   </h4>
                   <span className="font-mono capitalize">{meta.pitchType}</span>
                 </li>
                 <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono leading-tight uppercase">
+                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Paper Types
                   </h4>
                   <ul className="flex flex-row">
