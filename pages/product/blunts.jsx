@@ -37,34 +37,38 @@ export default function Blunts() {
               to learn more.
             </p>
           </div>
-          <div>
+          <div className="mt-20">
             <H3 title="Premium Paper Weights" />
-            <ul className="flex flex-row">
-              <li className="center text-center">
-                <Image
-                  src="/images/hemp.png"
-                  alt="Hemp"
-                  width={100}
-                  height={100}
-                  className="w-[120px] h-[120px] object-contain object-center rounded-full bg-gray-400 border-8 border-stablesBrown"
-                />
-                <span>50 gsm</span>
-              </li>
+            <ul className="flex flex-row justify-center">
+              {[...Array(3)].map((e, i) => (
+                <li key={i} className="center text-center mx-5">
+                  <Image
+                    src="/weight.svg"
+                    alt="Hemp"
+                    width={50}
+                    height={50}
+                    className="w-[120px] h-[120px] rounded-full bg-gray-400 border-8 border-stablesBrown p-3 mb-2"
+                  />
+                  <span>50 gsm</span>
+                </li>
+              ))}
             </ul>
           </div>
-          <div>
+          <div className="mt-20">
             <H3 title="Premium Paper Material" />
             <ul className="flex flex-row">
-              <li className="center text-center">
-                <Image
-                  src="/images/hemp.png"
-                  alt="Hemp"
-                  width={100}
-                  height={100}
-                  className="w-[120px] h-[120px] object-contain object-center rounded-full bg-gray-400 border-8 border-stablesBrown"
-                />
-                <span>Light</span>
-              </li>
+              {[...Array(4)].map((e, i) => (
+                <li key={i} className="center text-center mx-5">
+                  <Image
+                    src="/colorwheel.svg"
+                    alt="Hemp"
+                    width={100}
+                    height={100}
+                    className="w-[120px] h-[120px] object-contain object-center rounded-full bg-gray-400 border-8 border-stablesBrown mb-2"
+                  />
+                  <span>Custom</span>
+                </li>
+              ))}
             </ul>
           </div>
         </section>
