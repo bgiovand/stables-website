@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import React from "react"
 import Image from "next/image"
 
-const simpleIconLoader = ({ src, color = "grey" }) => {
+const simpleIconLoader = ({ src, color = "EAEEB5" }) => {
   return `https://cdn.simpleicons.org/${src}/${color}`
 }
 
@@ -123,7 +123,7 @@ const Footer = () => {
                     loader={simpleIconLoader}
                     className="float-left inline mr-2 mt-1 fill-stablesYellow"
                     src="discord"
-                    color="currentColor"
+                    color="#EAEEB5"
                     alt="Discord"
                     width={18}
                     height={18}
@@ -137,7 +137,7 @@ const Footer = () => {
                     loader={simpleIconLoader}
                     className="float-left inline mr-2 mt-1"
                     src="twitter"
-                    color="gray"
+                    color="EAEEB5"
                     alt="Discord"
                     width={18}
                     height={18}

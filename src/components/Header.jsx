@@ -1,10 +1,11 @@
 import React from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { useState } from "react"
 
 const Header = () => {
   const menu = [
-    { name: "Home", url: "/", alt: "Stables" },
+    { name: "Home", url: "/" },
     { name: "About", url: "/about" },
     { name: "Blog", url: "/blog" },
     { name: "Contact", url: "/contact" },
@@ -17,26 +18,27 @@ const Header = () => {
   const currentRoute = router.pathname
   console.log(router.route)
 
+  const [isNavOpen, setIsNavOpen] = useState(false) // initiate isNavOpen state with false
+
   return (
     <header>
-      <nav className="w-100">
-        <div className="">
-          <Link
-            href="/"
-            className="self-center text-2xl font-semibold whitespace-nowrap text-stablesOrange md:hidden"
-          >
+      <nav className="w-100 p-5">
+        <div className="flex flex-row justify-between w-100  md:flex-col ">
+          <Link href="/" className="text-stablesOrange text-5xl md:text-center">
             Stables
           </Link>
+
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 ml-3 text-sm text-stablesYellow rounded-lg md:hidden hover:bg-stablesOrange focus:outline-none focus:ring-2 focus:ring-stablesOrange hover:text-white"
             aria-controls="navbar-default"
             aria-expanded="false"
+            onClick={() => setIsNavOpen((prev) => !prev)}
           >
             <span className="sr-only">Open main menu</span>
             <svg
-              className="w-6 h-6"
+              className="w-10 h-10"
               aria-hidden="true"
               fill="currentColor"
               viewBox="0 0 20 20"
@@ -46,39 +48,42 @@ const Header = () => {
                 fillRule="evenodd"
                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                 clipRule="evenodd"
-              ></path>
+              />
             </svg>
           </button>
-          <div
-            className="hidden w-full space-y-4 md:flex md:space-y-0 md:space-x-8 md:w-auto"
-            id="navbar-default"
+        </div>
+        <div
+          className={`${isNavOpen ? "visible" : "hidden"} 
+          
+          w-full relative background-stablesBlack z-50
+          md:flex md:flex-col md:items-center `}
+        >
+          <ul
+            className="flex flex-col bgTexture bg-stablesBlack/80 rounded-lg
+          md:flex-row sm:bg-none"
           >
-            <ul className="flex flex-col p-4 md:flex-row mx-auto w-max align-text-baseline">
-              {menu.map((page, index) => (
-                <li
-                  key={index}
-                  className={` align-bottom  border-transparent hover:border-stablesOrange flex
-                      ${page.name === "Home" ? "order-1" : `order-${index+1}`}
+            {menu.map((page, index) => (
+              <li key={index} className={`hover:border-stablesOrange`}>
+                <Link
+                  href={page.url}
+                  className={`w-full px-3 py-4 justify-end hover:text-stablesOrange font-regular text-5xl flex flex-row 
+                  md:text-2xl
+                  
+                  ${
+                    currentRoute.split("/")[1] == page.url.split("/")[1]
+                      ? "text-stablesOrange"
+                      : "text-stablesBlue"
+                  }
                     `}
                 >
-                  <Link
-                    href={page.url}
-                    className={`pb-0 px-10 hover:text-stablesOrange font-regular text-lg align-bottom flex justify-end flex-col ${
-                      currentRoute == page.url
-                        ? "text-stablesOrange"
-                        : "text-stablesBlue"
-                    } ${page.name === "Home" ? "text-4xl" : ""} 
-                    `}
-                  >
-                    {page.alt ? page.alt : page.name}
-                    {currentRoute === page.url && (
-                      <span className="sr-only">(current)</span>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  {page.alt ? page.alt : page.name}
+                  {currentRoute === page.url && (
+                    <span className="sr-only">(current)</span>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </nav>
     </header>
