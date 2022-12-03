@@ -135,6 +135,7 @@ const Footer = () => {
                 <Link href="/" className="hover:underline flex flex-row">
                   <Image
                     loader={simpleIconLoader}
+                    className="float-left inline mr-2 mt-1 fill-stablesYellow"
                     src="twitter"
                     color="EAEEB5"
                     alt="Discord"
