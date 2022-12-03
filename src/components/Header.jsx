@@ -6,12 +6,12 @@ import { useState } from "react"
 const Header = () => {
   const menu = [
     { name: "Home", url: "/" },
-    { name: "About", url: "/about" },
-    { name: "Blog", url: "/blog" },
-    { name: "Contact", url: "/contact" },
     { name: "Cones", url: "/product" },
     { name: "Blunts", url: "/product/blunts" },
     { name: "Custom", url: "/product/custom" },
+    { name: "Blog", url: "/blog" },
+    { name: "Contact", url: "/contact" },
+    { name: "About", url: "/about" },
   ]
 
   const router = useRouter()

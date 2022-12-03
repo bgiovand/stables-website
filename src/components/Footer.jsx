@@ -57,14 +57,14 @@ const footerSection = {
 
 const Footer = () => {
   return (
-    <footer className="px-28 pt-32">
-      <div className="flex w-full justify-between">
-        <div className="w-5/12">
+    <footer className="md:px-28 md:pt-32 p-10">
+      <div className="flex w-full justify-between flex-col md:flex-row">
+        <div className="md:w-5/12 w-full mb-14 md:mb-0">
           <h3 className="text-8xl font-semibold text-stablesOrange">Stables</h3>
           <h4>The Cone Company</h4>
         </div>
 
-        <div className="flex w-5/12 justify-between">
+        <div className="flex w-5/12 justify-between flex-col md:flex-row">
           <div>
             <h2 className="mb-6 text-xl font-semibold text-stablesBrown/60">
               Stables
@@ -114,10 +114,10 @@ const Footer = () => {
               Community
             </h2>
             <ul className="text-stablesYellow">
-              <li className="mb-4">
+              <li className="mb-4 ">
                 <Link
                   href="https://discord.gg/YfsVtC8C"
-                  className="hover:underline"
+                  className="hover:underline flex flex-row"
                 >
                   <Image
                     loader={simpleIconLoader}
@@ -132,10 +132,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-4">
-                <Link href="/" className="hover:underline">
+                <Link href="/" className="hover:underline flex flex-row">
                   <Image
                     loader={simpleIconLoader}
-                    className="float-left inline mr-2 mt-1"
                     src="twitter"
                     color="EAEEB5"
                     alt="Discord"
@@ -146,7 +145,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-4">
-                <Link href="/" className="hover:underline">
+                <Link href="/" className="hover:underline flex flex-row">
                   <Image
                     loader={simpleIconLoader}
                     className="float-left inline mr-2 mt-1"
@@ -160,7 +159,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-4">
-                <Link href="/" className="hover:underline">
+                <Link href="/" className="hover:underline flex flex-row">
                   <Image
                     loader={simpleIconLoader}
                     className="float-left inline mr-2 mt-1"
@@ -177,14 +176,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex py-10 justify-between">
+      <div className="flex py-10 justify-between align-baseline">
         <span className="flex text-sm text-center text-stablesBrown/80 font-light">
           {"© 2022 Stables™"}
         </span>
         <div>
           <Link
             href="/privacy"
-            className="text-sm text-center text-stablesBrown/80 font-light mr-5"
+            className="text-sm text-center text-stablesBrown/80 font-light mr-2"
           >
             {"Privacy Policy"}
           </Link>
