@@ -50,6 +50,29 @@ const paperTypes = [
   },
 ]
 
+const custom = [
+  {
+    title: "Wrap",
+    image: "/custom-wrap.svg",
+  },
+  {
+    title: "Band",
+    image: "/custom-band.svg",
+  },
+  {
+    title: "Filter",
+    image: "/custom-filter.svg",
+  },
+  {
+    title: "Watermarking",
+    image: "/custom-watermarking.svg",
+  },
+  {
+    title: "Color",
+    image: "/colorwheel.svg",
+  },
+]
+
 const Product = ({ product = {} }) => {
   const {
     _id,
@@ -238,28 +261,33 @@ const Product = ({ product = {} }) => {
         <section className="flex flex-col items-center justify-center bg-stablesBrown/20 pb-16 bgTexture">
           <div className="mt-20">
             <H3 title="Customize This Cone" />
-            <ul className="flex flex-row justify-center">
-              {[...Array(3)].map((e, i) => (
-                <li key={i} className="center text-center mx-5">
-                  
-                    <Image
-                      src="/colorwheel.svg"
-                      alt="Hemp"
-                      width={100}
-                      height={100}
-                      className="w-[120px] h-[120px] object-contain object-center rounded-full bg-gray-400 border-8 border-stablesBrown/80 mb-2"
-                    />
-                    <span>Color</span>
-                  
+            <ul className="flex flex-row justify-center flex-wrap">
+              {custom.map(({ title, description, image, color, index }) => (
+                <li key={index} className="center text-center mx-5 my-3">
+                  <Image
+                    src={image}
+                    alt={title}
+                    width={160}
+                    height={160}
+                    className="object-contain object-center rounded-full bg-gray-400 border-8 border-stablesBrown/80 mb-2"
+                  />
+                  <span>{title}</span>
                 </li>
               ))}
             </ul>
+
+            <p className="text-center w-2/3 mx-auto my-10 text-2xl text-stablesYellow">
+              {
+                "We offer various sizes, colors, and designs and can help with the entire process. Let us know how we can assist with your custom cone needs."
+              }
+            </p>
+
             <div className="flex flex-row justify-center">
               <Link
                 href="/contact"
                 className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-2xl text-white bg-stablesOrange rounded-full"
               >
-                See all options
+                Get in touch
               </Link>
             </div>
           </div>

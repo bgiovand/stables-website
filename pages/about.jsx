@@ -273,6 +273,7 @@ export default function About() {
               true if said quality isn’t consistent. With our expertise in
               manufacturing we can assure you that our quality is the most
               consistent.
+              {"Our cones and blunts don't canoe (burn unevenly)"}
             </p>
           </div>
 
@@ -336,7 +337,7 @@ export default function About() {
                       alt={brand.brand}
                       width={200}
                       height={50}
-                      className="w-30 h-20 object-contain mx-auto mb-5"
+                      className="grayscale w-30 h-20 object-contain mx-auto mb-5"
                     />
                     <span className="text-gray-100 sr-only">{brand.name}</span>
                   </Link>
