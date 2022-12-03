@@ -54,13 +54,13 @@ const Header = () => {
         </div>
         <div
           className={`${isNavOpen ? "visible" : "hidden"} 
-          
-          w-full relative background-stablesBlack z-50
-          md:flex md:flex-col md:items-center `}
+          w-full 
+          md:flex md:flex-col md:items-center 
+          `}
         >
           <ul
-            className="flex flex-col bgTexture bg-stablesBlack/80 rounded-lg
-          md:flex-row sm:bg-none"
+            className="flex flex-col bg-stablesBlack/80 rounded-2xl p-2
+          md:flex-row md:bg-stablesBlack/0"
           >
             {menu.map((page, index) => (
               <li key={index} className={`hover:border-stablesOrange`}>
