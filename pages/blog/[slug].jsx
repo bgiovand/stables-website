@@ -12,22 +12,33 @@ function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
 
-
-
 const Post = ({ post = {} }) => {
   const {
     title = "Missing title",
     name = "Missing name",
     categories,
-    authorImage,
+    authorImage = "",
     mainImage = "",
-    publishedAt,
+    publishedAt = "",
     body = [],
   } = post
 
-const ptComponents = {
-  
-}
+  const ptComponents = {
+    types: {
+      image: ({ value }) => {
+        if (!value?.asset?._ref) {
+          return null
+        }
+        return (
+          <Image
+            alt={value.alt || " "}
+            loading="lazy"
+            src={urlFor(value).width(320).height(240).fit("max").auto("format")}
+          />
+        )
+      },
+    },
+  }
 
   return (
     <main className="bgTexture">
@@ -40,43 +51,41 @@ const ptComponents = {
 
       <article style={{}} className={``}>
         <div className="flex flex-col items-center justify-center w-8/12 mx-auto py-40">
-          
-            <H1 title={title} />
-            {publishedAt && (
-              <div className="text-sm text-gray-500">{publishedAt}</div>
-            )}
+          <H1 title={title} />
+          {publishedAt && (
+            <div className="text-sm text-gray-500">{publishedAt}</div>
+          )}
 
-            {authorImage && (
-              <div>
-                <Image
-                  src={authorImage}
-                  alt={`${name}'s picture`}
-                  width={50}
-                  height={50}
-                />
-              </div>
-            )}
-            <span>{name}</span>
+          {authorImage && (
+            <div>
+              <Image
+                src={authorImage}
+                alt={`${name}'s picture`}
+                width={50}
+                height={50}
+              />
+            </div>
+          )}
+          <span>{name}</span>
 
-            {categories && (
-              <ul>
-                Posted in
-                {categories.map((category) => (
-                  <li key={category}>{category}</li>
-                ))}
-              </ul>
-            )}
-          
+          {categories && (
+            <ul>
+              Posted in
+              {categories.map((category) => (
+                <li key={category}>{category}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div className="flex flex-col w-8/12 mx-auto bg-stablesBlack text-white px-20 py-20 leading-loose font-light text-lg shadow-lg h-screen">
-          <PortableText value={body} components={ptComponents} />
+          {/* <PortableText value={body} components={ptComponents} /> */}
         </div>
       </article>
 
       <Footer />
       <Image
-        src={mainImage}
+        src={mainImage ? mainImage : ""}
         alt={title}
         width={1000}
         height={400}

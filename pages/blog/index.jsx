@@ -53,7 +53,7 @@ const Blog = ({ posts }) => {
                       />
                       <H3 title={title} />
                       <div className="font-thin">{publishedAt}</div>
-                      <div className="font-thin">{authorName}</div>
+                      <div className="font-thin">{authorName ? authorName : ""}</div>
                       <Image
                         src={authorImage ? authorImage : ""}
                         alt={authorName}
