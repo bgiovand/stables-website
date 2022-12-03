@@ -1,4 +1,4 @@
-import client from "../../client"
+import client from "../../src/utils/client"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import groq from "groq"

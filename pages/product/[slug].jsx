@@ -1,4 +1,4 @@
-import client from "../../client"
+import client from "../../src/utils/client"
 import Head from "next/head"
 import Image from "next/image"
 import Header from "../../src/components/Header"
@@ -19,7 +19,7 @@ const ptComponents = {
         return null
       }
       return (
-        <img
+        <Image
           alt={value.alt || " "}
           loading="lazy"
           src={urlFor(value).width(320).height(240).fit("max").auto("format")}
