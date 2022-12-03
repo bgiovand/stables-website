@@ -114,7 +114,7 @@ export default function Home() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 400 208.4724"
               width={600}
-              className="mx-auto"
+              className="mx-auto w-8/12 object-scale-down"
             >
               <g>
                 <g>
