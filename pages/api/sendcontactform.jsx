@@ -5,10 +5,17 @@ export default async function sendEmail(req, res) {
   try {
     await sendgrid.send({
       to: "hi@getstables.com",
-      from: "hi@getstables.com",
+      from: {
+        email: "hi@getstables.com",
+        name: "Stables Contact Form",
+      },
+      cc: "bruce@getstables.com",
+      reply_to: {
+        email: `${req.body.email}`,
+        name: `${req.body.fullname}`,
+      },
       subject: `${req.body.subject}`,
-      replyto: `${req.body.email}`,
-      fromname: `${req.body.fullname}`,
+      text: `${req.body.message}`,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
       <head>
@@ -18,6 +25,7 @@ export default async function sendEmail(req, res) {
       </head>
       <body>
         <p>${req.body.message}</p>
+        <p>From: ${req.body.fullname} (${req.body.email})</p>
       </body>
       </html>`,
     })

@@ -162,7 +162,7 @@ export default function ContactUs() {
       <div className="text-left">
         {showSuccessMessage && (
           <p className="text-green-500 font-semibold text-sm my-2">
-            Thankyou! Your Message has been delivered.
+            {"Thanks for the message. We'll be in touch shortly!"}
           </p>
         )}
         {showFailureMessage && (

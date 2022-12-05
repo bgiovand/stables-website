@@ -123,7 +123,7 @@ const Footer = () => {
                 >
                   <Image
                     loader={simpleIconLoader}
-                    className="float-left inline mr-2 mt-1 fill-stablesYellow"
+                    className="float-left inline mr-2 mt-1 h-[18px] w-[18px]"
                     src="discord"
                     color="#EAEEB5"
                     alt="Discord"
@@ -137,7 +137,7 @@ const Footer = () => {
                 <Link href="/" className="hover:underline flex flex-row">
                   <Image
                     loader={simpleIconLoader}
-                    className="float-left inline mr-2 mt-1 fill-stablesYellow"
+                    className="float-left inline mr-2 mt-1 h-[18px] w-[18px]"
                     src="twitter"
                     color="EAEEB5"
                     alt="Discord"
@@ -151,12 +151,13 @@ const Footer = () => {
                 <Link href="/" className="hover:underline flex flex-row">
                   <Image
                     loader={simpleIconLoader}
-                    className="float-left inline mr-2 mt-1"
+                    className="float-left inline mr-2 mt-1 h-[18px] w-[18px]"
                     src="tiktok"
                     color="gray"
                     alt="Discord"
                     width={18}
                     height={18}
+                    layout="fill"
                   />
                   TikTok
                 </Link>
@@ -165,7 +166,7 @@ const Footer = () => {
                 <Link href="/" className="hover:underline flex flex-row">
                   <Image
                     loader={simpleIconLoader}
-                    className="float-left inline mr-2 mt-1"
+                    className="float-left inline mr-2 mt-1 h-[18px] w-[18px]"
                     src="instagram"
                     color="gray"
                     alt="Discord"

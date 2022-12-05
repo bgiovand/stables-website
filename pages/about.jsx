@@ -168,10 +168,10 @@ export default function About() {
 
         <section className="bgTexture">
           <H2 title="The Principals" />
-          <div className="mx-20">
+          <div className="container mx-auto">
             {team.map((principal, index) => (
               <div key={principal.name} className="mx-10 my-20">
-                <div className="flex ">
+                <div className="flex flex-col md:flex-row">
                   <div
                     className={`flex flex-col items-center justify-center w-full md:w-1/2 ${
                       index % 2 ? "md:order-2" : ""
@@ -184,11 +184,13 @@ export default function About() {
                       alt={principal.name}
                       width={200}
                       height={200}
+                      className=""
                     />
-                    <H3 title={principal.name} />
-                    <h4 className=" text-xl font-light -mt-8">
-                      {principal.title}
-                    </h4>
+                    <H3 title={principal.name} className=" mb-0 p-0" />
+                    <H4
+                      title={principal.title}
+                      className=" mt-0 p-0 text-stablesBrown"
+                    />
                   </div>
                   <div className="flex flex-col items-center justify-center w-full md:w-1/2 flex-2">
                     <p className=" text-lg font-light mt-2">{principal.bio}</p>
@@ -199,24 +201,26 @@ export default function About() {
           </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center bgTexture bg-stablesBlue px-10 py-24 text-stablesBrown">
-          <p className="font-med text-4xl mx-28 leading-snug">{about.intro}</p>
+        <section className="bgTexture bg-stablesBlue py-24 text-stablesBrown">
+          <p className="container px-10 mx-auto text-4xl leading-snug">{about.intro}</p>
         </section>
 
-        <section id="values" className="mb-20">
-          <H2 title="Our Values" />
-          <ul className="flex flex-col md:flex-row">
-            {values.map((value) => (
-              <li key={value.name} className="flex flex-col items-center m-5">
-                <H3 title={value.name} />
-                <p className="">{value.description}</p>
-              </li>
-            ))}
-          </ul>
+        <section className="mx-auto py-20 ">
+          <div className="container mx-auto">
+            <H2 title="Our Values" className="" />
+            <ul className="flex flex-col md:flex-row">
+              {values.map((value) => (
+                <li key={value.name} className="flex flex-col items-center m-5">
+                  <H3 title={value.name} />
+                  <p className="">{value.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
-        <section>
-          <H2 title="Clients" />
+        <section className="mx-auto py-20">
+          <H2 title="Clients & Testimonials" />
           <ul className="flex flex-col md:flex-row justify-center">
             {clients.map((client) => (
               <li key={client.name} className="flex flex-col items-center m-5">
@@ -231,10 +235,6 @@ export default function About() {
               </li>
             ))}
           </ul>
-        </section>
-
-        <section>
-          <H2 title="Testimonials" />
           <ul className="flex flex-col md:flex-row justify-center">
             {testimonials.map((testimonial) => (
               <li
@@ -264,7 +264,7 @@ export default function About() {
           </ul>
         </section>
 
-        <section id="values" className="mb-20">
+        <section className="mx-auto py-20 ">
           <H2 title="Quality &amp; Automation" />
 
           <div className="flex flex-col">
@@ -334,7 +334,7 @@ export default function About() {
                   >
                     <Image
                       src={"/brands/" + brand.logo}
-                      alt={brand.brand}
+                      alt={brand.name}
                       width={200}
                       height={50}
                       className="grayscale w-30 h-20 object-contain mx-auto mb-5"

@@ -65,12 +65,12 @@ export default function Blunts() {
                       <text
                         transform="translate(40.1698 64.4442)"
                         fill="currentColor"
-                        font-family="inherit"
-                        font-size="22"
-                        font-weight="500"
+                        fontFamily="inherit"
+                        fontSize="22"
+                        fontWeight="500"
                         className=""
                       >
-                        <tspan x="0" y="0" letter-spacing="">
+                        <tspan x="0" y="0" letterSpacing="">
                           {i + 1}0
                         </tspan>
                       </text>

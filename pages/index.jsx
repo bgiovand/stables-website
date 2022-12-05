@@ -63,10 +63,10 @@ export default function Home() {
         </section>
 
         <section className=" py-20 bg-stablesBlue bgTexture">
-          <H1 title="The Filter" className="" />
-          <H2 title="Email Newsletter" className="mb-5 text-stablesBrown" />
+          <H1 title="The Filter" className="mt-0 pt-0" />
+          <H2 title="A Cannabis Industry Newsletter" className="mb-5 text-stablesBrown" />
           <p className="font-light text-center mb-8 text-stablesBrown">
-            A industry newsletter for the next generation of coneissieurs
+            Get industry hot takes, news, and analysis delivered to your inbox every week.
           </p>
           <Newsletter className="flex mx-auto" />
         </section>
@@ -77,7 +77,7 @@ export default function Home() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 400 208.4724"
               width={600}
-              className="mx-auto w-8/12 object-scale-down"
+              className="mx-auto w-full px-5 md:w-8/12 object-scale-down"
             >
               <g>
                 <g>
@@ -138,8 +138,8 @@ export default function Home() {
                   y2="3.4724"
                   fill="none"
                   stroke="currentcolor"
-                  stroke-miterlimit="10"
-                  stroke-width="6.9447"
+                  strokeMiterlimit="10"
+                  strokeWidth="6.9447"
                 />
                 <line
                   y1="153.9319"
@@ -147,8 +147,8 @@ export default function Home() {
                   y2="153.9319"
                   fill="none"
                   stroke="currentcolor"
-                  stroke-miterlimit="10"
-                  stroke-width="6.9447"
+                  strokeMiterlimit="10"
+                  strokeWidth="6.9447"
                 />
                 <line
                   x1="346.3172"
@@ -157,12 +157,14 @@ export default function Home() {
                   y2="153.9319"
                   fill="none"
                   stroke="currentcolor"
-                  stroke-miterlimit="10"
-                  stroke-width="6.9447"
+                  strokeMiterlimit="10"
+                  strokeWidth="6.9447"
                 />
               </g>
             </svg>
-            <H4 title="Merchandise Coming Soon..." />
+            <H4 title="The Merchandise" className="text-black/80 mt-10 mb-0" />
+            <p className="text-black/30">Coming Soon...</p>
+
           </div>
         </section>
 
