@@ -238,7 +238,7 @@ export default function Custom() {
                     >
                       <h3 className="capitalize font-bold flex flex-row ">
                         <div
-                          className={`w-8 h-8 border flex rounded-full mr-2 border-4 border-red transition-border duration-300 ease-in-out border-outline
+                          className={`w-8 h-8 flex rounded-full mr-2 border-4 border-red transition-border duration-300 ease-in-out border-outline
                           ${
                             state.current == item
                               ? "border-white"
