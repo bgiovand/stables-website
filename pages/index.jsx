@@ -6,7 +6,7 @@ import Footer from "@/components/Footer"
 import Link from "next/link"
 import { H1, H2, H3, H4 } from "@/components/Typography"
 import { Badge } from "@/components/svg/Badge"
-import Newsletter from "@/components/Newsletter"
+import {Newsletter} from "@/components/Newsletter"
 
 export default function Home() {
   return (
@@ -64,10 +64,7 @@ export default function Home() {
 
         <section className=" py-20 bg-stablesBlue bgTexture">
           <H1 title="The Filter" className="" />
-          <H2
-            title="Email Newsletter"
-            className="mb-5 text-stablesBrown"
-          />
+          <H2 title="Email Newsletter" className="mb-5 text-stablesBrown" />
           <p className="font-light text-center mb-8 text-stablesBrown">
             A industry newsletter for the next generation of coneissieurs
           </p>
