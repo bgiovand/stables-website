@@ -1,26 +1,28 @@
-import { NextApiRequest, NextApiResponse } from "next"
+const { Client } = require("@sendgrid/client")
+const client = new Client()
+client.setApiKey(process.env.SENDGRID_API_KEY)
 
-export default function handler(NextApiRequest, NextApiResponse) {
-  const { email } = req.body
-
-  if (!email) {
-    return res.status(400).json({ error: "Email is required" })
+export default async function handler(req, res) {
+  if (req.method === "POST") {
+    try {
+      const request = {
+        method: "PUT",
+        url: "/v3/marketing/contacts",
+        body: {
+          contacts: [{ email: `${req.body.email}` }],
+          list_ids: [process.env.SENDGRID_MAILING_ID],
+        },
+      }
+      const [response] = await client.request(request)
+      res.status(200).send({
+        message:
+          "Your email has been succesfully added to the mailing list. Welcome 👋",
+      })
+    } catch (error) {
+      res.status(500).send({
+        message:
+          "Oups, there was a problem with your subscription, please try again or contact us",
+      })
+    }
   }
-
-  //   const result = await fetch('https://www.getrevue.co/api/v2/subscribers', {
-  //     method: 'POST',
-  //     headers: {
-  //       Authorization: `Token ${process.env.REVUE_API_KEY}`,
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({ email, double_opt_in: false })
-  //   });
-
-  // 	const data = await result.json();
-
-  //   if (!result.ok) {
-  //     return res.status(500).json({ error: data.error.email[0] });
-  //   }
-
-  //   return res.status(201).json({ error: '' });
 }

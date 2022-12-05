@@ -6,6 +6,7 @@ import Footer from "@/components/Footer"
 import Link from "next/link"
 import { H1, H2, H4 } from "@/components/Typography"
 import { Badge } from "@/components/svg/Badge"
+import Newsletter from "@/components/newsletter"
 
 export default function Home() {
   return (
@@ -61,7 +62,9 @@ export default function Home() {
           </svg>
         </section>
 
-        <section className="m-20">
+        <Newsletter />
+
+        {/* <section className="m-20">
           <h2 className={styles.title}>Sign up for THE FILTER</h2>
           <p className={styles.description}>
             A industry newsletter for the next generation of coneissieurs
@@ -106,7 +109,7 @@ export default function Home() {
               </button>
             </div>
           </form>
-        </section>
+        </section> */}
 
         <section className="py-40 bg-gray-200 bgTexture">
           <div className="mx-auto px-4 text-[#EB2024] center text-center">
