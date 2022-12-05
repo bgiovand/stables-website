@@ -12,7 +12,6 @@ const Blog = ({ posts }) => {
   const router = useRouter()
 
   return (
-    
     <div className="bgTexture">
       <Head>
         <title>Stables</title>
@@ -22,14 +21,13 @@ const Blog = ({ posts }) => {
 
       <Header />
 
-      <main className="px-20">
-        <H1 title="Blog" />
-        <H2 title="Latest Posts" />
-        <div className="flex flex-row flex-wrap justify-between">
+      <main className="mx-auto">
+        {/* <H2 title="Latest Posts" /> */}
+        <div className="container mx-auto grid md:grid-cols-3 gap-10 ">
           {posts.length > 0 &&
             posts.map(
               ({
-                _id,
+                _id = "",
                 title = "",
                 slug = "",
                 publishedAt = "",
@@ -41,26 +39,31 @@ const Blog = ({ posts }) => {
                   <Link
                     href="/blog/[slug]"
                     as={`/blog/${slug.current}`}
-                    className="flex w-4/12 flex-col border-2"
+                    key={_id}
+                    className="w-full h-full group bg-stablesBrown/10 rounded-lg"
                   >
-                    <div key={_id}>
+                    <div className="">
                       <Image
                         src={image}
                         alt={title}
                         width={200}
                         height={200}
-                        className="object-cover w-full h-64 opacity-50 hover:opacity-100 transition-all"
+                        className="object-cover w-full h-64 opacity-50 group-hover:opacity-100 transition-all"
                       />
                       <H3 title={title} />
-                      <div className="font-thin">{publishedAt}</div>
-                      <div className="font-thin">{authorName ? authorName : ""}</div>
-                      <Image
-                        src={authorImage ? authorImage : ""}
-                        alt={authorName}
-                        width={50}
-                        height={50}
-                        className="object-cover w-12 h-12 rounded-full"
-                      />
+                      <div className="font-thin">{new Date(publishedAt).toLocaleString() }</div>
+                      {authorName && (
+                        <div className="font-thin">{authorName}</div>
+                      )}
+                      {authorImage && (
+                        <Image
+                          src={authorImage ? authorImage : ""}
+                          alt={authorName}
+                          width={50}
+                          height={50}
+                          className="object-cover w-12 h-12 rounded-full"
+                        />
+                      )}
                     </div>
                   </Link>
                 )
