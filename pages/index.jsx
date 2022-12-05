@@ -4,9 +4,9 @@ import styles from "../styles/Home.module.css"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import Link from "next/link"
-import { H1, H2, H4 } from "@/components/Typography"
+import { H1, H2, H3, H4 } from "@/components/Typography"
 import { Badge } from "@/components/svg/Badge"
-import Newsletter from "@/components/newsletter"
+import Newsletter from "@/components/Newsletter"
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
       <main className="">
         <section className="max-w-max min-w-full bgTexture bg-stablesBlue">
           <div className="px-20 py-10">
-            <H1 title="Stables" />
+            <H1 title="Stables" className="pt-0" />
             <H2 title="Smoke Easy" />
             <div className="block">
               <Image
@@ -62,54 +62,17 @@ export default function Home() {
           </svg>
         </section>
 
-        <Newsletter />
-
-        {/* <section className="m-20">
-          <h2 className={styles.title}>Sign up for THE FILTER</h2>
-          <p className={styles.description}>
+        <section className=" py-20 bg-stablesBlue bgTexture">
+          <H1 title="The Filter" className="" />
+          <H2
+            title="Email Newsletter"
+            className="mb-5 text-stablesBrown"
+          />
+          <p className="font-light text-center mb-8 text-stablesBrown">
             A industry newsletter for the next generation of coneissieurs
           </p>
-          <form className={styles.form} action="https" method="POST">
-            <div className="mb-6">
-              <label
-                for="email-newsletter"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-                Email Newsletter
-              </label>
-              <input
-                type="email"
-                id="email-newsletter"
-                aria-describedby="Email address for newsletter"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Your email"
-                autoComplete="email"
-                required
-              />
-              <p
-                id="helper-text-explanation"
-                className="mt-2 text-sm text-gray-500 dark:text-gray-400"
-              >
-                We’ll never share your details. Read our{" "}
-                <Link
-                  href="/privacy"
-                  className="font-medium text-blue-600 hover:underline dark:text-blue-500"
-                >
-                  Privacy Policy
-                </Link>
-                .
-              </p>
-            </div>
-            <div className="mb-6">
-              <button
-                type="button"
-                className="text-white bg-stablesOrange hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800"
-              >
-                Sign Up
-              </button>
-            </div>
-          </form>
-        </section> */}
+          <Newsletter className="flex mx-auto" />
+        </section>
 
         <section className="py-40 bg-gray-200 bgTexture">
           <div className="mx-auto px-4 text-[#EB2024] center text-center">

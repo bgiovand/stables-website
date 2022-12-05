@@ -2,7 +2,12 @@ import React from "react"
 
 const H1 = (props) => {
   return (
-    <h1 className="text-7xl text-stablesOrange text-center font-semibold  mb-2 pt-20  peer ">
+    <h1
+      className={
+        "text-stablesOrange text-7xl text-center font-semibold mb-2 pt-10 peer " +
+        props.className
+      }
+    >
       {props.title}
     </h1>
   )
@@ -10,7 +15,12 @@ const H1 = (props) => {
 
 const H2 = (props) => {
   return (
-    <h2 className="text-stablesOrange text-6xl  text-center font-normal mb-10 peer-first:text-3xl">
+    <h2
+      className={
+        "text-stablesOrange text-6xl text-center font-normal mb-5 peer-first:text-3xl " +
+        props.className
+      }
+    >
       {props.title}
     </h2>
   )
@@ -18,7 +28,12 @@ const H2 = (props) => {
 
 const H3 = (props) => {
   return (
-    <h3 className="text-stablesYellow text-5xl  text-center font-normal mb-10 ">
+    <h3
+      className={
+        "text-stablesYellow text-5xl text-center font-normal mb-5 " +
+        props.className
+      }
+    >
       {props.title}
     </h3>
   )
@@ -26,7 +41,12 @@ const H3 = (props) => {
 
 const H4 = (props) => {
   return (
-    <h4 className="text-stablesOrange text-4xl  text-center font-normal mb-10  ">
+    <h4
+      className={
+        "text-stablesOrange text-4xl  text-center font-normal mb-5 " +
+        props.className
+      }
+    >
       {props.title}
     </h4>
   )

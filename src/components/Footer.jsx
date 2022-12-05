@@ -2,6 +2,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import React from "react"
 import Image from "next/image"
+import Newsletter from "./Newsletter"
 
 const simpleIconLoader = ({ src, color = "EAEEB5" }) => {
   return `https://cdn.simpleicons.org/${src}/${color}`
@@ -62,6 +63,7 @@ const Footer = () => {
         <div className="md:w-5/12 w-full mb-14 md:mb-0">
           <h3 className="text-8xl font-semibold text-stablesOrange">Stables</h3>
           <h4>The Cone Company</h4>
+          <Newsletter className="mt-10 pt-8" placeholder="Enter your email and subscribe to our newsletter"/>
         </div>
 
         <div className="flex w-5/12 justify-between flex-col md:flex-row">

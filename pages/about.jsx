@@ -45,7 +45,7 @@ export default function About() {
     },
     {
       name: "AutoCone",
-      logo: "autoCone.png",
+      logo: "autocone.png",
       link: "",
       description: "",
       models: ["AutoCone"],

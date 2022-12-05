@@ -24,7 +24,7 @@ const Header = () => {
     <header>
       <nav className="w-100 p-5">
         <div className="flex flex-row justify-between w-100  md:flex-col ">
-          <Link href="/" className="text-stablesOrange text-5xl md:text-center">
+          <Link href="/" className="text-stablesOrange text-5xl md:text-center font-semibold">
             Stables
           </Link>
 

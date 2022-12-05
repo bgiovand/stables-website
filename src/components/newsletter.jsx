@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { H1, H2, H3 } from "./Typography"
 
-const Newsletter = () => {
+const Newsletter = (props) => {
   const [mail, setMail] = useState(null)
   const [loading, setLoading] = useState(false)
 
@@ -30,34 +30,30 @@ const Newsletter = () => {
   }
 
   return (
-    <section className="mx-auto text-center py-20">
-      <H2 title="The Filter" />
-      <H3 title="Email Newsletter" />
-      <p className="text-gray-500 font-light">
-        A industry newsletter for the next generation of coneissieurs
-      </p>
-
-      <div className="mt-5">
-        <input
-          onChange={(e) => {
-            setMail(e.target.value)
-          }}
-          type="email"
-          placeholder="Your email"
-          className="input input-primary input-bordered rounded-md text-black"
-        />
-        <button
-          onClick={subscribe}
-          className={`bg-stablesOrange text-white px-5 py-2 rounded-md ml-2
+    <div className={"mx-auto text-center w-full" + props.className}>
+      <div className="mx-auto w-full">
+        <form>
+          <input
+            onChange={(e) => {
+              setMail(e.target.value)
+            }}
+            type="email"
+            placeholder={props.placeholder ? props.placeholder : "Your Email"}
+            className="input input-primary rounded-md text-black rounded-r-none outline-none border-none"
+          />
+          <button
+            onClick={subscribe}
+            className={`bg-stablesOrange text-white px-5 py-2 rounded-md rounded-l-none ml-0 pl-6 border-stablesOrange border-1
             ${loading ? "btn-disabled loading" : "btn-primary"}`}
-        >
-          {"Subscribe"}
-        </button>
+          >
+            {"Subscribe"}
+          </button>
+        </form>
         <div className="text-xs text-gray-500 font-light mt-2">
           {"*We care about your privacy. No spam, ever."}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

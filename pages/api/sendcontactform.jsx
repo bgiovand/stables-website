@@ -11,16 +11,9 @@ export default async function sendEmail(req, res) {
       <html lang="en">
       <head>
         <meta charset="utf-8">
-
-        <title>The HTML5 Herald</title>
-        <meta name="description" content="The HTML5 Herald">
-        <meta name="author" content="SitePoint">
-      <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
-
-        <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+        <title>Stables Contact Form</title>
+        <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
       </head>
-
       <body>
         <h3>You've got a new mail from ${req.body.fullname} (${req.body.email}) </h3>
         <div style="font-size: 16px;">
