@@ -23,7 +23,7 @@ const Product = ({ products }) => {
 
       <main>
         <div className="">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto">
             <H1 title="Products" />
             <H3 title="Cones" />
 
@@ -61,7 +61,7 @@ const Product = ({ products }) => {
                               </div>
                             </div>
 
-                            <div className="flex justify-center">
+                            <div className="flex justify-center overflow-clip">
                               <Image
                                 src={image ? image : ""}
                                 alt={title}
