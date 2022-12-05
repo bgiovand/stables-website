@@ -50,7 +50,7 @@ export default function ContactUs() {
 
     if (isValidForm) {
       setButtonText("Sending")
-      const res = await fetch("/api/sendgrid", {
+      const res = await fetch("/api/sendcontactform", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ export default function ContactUs() {
       setMessage("")
       setSubject("")
     }
-    console.log(fullname, email, subject, message)
+    // console.log(fullname, email, subject, message)
   }
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
