@@ -26,6 +26,7 @@ const Newsletter = (props) => {
       .catch((err) => {
         setLoading(false)
         alert(err)
+        
       })
   }
 

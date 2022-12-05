@@ -2,7 +2,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import React from "react"
 import Image from "next/image"
-import {Newsletter} from "@/components/Newsletter"
+import Newsletter from "@/components/Mewsletter"
 
 const simpleIconLoader = ({ src, color = "EAEEB5" }) => {
   return `https://cdn.simpleicons.org/${src}/${color}`

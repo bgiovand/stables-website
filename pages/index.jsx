@@ -6,7 +6,7 @@ import Footer from "@/components/Footer"
 import Link from "next/link"
 import { H1, H2, H3, H4 } from "@/components/Typography"
 import { Badge } from "@/components/svg/Badge"
-import {Newsletter} from "@/components/Newsletter"
+import Newsletter from "@/components/Mewsletter"
 
 export default function Home() {
   return (
