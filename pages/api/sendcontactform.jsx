@@ -7,6 +7,8 @@ export default async function sendEmail(req, res) {
       to: "hi@getstables.com",
       from: "hi@getstables.com",
       subject: `${req.body.subject}`,
+      replyto: `${req.body.email}`,
+      fromname: `${req.body.fullname}`,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
       <head>
@@ -15,11 +17,7 @@ export default async function sendEmail(req, res) {
         <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
       </head>
       <body>
-        <h3>You've got a new mail from ${req.body.fullname} (${req.body.email}) </h3>
-        <div style="font-size: 16px;">
-          <p>Message:</p>
-          <p>${req.body.message}</p>
-        </div>
+        <p>${req.body.message}</p>
       </body>
       </html>`,
     })
