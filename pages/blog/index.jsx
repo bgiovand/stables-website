@@ -40,7 +40,7 @@ const Blog = ({ posts }) => {
                     href="/blog/[slug]"
                     as={`/blog/${slug.current}`}
                     key={_id}
-                    className="group bg-stablesBrown/10 rounded-2xl shadow-lg overflow-hidden trasition-all mx-3 sm:mx-0"
+                    className="group bg-stablesBrown/10 rounded-2xl shadow-lg overflow-hidden trasition-all mx-3 sm:mx-0 h-[32rem]"
                   >
                     <Image
                       src={image}
@@ -49,24 +49,24 @@ const Blog = ({ posts }) => {
                       height={200}
                       className="object-cover w-full h-1/3 opacity-70 group-hover:opacity-100 transition-all"
                     />
-                    <div className="text-center flex flex-col h-2/3 justify-evenly px-3 py-5">
+                    <div className="text-center flex flex-col h-2/3 justify-between px-3 py-5">
                       <H3
                         title={title}
-                        className="mb-0 p-0 line-clamp-3 pb-0 group-hover:text-stablesOrange"
+                        className="mb-0 p-0 group-hover:text-stablesOrange line-clamp-3 pb-2 text-5xl"
                       />
-                      <div>
+                      <div className="">
                         {authorImage && (
                           <Image
                             src={authorImage ? authorImage : ""}
                             alt={authorName}
                             width={50}
                             height={50}
-                            className="object-cover mx-auto rounded-full bg-stablesBlue border-2 border-stablesBrown flex flex-row"
+                            className="object-cover mx-auto rounded-full bg-stablesBlue border-2 border-stablesBrown flex flex-row "
                           />
                         )}
                         <div className=" ">
                           {authorName && (
-                            <div className="font-thin text-lg mb-4">
+                            <div className="font-thin text-lg mb-2">
                               by {authorName}
                             </div>
                           )}
