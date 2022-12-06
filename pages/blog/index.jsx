@@ -23,7 +23,7 @@ const Blog = ({ posts }) => {
 
       <main className="mx-auto">
         {/* <H2 title="Latest Posts" /> */}
-        <div className="container mx-auto grid md:grid-cols-3 gap-10 ">
+        <div className="container mx-auto grid md:grid-cols-3 gap-8">
           {posts.length > 0 &&
             posts.map(
               ({
@@ -40,30 +40,42 @@ const Blog = ({ posts }) => {
                     href="/blog/[slug]"
                     as={`/blog/${slug.current}`}
                     key={_id}
-                    className="w-full h-full group bg-stablesBrown/10 rounded-lg"
+                    className="group bg-stablesBrown/10 rounded-2xl shadow-lg overflow-hidden trasition-all mx-3 sm:mx-0"
                   >
-                    <div className="">
-                      <Image
-                        src={image}
-                        alt={title}
-                        width={200}
-                        height={200}
-                        className="object-cover w-full h-64 opacity-50 group-hover:opacity-100 transition-all"
+                    <Image
+                      src={image}
+                      alt={title}
+                      width={200}
+                      height={200}
+                      className="object-cover w-full h-1/3 opacity-70 group-hover:opacity-100 transition-all"
+                    />
+                    <div className="text-center flex flex-col h-2/3 justify-evenly px-3 py-5">
+                      <H3
+                        title={title}
+                        className="mb-0 p-0 line-clamp-3 pb-0 group-hover:text-stablesOrange"
                       />
-                      <H3 title={title} />
-                      <div className="font-thin">{new Date(publishedAt).toLocaleString() }</div>
-                      {authorName && (
-                        <div className="font-thin">{authorName}</div>
-                      )}
-                      {authorImage && (
-                        <Image
-                          src={authorImage ? authorImage : ""}
-                          alt={authorName}
-                          width={50}
-                          height={50}
-                          className="object-cover w-12 h-12 rounded-full"
-                        />
-                      )}
+                      <div>
+                        {authorImage && (
+                          <Image
+                            src={authorImage ? authorImage : ""}
+                            alt={authorName}
+                            width={50}
+                            height={50}
+                            className="object-cover mx-auto rounded-full bg-stablesBlue border-2 border-stablesBrown flex flex-row"
+                          />
+                        )}
+                        <div className=" ">
+                          {authorName && (
+                            <div className="font-thin text-lg mb-4">
+                              by {authorName}
+                            </div>
+                          )}
+
+                          <div className="font-thin text-sm text-gray-500">
+                            {new Date(publishedAt).toLocaleString()}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 )

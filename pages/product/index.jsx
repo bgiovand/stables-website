@@ -22,12 +22,12 @@ const Product = ({ products }) => {
       <Header />
 
       <main>
-        <div className="">
+        <div className="container mx-auto">
           <div className="mx-auto">
             <H1 title="Products" />
             <H3 title="Cones" />
 
-            <div className="grid grid-cols-1 gap-8 py-8 px-6 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3">
               {products.length > 0 &&
                 products.map(
                   ({
