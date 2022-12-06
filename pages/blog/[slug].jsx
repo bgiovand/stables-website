@@ -34,14 +34,12 @@ const ptComponents = {
           alt={value.alt || " "}
           loading="lazy"
           src={urlFor(value).width(320).height(240).fit("max").auto("format")}
+          className="w-full dev h-full"
         />
       )
     },
   },
 }
-
-
-    
 
   return (
     <main className="bgTexture">
