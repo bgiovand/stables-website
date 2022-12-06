@@ -149,7 +149,7 @@ const Product = ({ product = {} }) => {
                 alt={title}
                 width={500}
                 height={500}
-                priority 
+                priority
               />
             </div>
             <div className="flex flex-col">

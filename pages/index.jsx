@@ -64,9 +64,13 @@ export default function Home() {
 
         <section className=" py-20 bg-stablesBlue bgTexture">
           <H1 title="The Filter" className="mt-0 pt-0" />
-          <H2 title="A Cannabis Industry Newsletter" className="mb-5 text-stablesBrown" />
+          <H2
+            title="A Cannabis Industry Newsletter"
+            className="mb-5 text-stablesBrown"
+          />
           <p className="font-light text-center mb-8 text-stablesBrown">
-            Get industry hot takes, news, and analysis delivered to your inbox every week.
+            Get industry hot takes, news, and analysis delivered to your inbox
+            every week.
           </p>
           <Newsletter className="flex mx-auto" />
         </section>
@@ -164,7 +168,36 @@ export default function Home() {
             </svg>
             <H4 title="The Merchandise" className="text-black/80 mt-10 mb-0" />
             <p className="text-black/30">Coming Soon...</p>
-
+            <Image
+              src="/merch/hat.png"
+              alt="Things"
+              width={200}
+              height={200}
+              className="mx-auto mb-20 mt-10"
+            />
+            <div className="grid md:grid-cols-3 gap-0 mt-10">
+              <Image
+                src="/merch/shirt1.png"
+                alt="Things"
+                width={900}
+                height={900}
+                className="mix-blend-multiply"
+              />
+              <Image
+                src="/merch/shirt2.png"
+                alt="Things"
+                width={900}
+                height={900}
+                className="mix-blend-multiply"
+              />
+              <Image
+                src="/merch/shirt3.png"
+                alt="Things"
+                width={900}
+                height={900}
+                className="mix-blend-multiply"
+              />
+            </div>
           </div>
         </section>
 
