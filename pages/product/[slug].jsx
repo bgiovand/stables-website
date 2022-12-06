@@ -29,27 +29,6 @@ const ptComponents = {
   },
 }
 
-const paperTypes = [
-  {
-    title: "Refined\nWhite\n(Ultrathin)",
-    description: "White paper",
-    image: "/images/white.png",
-    color: "#E2E3DE",
-  },
-  {
-    title: "White\nHemp",
-    description: "Brown paper",
-    image: "/images/brown.png",
-    color: "#FFFFFF",
-  },
-  {
-    title: "Natural\nBrown",
-    description: "Black paper",
-    image: "/images/black.png",
-    color: "#776D5B",
-  },
-]
-
 const custom = [
   {
     title: "Wrap",
@@ -80,21 +59,64 @@ const Product = ({ product = {} }) => {
     title = "Missing",
     industryName,
     image,
-    meta = {
-      fillWeightRangeLow: product.fillWeightRangeLow || "Missing",
-      fillWeightRangeHigh: product.fillWeightRangeHigh || 0,
-      burnerDiameter: product.burnerDiameter || 0,
-      mouthDiameter: product.mouthDiameter || 0,
-      filterType: product.filterType || "",
-      lengthFull: product.lengthFull || 0,
-      lengthFilter: product.lengthFilter || 0,
-      pitch: product.pitch || 0,
-      pitchType: product.pitchType || "",
-    },
+    meta = [
+      {
+        title: "Fill Weight",
+        value: `${product.fillWeightRangeLow}  ➜  ${product.fillWeightRangeHigh} grams`,
+      },
+      {
+        title: "Burner Diameter",
+        value: `${product.burnerDiameter} mm`,
+      },
+      {
+        title: "Mouth Diameter",
+        value: `${product.mouthDiameter} mm`,
+      },
+      {
+        title: "Filter Type",
+        value: `${product.filterType}`,
+      },
+      {
+        title: "Cone Length",
+        value: `${product.lengthFull} mm`,
+      },
+      {
+        title: "Filter Length",
+        value: `${product.lengthFilter} mm`,
+      },
+      {
+        title: "Pitch",
+        value: `${product.pitch}°`,
+      },
+      {
+        title: "Pitch Type",
+        value: `${product.pitchType}`,
+      },
+    ],
+    paperType = [
+      {
+        title: "Refined\nWhite\n(Ultrathin)",
+        description: "White paper",
+        image: "/images/white.png",
+        color: "#E2E3DE",
+      },
+      {
+        title: "White\nHemp",
+        description: "Brown paper",
+        image: "/images/brown.png",
+        color: "#FFFFFF",
+      },
+      {
+        title: "Natural\nBrown",
+        description: "Black paper",
+        image: "/images/black.png",
+        color: "#776D5B",
+      },
+    ],
     description = [],
   } = product
   return (
-    <div className="bgTexture">
+    <div className="bgTexture" key={_id}>
       <Head>
         <title>Stables</title>
         <meta name="description" content="Stables is The Cone Company" />
@@ -103,7 +125,7 @@ const Product = ({ product = {} }) => {
 
       <Header />
       <main>
-        <article>
+         <article>
           <H1 title={title} />
           <H3 title={industryName} />
           <div className="block h-20">
@@ -120,95 +142,37 @@ const Product = ({ product = {} }) => {
             <PortableText value={description} components={ptComponents} />
           </div>
 
-          <section className="flex flex-row items-center justify-center p-4">
-            <div className="flex flex-col w-1/2">
+          <section className="container flex flex-row items-center justify-center p-4 mx-auto">
+            <div className="flex flex-col">
               <Image
                 src={image ? image : ""}
                 alt={title}
                 width={500}
                 height={500}
+                priority 
               />
             </div>
             <div className="flex flex-col">
               <ul>
-                <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
-                    Fill Weight Range
-                  </h4>
-                  <span className="font-mono font-thin ">
-                    {`${meta.fillWeightRangeLow} ➜ ${meta.fillWeightRangeHigh} grams`}
-                  </span>
-                </li>
-                <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
-                    Burnside Diameter
-                  </h4>
-                  <span className="font-mono font-thin ">
-                    {meta.burnerDiameter} mm
-                  </span>
-                </li>
-                <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
-                    Mouth Diamter
-                  </h4>
-                  <span className="font-mono font-thin ">
-                    {meta.mouthDiameter} mm
-                  </span>
-                </li>
-                <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
-                    Filter Style
-                  </h4>
-                  <span className="font-mono font-thin ">
-                    {meta.filterType}
-                  </span>
-                </li>
-                <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
-                    Length
-                  </h4>
-                  <span className="font-mono font-thin ">
-                    {meta.lengthFull}
-                  </span>
-                </li>
-                <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
-                    Filter Length
-                  </h4>
-                  <span className="font-mono font-thin ">
-                    {meta.lengthFilter}
-                  </span>
-                </li>
-                <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
-                    Pitch
-                  </h4>
-                  <span className="font-mono font-thin ">{meta.pitch}</span>
-                </li>
-                <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
-                    Pitch Type
-                  </h4>
-                  <span className="font-mono capitalize">{meta.pitchType}</span>
-                </li>
+                {meta.map(({ title, value }, index) => (
+                  <li key={index}>
+                    <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
+                      {title}
+                    </h4>
+                    <span className="font-mono font-thin ">{value}</span>
+                  </li>
+                ))}
                 <li>
                   <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
                     Paper Types
                   </h4>
                   <ul className="flex flex-row">
-                    {paperTypes.map(
-                      ({ title, description, image, color, index }) => (
+                    {paperType.map(
+                      ({ title, color }, index) => (
                         <li
                           key={index}
-                          className="center text-center mr-5 w-2/12"
+                          className="center text-center mr-5 w-1/3"
                         >
-                          {/* <Image
-                          src={image}
-                          alt={title}
-                          width={50}
-                          height={50}
-                          className="w-[50px] h-[50px] object-contain object-center rounded-full bg-gray-400 border-[3px] border-stablesBrown"
-                        /> */}
                           <div
                             className={`w-[50px] h-[50px] object-contain object-center rounded-full bgTexture border-[3px] border-stablesBrown/90 mx-auto`}
                             style={{
@@ -262,7 +226,7 @@ const Product = ({ product = {} }) => {
           <div className="mt-20">
             <H3 title="Customize This Cone" />
             <ul className="flex flex-row justify-center flex-wrap">
-              {custom.map(({ title, description, image, color, index }) => (
+              {custom.map(({ title, description, image, color}, index) => (
                 <li key={index} className="center text-center mx-5 my-3">
                   <Image
                     src={image}
@@ -326,7 +290,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params
   const product = await client.fetch(
     `
