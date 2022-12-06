@@ -12,23 +12,6 @@ function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
 
-const ptComponents = {
-  types: {
-    image: ({ value }) => {
-      if (!value?.asset?._ref) {
-        return null
-      }
-      return (
-        <Image
-          alt={value.alt || " "}
-          loading="lazy"
-          src={urlFor(value).width(320).height(240).fit("max").auto("format")}
-        />
-      )
-    },
-  },
-}
-
 const custom = [
   {
     title: "Wrap",
@@ -139,7 +122,7 @@ const Product = ({ product = {} }) => {
             </div>
           </div>
           <div className="mx-auto w-8/12 center text-center text-2xl">
-            <PortableText value={description} components={ptComponents} />
+            <PortableText value={description} />
           </div>
 
           <section className="container flex flex-row items-center justify-center p-4 mx-auto">
