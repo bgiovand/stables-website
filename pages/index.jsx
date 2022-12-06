@@ -72,7 +72,7 @@ export default function Home() {
             Get industry hot takes, news, and analysis delivered to your inbox
             every week.
           </p>
-          <Newsletter className="flex mx-auto" />
+          <Newsletter className="block w-10/12 md:w-8/12 lg:w-4/12 mx-auto" />
         </section>
 
         <section className="py-40 bg-gray-200 bgTexture">
@@ -179,22 +179,22 @@ export default function Home() {
               <Image
                 src="/merch/shirt1.png"
                 alt="Things"
-                width={900}
-                height={900}
+                width={500}
+                height={500}
                 className="mix-blend-multiply"
               />
               <Image
                 src="/merch/shirt2.png"
                 alt="Things"
-                width={900}
-                height={900}
+                width={500}
+                height={500}
                 className="mix-blend-multiply"
               />
               <Image
                 src="/merch/shirt3.png"
                 alt="Things"
-                width={900}
-                height={900}
+                width={500}
+                height={500}
                 className="mix-blend-multiply"
               />
             </div>
@@ -203,16 +203,7 @@ export default function Home() {
 
         <Footer className="bg-gray-200" />
 
-        {/* <section className="bg-white block w-full p-20">
-          <Image
-            src="/things.svg"
-            alt="Things"
-            width={500}
-            height={500}
-            className="mx-auto"
-          />
-          <H2 title="The Merchandise" />
-        </section> */}
+        
       </main>
     </div>
   )

@@ -63,7 +63,13 @@ const Footer = () => {
         <div className="md:w-5/12 w-full mb-14 md:mb-0">
           <h3 className="text-8xl font-semibold text-stablesOrange">Stables</h3>
           <h4>The Cone Company</h4>
-          <Newsletter className="mt-10 pt-8" placeholder="Enter your email and subscribe to our newsletter"/>
+          <div className="mt-8">
+            <span className="mb-3 block text-stablesOrange">Sign up for The Filter</span>
+            <Newsletter
+              className="mt-3 pt-0"
+              placeholder="Email Address"
+            />
+          </div>
         </div>
 
         <div className="flex w-5/12 justify-between flex-col md:flex-row">
