@@ -4,10 +4,9 @@ module.exports = {
   images: {
     domains: ["cdn.sanity.io", "cdn.simpleicons.org"],
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "cdn.simpleicons.org",
-      },
+      {hostname: "cdn.simpleicons.org",},
+      { hostname: "cdn.sanity.io" },
+      { hostname: "source.unsplash.com" },
     ],
   },
   async headers() {

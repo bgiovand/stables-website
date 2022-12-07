@@ -163,7 +163,7 @@ const Footer = () => {
                     alt="Discord"
                     width={18}
                     height={18}
-                    layout="fill"
+                    
                   />
                   TikTok
                 </Link>
