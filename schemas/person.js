@@ -55,4 +55,11 @@ export default defineType({
       ],
     },
   ],
+  preview: {
+    select: {
+      title: "name",
+      subtitle: "title",
+      media: "image",
+    },
+  },
 })
