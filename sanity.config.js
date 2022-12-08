@@ -1,4 +1,12 @@
 import { deskTool } from "sanity/desk"
+import {
+  dashboardTool,
+  sanityTutorialsWidget,
+  projectUsersWidget,
+  projectInfoWidget,
+} from "@sanity/dashboard"
+import { scheduledPublishing } from "@sanity/scheduled-publishing"
+
 
 // Import Schema Types
 import postType from "schemas/post"
@@ -23,8 +31,15 @@ const config = {
   projectId: process.env.SANITY_API_PROJECT_ID || "hwmnpy3d",
   dataset: process.env.SANITY_API_DATASET || "production",
   plugins: [
-    deskTool({
+    deskTool({}),
+    dashboardTool({
+      widgets: [
+        sanityTutorialsWidget(),
+        projectInfoWidget(),
+        projectUsersWidget(),
+      ],
     }),
+    scheduledPublishing(),
   ],
   schema: {
     types: [
@@ -40,7 +55,7 @@ const config = {
       testimonials,
       compatibility,
       values,
-      certifications
+      certifications,
     ],
   },
 }

@@ -5,54 +5,41 @@ export const config = {
   runtime: "experimental-edge",
 }
 
+const font = fetch(
+  new URL("../../public/fonts/made-mellow-medium.ttf", import.meta.url)
+).then((res) => res.arrayBuffer())
+
 export default async function handler(req) {
   const { searchParams } = req.nextUrl
+  const title = searchParams.get("title") || "My Blog Post"
+  const author = searchParams.get("author") || "Jane Doe"
+  const image = searchParams.get("image") || ""
+
+  const fontData = await font
 
   return new ImageResponse(
     (
-      // Modified based on https://tailwindui.com/components/marketing/sections/cta-sections
-      <div
-        style={{
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "white",
-        }}
-      >
-        <div tw="bg-gray-50 flex">
-          <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
-            <h2 tw="flex flex-col text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 text-left">
-              <span>Ready to dive in?</span>
-              <span tw="text-indigo-600">Start your free trial today.</span>
-            </h2>
-            <div tw="mt-8 flex md:mt-0">
-              <div tw="flex rounded-md shadow">
-                <a
-                  href="#"
-                  tw="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white"
-                >
-                  Get started
-                </a>
-              </div>
-              <div tw="ml-3 flex rounded-md shadow">
-                <a
-                  href="#"
-                  tw="flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600"
-                >
-                  Learn more
-                </a>
-              </div>
-            </div>
-          </div>
+      <div tw="flex flex-row items-center justify-center w-full h-full p-10">
+        <div tw="flex flex-col items-center justify-center w-8/12 h-full">
+          <h1 tw="text-6xl font-mellow font-medium">{title}</h1>
+          {author}
         </div>
+        <img
+          src={image}
+          tw="flex flex-col items-center justify-center w-4/12 h-full"
+        />
       </div>
     ),
     {
       width: 1200,
       height: 630,
+      fonts: [
+        {
+          name: "Mellow",
+          data: fontData,
+          style: "medium",
+        },
+      ],
     }
   )
 }

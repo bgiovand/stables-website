@@ -9,6 +9,7 @@ import client from "@/utils/client"
 import { H1 } from "@/components/Typography"
 import PortableText from "react-portable-text"
 import config from "../../sanity.config"
+import { useRouter } from "next/router"
 
 const ptSerializers = {
   h1: (props) => <h1 className="text-4xl text-stablesOrange mb-3" {...props} />,
@@ -64,25 +65,73 @@ const ptSerializers = {
 }
 
 const Post = ({ post = {} }) => {
+
+  const router = useRouter()
+  
+
   const {
     title = "Missing title",
     name = "Missing name",
     categories = [],
     authorImage = "",
     mainImage = "",
-    published = new Date(post.publishedAt).toISOString() || "Missing date",
+    // published = new Date(post.publishedAt).toISOString() || "Missing date",
+    published = "Missing date",
     publishedAgo = "5 days ago",
     relativePublishedDate = "",
     body = [],
     readTime = "",
+    meta = {
+      title: title || "Stables",
+      description: "Stables is The Cone Company",
+      robots: "follow, index",
+      url: "https://getstables.com",
+      siteName: "Stables",
+      author: name || "Stables",
+      date: published || "Missing date",
+      image: `${"http://localhost:3000"}/api/ogImage?title=${title}&author=${name}&image=${mainImage}`
+    },
   } = post
 
+  console.log("base path: " + router.pathname)
   return (
     <main className="bgTexture">
       <Head>
-        <title>Stables</title>
+        <title>Stables {title}</title>
         <meta name="description" content="Stables is The Cone Company" />
         <link rel="icon" href="/favicon.ico" />
+
+        <meta name="robots" content={meta.robots} />
+        <meta content={meta.description} name="description" />
+        <meta property="og:url" content={`${meta.url}${""}`} />
+        <link rel="canonical" href={`${meta.url}${""}`} />
+        {/* Open Graph */}
+        <meta property="og:type" content={meta.type} />
+        <meta property="og:site_name" content={meta.siteName} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta name="image" property="og:image" content={meta.image} />
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@getstablescones" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+        {meta.date && meta.author && (
+          <>
+            <meta property="article:published_time" content={meta.date} />
+            <meta
+              name="publish_date"
+              property="og:publish_date"
+              content={meta.date}
+            />
+            <meta
+              name="author"
+              property="article:author"
+              content={meta.author}
+            />
+          </>
+        )}
       </Head>
       <Header />
 
