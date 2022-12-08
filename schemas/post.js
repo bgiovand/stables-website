@@ -3,7 +3,7 @@ import blockContent from "schemas/blockContent"
 
 export default defineType({
   name: "post",
-  title: "Post",
+  title: "Blog",
   type: "document",
   fields: [
     {

@@ -30,7 +30,7 @@ export default defineType({
     {
       name: "description",
       title: "Description",
-      type: "blockContent",
+      type: "text",
     },
   ],
 

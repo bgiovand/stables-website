@@ -7,9 +7,9 @@ import personType from "schemas/person"
 import categoryType from "schemas/category"
 import productType from "schemas/product"
 import blockContent from "schemas/blockContent"
-
-const projectId = process.env.SANITY_API_PROJECT_ID
-const dataset = process.env.SANITY_API_DATASET
+import newsLetter from "schemas/newsLetter"
+import { CogIcon } from "@sanity/icons"
+import siteSettings from "schemas/siteSettings"
 
 const config = {
   name: "Stables",
@@ -17,7 +17,10 @@ const config = {
   basePath: "/admin",
   projectId: process.env.SANITY_API_PROJECT_ID || "hwmnpy3d",
   dataset: process.env.SANITY_API_DATASET || "production",
-  plugins: [deskTool()],
+  plugins: [
+    deskTool({
+    }),
+  ],
   schema: {
     types: [
       postType,
@@ -26,6 +29,8 @@ const config = {
       categoryType,
       productType,
       blockContent,
+      newsLetter,
+      siteSettings,
     ],
   },
 }

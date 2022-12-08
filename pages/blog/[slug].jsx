@@ -8,10 +8,6 @@ import { PortableText } from "@portabletext/react"
 import client from "../../src/utils/client"
 import { H1 } from "@/components/Typography"
 
-function urlFor(source) {
-  return imageUrlBuilder(client).image(source)
-}
-
 const Post = ({ post = {} }) => {
   const {
     title = "Missing title",
@@ -33,8 +29,10 @@ const ptComponents = {
         <Image
           alt={value.alt || " "}
           loading="lazy"
-          src={urlFor(value).width(320).height(240).fit("max").auto("format")}
-          className="w-full dev h-full"
+          src={imageUrlBuilder(client).image(value).auto("format").url()}
+          className=""
+          width={520}
+          height={320}
         />
       )
     },

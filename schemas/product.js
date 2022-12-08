@@ -1,17 +1,20 @@
 import { defineField, defineType } from "sanity"
 import blockContent from "schemas/blockContent"
+import { BasketIcon } from "@sanity/icons"
+
 
 export default defineType({
   name: "product",
   title: "Product",
   type: "document",
+  icon: BasketIcon,
   fields: [
     {
       name: "title",
       title: "Title",
       type: "string",
       required: true,
-    }, 
+    },
     {
       name: "slug",
       title: "Slug",
@@ -21,6 +24,16 @@ export default defineType({
         maxLength: 96,
       },
       required: true,
+    },
+    {
+      name: "SKU",
+      title: "SKU",
+      type: "string",
+    },
+    {
+      name: "industryName",
+      title: "Industry Name",
+      type: "string",
     },
     {
       name: "isPrivate",
@@ -67,16 +80,6 @@ export default defineType({
       name: "fillWeightRangeHigh",
       title: "Fill Weight Range High",
       type: "number",
-    },
-    {
-      name: "SKU",
-      title: "SKU",
-      type: "string",
-    },
-    {
-      name: "industryName",
-      title: "Industry Name",
-      type: "string",
     },
     {
       name: "pitchType",
@@ -127,12 +130,8 @@ export default defineType({
   preview: {
     select: {
       title: "title",
-    },
-    prepare(selection) {
-      const { product } = selection
-      return Object.assign({}, selection, {
-        subtitle: product && `by ${product}`,
-      })
+      subtitle: "industryName",
+      media: "mainImage",
     },
   },
 })
