@@ -33,6 +33,23 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        { 
+          name: "attribution",
+          title: "Attribution",
+          type: "string",
+        },
+        {
+          name: "attributonLink",
+          title: "Attribution Link",
+          type: "url",
+        },
+        {
+          name: "caption",
+          title: "Caption",
+          type: "string",
+        },
+      ],
     },
     {
       name: "categories",

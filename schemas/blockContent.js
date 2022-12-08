@@ -54,7 +54,21 @@ export default defineType({
     },
     {
       type: "image",
-      options: { hotspot: true },
+      options: { 
+        hotspot: true,
+      },
+      fields: [
+        {
+          title: "Caption",
+          name: "caption",
+          type: "string",
+        },
+        {
+          title: "Attribution",
+          name: "attribution",
+          type: "string",
+        },
+      ],
     },
   ],
 })
