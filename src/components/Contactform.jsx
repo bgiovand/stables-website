@@ -1,10 +1,13 @@
 import React, { useState } from "react"
+import { useEffect } from "react"
 
-export default function ContactUs() {
+export default function ContactUs(props) {
+  
   const [fullname, setFullname] = useState("")
   const [email, setEmail] = useState("")
-  const [subject, setSubject] = useState("")
+  const [subject, setSubject] = useState(props.subject ? props.subject : "")
   const [message, setMessage] = useState("")
+
 
   //   Form validation
   const [errors, setErrors] = useState({})
@@ -41,10 +44,8 @@ export default function ContactUs() {
     return isValid
   }
 
-//   const [form, setForm] = useState(false);
-
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    // e.preventDefault()
 
     let isValidForm = handleValidation()
 
@@ -81,13 +82,28 @@ export default function ContactUs() {
       setShowFailureMessage(false)
       setButtonText("Send")
       // Reset form fields
-      setFullname("")
-      setEmail("")
-      setMessage("")
-      setSubject("")
+      // setFullname("")
+      // setEmail("")
+      // setMessage("")
     }
     // console.log(fullname, email, subject, message)
   }
+
+  useEffect(() => {
+    // Get the subject from url params and pass it to Contactform component using useEffect
+    
+    const urlParams = new URLSearchParams(window.location.search)
+    const subject = urlParams.get("subject")
+    if (subject) {
+      setSubject(subject)
+    }
+    else {
+      setSubject("")
+    }
+  }, [])
+
+
+  
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
       <label htmlFor="fullname" className=" font-light mt-4 mb-1 ">

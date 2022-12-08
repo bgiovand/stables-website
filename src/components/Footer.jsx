@@ -30,28 +30,33 @@ const footerSection = {
     },
     {
       name: "Blunts",
-      href: "/product",
+      href: "/product/blunts",
     },
     {
       name: "Custom",
-      href: "/product",
+      href: "/product/custom",
     },
   ],
   community: [
     {
       name: "Instagram",
-      href: "https://www.instagram.com/stables.cones/",
+      href: "https://www.instagram.com/getstables/",
       icon: "instagram",
     },
     {
       name: "Discord",
-      href: "",
+      href: "https://discord.gg/YfsVtC8C",
       icon: "discord",
     },
     {
       name: "TikTok",
-      href: "https://",
+      href: "https://www.tiktok.com/@getstables",
       icon: "tiktok",
+    },
+    {
+      name: "Twitter",
+      href: "https://twitter.com/getstablescones",
+      icon: "twitter",
     },
   ],
 }
@@ -64,11 +69,10 @@ const Footer = () => {
           <h3 className="text-8xl font-semibold text-stablesOrange">Stables</h3>
           <h4>The Cone Company</h4>
           <div className="mt-8">
-            <span className="mb-3 block text-stablesOrange">Sign up for The Filter</span>
-            <Newsletter
-              className="mt-3 pt-0"
-              placeholder="Email Address"
-            />
+            <span className="mb-3 block text-stablesOrange">
+              Sign up for The Filter
+            </span>
+            <Newsletter className="mt-3 pt-0" placeholder="Email Address" />
           </div>
         </div>
 
@@ -78,21 +82,13 @@ const Footer = () => {
               Stables
             </h2>
             <ul className="text-stablesYellow">
-              <li className="mb-4">
-                <Link href="/about" className=" hover:underline">
-                  About
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link href="/blog" className="hover:underline">
-                  Blog
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link href="/contact" className="hover:underline">
-                  Contact
-                </Link>
-              </li>
+              {footerSection.stables.map((item, index) => (
+                <li className="mb-4" key={index}>
+                  <Link href={item.href} className=" hover:underline">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
@@ -100,21 +96,13 @@ const Footer = () => {
               Products
             </h2>
             <ul className="text-stablesYellow">
-              <li className="mb-4">
-                <Link href="/about" className=" hover:underline">
-                  Cones
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link href="/blog" className="hover:underline">
-                  Blunts
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link href="/contact" className="hover:underline">
-                  Custom
-                </Link>
-              </li>
+              {footerSection.products.map((item, index) => (
+                <li className="mb-4" key={index}>
+                  <Link href={item.href} className=" hover:underline">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
@@ -122,66 +110,25 @@ const Footer = () => {
               Community
             </h2>
             <ul className="text-stablesYellow">
-              <li className="mb-4 ">
-                <Link
-                  href="https://discord.gg/YfsVtC8C"
-                  className="hover:underline flex flex-row"
-                >
-                  <Image
-                    loader={simpleIconLoader}
-                    className="float-left inline mr-2 mt-1 h-[18px] w-[18px]"
-                    src="discord"
-                    color="#EAEEB5"
-                    alt="Discord"
-                    width={18}
-                    height={18}
-                  />
-                  Discord
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link href="/" className="hover:underline flex flex-row">
-                  <Image
-                    loader={simpleIconLoader}
-                    className="float-left inline mr-2 mt-1 h-[18px] w-[18px]"
-                    src="twitter"
-                    color="EAEEB5"
-                    alt="Discord"
-                    width={18}
-                    height={18}
-                  />
-                  Twitter
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link href="/" className="hover:underline flex flex-row">
-                  <Image
-                    loader={simpleIconLoader}
-                    className="float-left inline mr-2 mt-1 h-[18px] w-[18px]"
-                    src="tiktok"
-                    color="gray"
-                    alt="Discord"
-                    width={18}
-                    height={18}
-                    
-                  />
-                  TikTok
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link href="/" className="hover:underline flex flex-row">
-                  <Image
-                    loader={simpleIconLoader}
-                    className="float-left inline mr-2 mt-1 h-[18px] w-[18px]"
-                    src="instagram"
-                    color="gray"
-                    alt="Discord"
-                    width={18}
-                    height={18}
-                  />
-                  Instagram
-                </Link>
-              </li>
+              {footerSection.community.map((item, index) => (
+                <li className="mb-4" key={index}>
+                  <Link href={item.href}
+                    className=" hover:underline flex flex-row"
+                  >
+                    {item.icon && (
+                      <Image
+                        loader={simpleIconLoader}
+                        src={item.icon}
+                        className="float-left inline mr-2 mt-1 h-[18px] w-[18px]" 
+                        alt="{item.name}"
+                        width={18}
+                        height={18}
+                        />
+                    )}
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

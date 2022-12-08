@@ -13,6 +13,8 @@ import siteSettings from "schemas/siteSettings"
 import brands from "schemas/brands"
 import testimonials from "schemas/testimonials"
 import compatibility from "schemas/compatibility"
+import values from "schemas/values"
+import certifications from "schemas/certifications"
 
 const config = {
   name: "Stables",
@@ -36,7 +38,9 @@ const config = {
       siteSettings,
       brands,
       testimonials,
-      compatibility
+      compatibility,
+      values,
+      certifications
     ],
   },
 }

@@ -202,7 +202,9 @@ export default function About() {
         </section>
 
         <section className="bgTexture bg-stablesBlue py-24 text-stablesBrown">
-          <p className="container px-10 mx-auto text-4xl leading-snug">{about.intro}</p>
+          <p className="container px-10 mx-auto text-4xl leading-snug">
+            {about.intro}
+          </p>
         </section>
 
         <section className="mx-auto py-20 ">
@@ -355,6 +357,13 @@ export default function About() {
               </li>
             ))}
           </ul>
+          <H4 title="Don't see your equipment?" />
+          <p className="text-gray-100 text-lg text-center">
+            {"We're constantly adding new equipment to our compatibility list. If you don't see your equipment and would like to see it added, please contact us."}
+          </p>
+          <Link href="/contact?subject=Equipment Validation" className="text-center">
+            Contact us
+          </Link>
         </section>
       </main>
 

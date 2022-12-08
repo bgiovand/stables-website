@@ -6,10 +6,14 @@ import Footer from "../src/components/Footer"
 import { H1, H2 } from "../src/components/Typography"
 import { useState } from "react"
 import Contactform from "@/components/Contactform"
+import React, { useEffect } from "react"
 
 export default function Contact() {
 
 
+  
+
+ 
   return (
     <div className="bgTexture">
       <Head>
@@ -26,7 +30,6 @@ export default function Contact() {
 
         <section className="">
           <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-            
             
             <Contactform />
           </div>
