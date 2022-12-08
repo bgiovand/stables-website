@@ -14,6 +14,7 @@ This is the source code for the Stables website. It is built using next.js and h
 ## Inspiration
 
 - <https://offscreencanvas.com/issues/011/>
+- <https://www.getrepeat.io>
 
 ## Cone-figurator
 

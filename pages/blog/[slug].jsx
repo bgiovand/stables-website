@@ -11,6 +11,8 @@ import PortableText from "react-portable-text"
 import config from "../../sanity.config"
 import { useRouter } from "next/router"
 
+
+
 const ptSerializers = {
   h1: (props) => <h1 className="text-4xl text-stablesOrange mb-3" {...props} />,
   h2: (props) => <h2 className="text-3xl text-stablesOrange mb-3" {...props} />,
@@ -65,6 +67,20 @@ const ptSerializers = {
 }
 
 const Post = ({ post = {} }) => {
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "Title of the blog post",
+    description: "Description of the blog post",
+    author: [
+      {
+        "@type": "Person",
+        name: "John Doe",
+      },
+    ],
+    datePublished: "2022-09-14T09:00:00.000Z",
+  }
 
   const router = useRouter()
   
@@ -132,6 +148,11 @@ const Post = ({ post = {} }) => {
             />
           </>
         )}
+        <script
+          key="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
       <Header />
 
