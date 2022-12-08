@@ -25,5 +25,15 @@ export default defineType({
       title: "URL",
       type: "url",
     }),
+    defineField({
+      name: "client",
+      title: "Client",
+      type: "boolean",
+      initialValue: false,
+      description: "Show this brand on the the clients list",
+      options: {
+        layout: "checkbox",
+      },
+    }),
   ],
 })

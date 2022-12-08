@@ -40,21 +40,26 @@ const ptSerializers = {
   ),
   image: (props) => (
     <figure className="text-base text-gray-200">
-      <Image
-        alt={props.alt || " "}
-        loading="lazy"
-        src={imageUrlBuilder(client).image(props).auto("format").url()}
-        className="dev"
-        width={400}
-        height={400}
-      />
-      <figcaption className="text-base text-gray-200">{props.alt}</figcaption>
+      {props && (
+        <Image
+          alt={props.alt || " "}
+          loading="lazy"
+          src={imageUrlBuilder(client).image(props).auto("format").url()}
+          className="dev"
+          width={400}
+          height={400}
+        />
+      )}
+
+      {props.caption && (
+        <figcaption className="text-base text-gray-200">
+          {props.caption}
+        </figcaption>
+      )}
     </figure>
   ),
   footnote: (children) => (
-    <span className=" text-stablesOrange block dev">
-      {children}
-    </span>
+    <span className=" text-stablesOrange block dev">{children}</span>
   ),
 }
 

@@ -33,4 +33,12 @@ export default defineType({
       ],
     }),
   ],
+
+  preview: {
+    select: {
+      title: "Equipment.EquipmentName",
+      subtitle: "Equipment.EquipmentModel",
+      media: "Brand.image",
+    },
+  },
 })
