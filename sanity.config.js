@@ -10,6 +10,9 @@ import blockContent from "schemas/blockContent"
 import newsLetter from "schemas/newsLetter"
 import { CogIcon } from "@sanity/icons"
 import siteSettings from "schemas/siteSettings"
+import brands from "schemas/brands"
+import testimonials from "schemas/testimonials"
+import compatibility from "schemas/compatibility"
 
 const config = {
   name: "Stables",
@@ -31,6 +34,9 @@ const config = {
       blockContent,
       newsLetter,
       siteSettings,
+      brands,
+      testimonials,
+      compatibility
     ],
   },
 }
