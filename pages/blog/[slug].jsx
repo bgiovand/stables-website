@@ -68,19 +68,7 @@ const ptSerializers = {
 
 const Post = ({ post = {} }) => {
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: "Title of the blog post",
-    description: "Description of the blog post",
-    author: [
-      {
-        "@type": "Person",
-        name: "John Doe",
-      },
-    ],
-    datePublished: "2022-09-14T09:00:00.000Z",
-  }
+  
 
   const router = useRouter()
   
@@ -108,6 +96,20 @@ const Post = ({ post = {} }) => {
       image: `${"http://localhost:3000"}/api/ogImage?title=${title}&author=${name}&image=${mainImage}`
     },
   } = post
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: meta.title,
+    description: meta.description,
+    author: [
+      {
+        "@type": "Person",
+        name: meta.author,
+      },
+    ],
+    datePublished: "2022-09-14T09:00:00.000Z",
+  }
 
   console.log("base path: " + router.pathname)
   return (

@@ -1,8 +1,19 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
+
 import { ImageResponse } from "@vercel/og"
 import { NextRequest } from "next/server"
 
 export const config = {
   runtime: "experimental-edge",
+}
+
+const colors = {
+  stablesOrange: "#F05A28",
+  stablesBlue: "#C3E4D9",
+  stablesYellow: "#EAEEB5",
+  stablesBrown: "#603813",
+  stablesBlack: "#1e1a16",
 }
 
 const font = fetch(
@@ -11,23 +22,36 @@ const font = fetch(
 
 export default async function handler(req) {
   const { searchParams } = req.nextUrl
-  const title = searchParams.get("title") || "My Blog Post"
-  const author = searchParams.get("author") || "Jane Doe"
+  const type = searchParams.get("type") || "default"
+  const title = searchParams.get("title") || ""
+  const author = searchParams.get("author") || ""
   const image = searchParams.get("image") || ""
 
   const fontData = await font
 
   return new ImageResponse(
     (
-      <div tw="flex flex-row items-center justify-center w-full h-full p-10">
+      <div tw={`flex flex-row items-center justify-center w-full h-full p-10 bg-[${colors.stablesBlack}] text-[${colors.stablesYellow}]`}>
+        {type === "default" && "hello"}
         <div tw="flex flex-col items-center justify-center w-8/12 h-full">
-          <h1 tw="text-6xl font-mellow font-medium">{title}</h1>
-          {author}
+          <h1
+            tw={`text-6xl font-mellow font-medium text-[${colors.stablesOrange}]`}
+          >
+            {title}
+          </h1>
+          {"by " + author}
         </div>
-        <img
-          src={image}
-          tw="flex flex-col items-center justify-center w-4/12 h-full"
-        />
+        {image && (
+          <img
+            src={image}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          />
+        )}
       </div>
     ),
     {
