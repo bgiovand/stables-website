@@ -1,6 +1,6 @@
 # Stables Website
 
-This is the source code for the Stables website. It is built using next.js and hosted on Vercel.
+This is the source code for the Stables website. It's built using Next.js, Tailwind CSS, React, Shopify, and a few other tools. 
 
 ## Reference
 
@@ -10,6 +10,10 @@ This is the source code for the Stables website. It is built using next.js and h
 - <https://github.com/tailwindlabs/tailwindcss-forms>
 - <https://flowbite.com/docs/forms/input-field/>
 - <https://braydoncoyer.dev/blog/create-a-newsletter-subscription-form-with-next.js-api-routes-and-the-twitter-revue-api>
+  
+### Shopify Integration
+
+- <https://www.telerik.com/blogs/build-fast-ecommerce-site-nextjs-shopify>
 
 ## Inspiration
 

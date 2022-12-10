@@ -11,8 +11,6 @@ import PortableText from "react-portable-text"
 import config from "../../sanity.config"
 import { useRouter } from "next/router"
 
-
-
 const ptSerializers = {
   h1: (props) => <h1 className="text-4xl text-stablesOrange mb-3" {...props} />,
   h2: (props) => <h2 className="text-3xl text-stablesOrange mb-3" {...props} />,
@@ -67,11 +65,7 @@ const ptSerializers = {
 }
 
 const Post = ({ post = {} }) => {
-
-  
-
   const router = useRouter()
-  
 
   const {
     title = "Missing title",
@@ -93,7 +87,7 @@ const Post = ({ post = {} }) => {
       siteName: "Stables",
       author: name || "Stables",
       date: published || "Missing date",
-      image: `${"http://localhost:3000"}/api/ogImage?title=${title}&author=${name}&image=${mainImage}`
+      image: `${"http://localhost:3000"}/api/ogImage?title=${title}&author=${name}&image=${mainImage}`,
     },
   } = post
 
@@ -117,7 +111,12 @@ const Post = ({ post = {} }) => {
       <Head>
         <title>Stables {title}</title>
         <meta name="description" content="Stables is The Cone Company" />
-        <link rel="icon" href="/favicon.ico" />
+      
+        {/* Icons */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* <link rel="manifest" href="/manifest.webmanifest"></link> */}
 
         <meta name="robots" content={meta.robots} />
         <meta content={meta.description} name="description" />
