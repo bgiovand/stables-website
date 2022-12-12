@@ -25,3 +25,9 @@ This is the source code for the Stables website. It's built using Next.js, Tailw
 - Generate custom URLs that load the cone configurator with the specified parameters
   - These links will generate a custom OG image that shows the customization when shared on social media
 - Any product from our initial offering can be used as a base for customiztion by clicking a button
+
+## Favicon Setup
+
+- <https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs>
+- <https://www.jvt.me/posts/2022/02/07/favicon-cli/>
+  
