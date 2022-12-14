@@ -19,6 +19,7 @@ This is the source code for the Stables website. It's built using Next.js, Tailw
 
 - <https://offscreencanvas.com/issues/011/>
 - <https://www.getrepeat.io>
+- <https://prendslair.ca>
 
 ## Cone-figurator
 
@@ -31,3 +32,23 @@ This is the source code for the Stables website. It's built using Next.js, Tailw
 - <https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs>
 - <https://www.jvt.me/posts/2022/02/07/favicon-cli/>
   
+## Schema / Structured Data
+
+- https://schema.org/Product
+- https://www.codeconcisely.com/posts/nextjs-structured-data/
+  
+## Blog Design
+
+- https://css-tricks.com/almanac/properties/m/mask-mode/
+  
+## Groq
+
+- https://hdoro.dev/learn-groq
+  
+## 3D
+
+- https://www.fiverr.com/users/bgiovand/lists/my-first-list-881806254
+- https://www.fiverr.com/salimhossain815/model-and-render-realistic-objects-with-blender
+- https://www.fiverr.com/zero47/design-3d-products-for-you-using-a-design-that-you-provide
+- https://www.fiverr.com/mtr_animation/learn-you-how-to-use-blender
+- https://www.fiverr.com/viz_studio/do-photorealistic-3d-product-rendering

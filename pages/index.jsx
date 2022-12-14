@@ -4,10 +4,10 @@ import styles from "../styles/Home.module.css"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import Link from "next/link"
-import { H1, H2, H3, H4 } from "@/components/Typography"
-import { Badge } from "@/components/svg/Badge"
-import Newsletter from "@/components/Mewsletter"
-import clsx from "clsx"
+// import { H1, H2, H3, H4 } from "@/components/Typography"
+// import { Badge } from "@/components/svg/Badge"
+// import Newsletter from "@/components/Mewsletter"
+// import clsx from "clsx"
 
 export default function Home() {
   return (
