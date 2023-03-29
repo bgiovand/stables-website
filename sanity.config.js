@@ -5,7 +5,7 @@ import {
   projectUsersWidget,
   projectInfoWidget,
 } from "@sanity/dashboard"
-import { scheduledPublishing } from "@sanity/scheduled-publishing"
+// import { scheduledPublishing } from "@sanity/scheduled-publishing"
 
 
 // Import Schema Types
@@ -39,7 +39,7 @@ const config = {
         projectUsersWidget(),
       ],
     }),
-    scheduledPublishing(),
+    // scheduledPublishing(),
   ],
   schema: {
     types: [

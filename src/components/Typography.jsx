@@ -1,5 +1,6 @@
 import React from "react"
 import clsx from "clsx"
+import Balancer from "react-wrap-balancer"
 
 const H1 = (props) => {
   return (
@@ -14,7 +15,7 @@ const H1 = (props) => {
         props.className,
       ]}
     >
-      {props.title}
+      <Balancer>{props.title}</Balancer>
     </h1>
   )
 }
@@ -27,7 +28,7 @@ const H2 = (props) => {
         props.className
       }
     >
-      {props.title}
+      <Balancer>{props.title}</Balancer>
     </h2>
   )
 }
@@ -40,7 +41,7 @@ const H3 = (props) => {
         props.className
       }
     >
-      {props.title}
+      <Balancer>{props.title}</Balancer>
     </h3>
   )
 }
@@ -53,7 +54,7 @@ const H4 = (props) => {
         props.className
       }
     >
-      {props.title}
+      <Balancer>{props.title}</Balancer>
     </h4>
   )
 }
