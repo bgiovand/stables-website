@@ -46,13 +46,13 @@ export default function Privacy() {
               We may collect non-personal identification information about Users
               whenever they interact with our Site. Non-personal identification
               information may include the browser name, the type of computer and
-              technical information about Users' means of connection to our
+              technical information about Users means of connection to our
               Site, such as the operating system and the Internet service
               providers utilized and other similar information.
             </p>
             <h2>WEB BROWSERCOOKIES</h2>
             <p>
-              Our Site may use "cookies" to enhance User experience. User's web
+              Our Site may use &quot;cookies&quot; to enhance User experience. Users web
               browser places cookies on their hard drive for record-keeping
               purposes and sometimes to track information about them. Users may
               choose to set their web browser to refuse cookies or to alert you
@@ -61,7 +61,7 @@ export default function Privacy() {
             </p>
             <h2>HOW WE USE COLLECTED INFORMATION</h2>
             <p>
-              Stables may collect and use Users' personal information for the
+              Stables may collect and use Users personal information for the
               following purposes: - To improve customer service To personalize
               user experience - To process payments - To send periodic emails -
               To run a promotion, contest, survey or other Site feature
@@ -104,7 +104,7 @@ export default function Privacy() {
               and services may have their own privacy policies and customer
               service policies. Browsing and interaction on any other website,
               including websites which have a link to our Site, is subject to
-              that website's own terms and policies.
+              that websites own terms and policies.
             </p>
             <h2>GOOGLE ANALYTICS</h2>
             <p>
