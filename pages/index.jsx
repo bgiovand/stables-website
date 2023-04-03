@@ -22,8 +22,8 @@ export default function Home() {
 
       <main className="">
         <section className="max-w-max min-w-full bgTexture bg-stablesBlue">
-          <div className="px-20 py-10">
-            <H1 title="Stables" className="pt-0" />
+          <div className="px-10 py-10">
+            <H1 title="Stables" className="p-0 m-0" />
             <H2 title="Smoke Easy" />
             <div className="block">
               <Image
@@ -33,7 +33,7 @@ export default function Home() {
                 height={500}
                 className="mx-auto m-10 bgTexture bg-stablesBlue"
               />
-              <Badge title="new" />
+              {/* <Badge title="new" /> */}
             </div>
             <div className="flex justify-center">
               <p className="text-white text-2xl font-light">
