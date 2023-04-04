@@ -37,6 +37,7 @@ const Product = ({ products }) => {
                     lengthFull = "",
                     lengthFilter = "",
                     image = "",
+                    industryName = "",
                   }) =>
                     _id && (
                       <div
@@ -58,16 +59,21 @@ const Product = ({ products }) => {
                                 <span className="">
                                   {lengthFull + "/" + lengthFilter}
                                 </span>
+                                <span className="text-stablesBrown/100 font-light ml-2">
+                                  {industryName}
+                                </span>
                               </div>
                             </div>
 
-                            <div className="flex justify-center overflow-clip">
+                            <div className="flex justify-center overflow-clip w-300 h-300">
                               <Image
                                 src={image ? image : ""}
                                 alt={title}
                                 width={300}
                                 height={300}
-                                className="rotate-45 leading-0 group-hover:scale-105 ease-in-out duration-200  transition-all"
+                                // normalize the image size using tailwind
+                                className="w-fit h-96 rotate-45 leading-0 group-hover:scale-105  transition-all dev"
+                                objectFit="contain"
                               />
                             </div>
                           </Link>
@@ -93,6 +99,7 @@ export async function getStaticProps() {
         slug,
         lengthFull,
         lengthFilter,
+        industryName,
         "image": mainImage.asset->url
       }
     `)

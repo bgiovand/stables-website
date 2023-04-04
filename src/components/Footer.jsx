@@ -14,10 +14,10 @@ const footerSection = {
       name: "About",
       href: "/about",
     },
-    {
-      name: "Blog",
-      href: "/blog",
-    },
+    // {
+    //   name: "Blog",
+    //   href: "/blog",
+    // },
     {
       name: "Contact",
       href: "/contact",
@@ -28,14 +28,14 @@ const footerSection = {
       name: "Cones",
       href: "/product",
     },
-    {
-      name: "Blunts",
-      href: "/product/blunts",
-    },
-    {
-      name: "Custom",
-      href: "/product/custom",
-    },
+    // {
+    //   name: "Blunts",
+    //   href: "/product/blunts",
+    // },
+    // {
+    //   name: "Custom",
+    //   href: "/product/custom",
+    // },
   ],
   community: [
     {
