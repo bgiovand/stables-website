@@ -65,7 +65,7 @@ const Product = ({ products }) => {
                               </div>
                             </div>
 
-                            <div className="flex justify-center overflow-clip w-300 h-300">
+                            <div className="flex justify-center w-300 h-300">
                               <Image
                                 src={image ? image : ""}
                                 alt={title}

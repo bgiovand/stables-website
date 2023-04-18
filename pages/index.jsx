@@ -76,7 +76,7 @@ export default function Home() {
           <Newsletter className="block w-10/12 md:w-8/12 lg:w-4/12 mx-auto" />
         </section>
 
-        <section className="py-40 bg-gray-200 bgTexture">
+        {/* <section className="py-40 bg-gray-200 bgTexture">
           <div className="mx-auto px-4 text-[#EB2024] center text-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +200,7 @@ export default function Home() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         <Footer className="bg-gray-200" />
 

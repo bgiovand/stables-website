@@ -22,6 +22,10 @@ const footerSection = {
       name: "Contact",
       href: "/contact",
     },
+    {
+      name: "Cones",
+      href: "/product",
+    },
   ],
   products: [
     {
@@ -91,7 +95,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h2 className="mb-6 text-xl font-semibold text-stablesBrown/60">
               Products
             </h2>
@@ -104,7 +108,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
           <div>
             <h2 className="mb-6 text-xl font-semibold text-stablesBrown/60">
               Community
