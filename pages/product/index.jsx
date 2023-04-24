@@ -65,16 +65,35 @@ const Product = ({ products }) => {
                               </div>
                             </div>
 
-                            <div className="flex justify-center w-300 h-300">
+                            <div className="flex justify-center w-300 h-300 p-10 py-20">
                               <Image
                                 src={image ? image : ""}
                                 alt={title}
-                                width={300}
+                                width={500}
                                 height={300}
-                                // normalize the image size using tailwind
-                                className="w-fit h-96 rotate-45 leading-0 group-hover:scale-105  transition-all dev"
-                                objectFit="contain"
+                                className="object-scale-down"
                               />
+                            </div>
+                            <div className="flex justify-center pb-5">
+                              {/* Hemp */}
+                              <span className="bg-[#ffffff] rounded-full w-[10px] h-[10px] block mx-1 has-tooltip ">
+                                &nbsp;
+                                <span class="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8">
+                                  Some Nice Tooltip Text
+                                </span>
+                              </span>
+                              <span className="bg-[#b0b1a2] rounded-full w-[10px] h-[10px] block mx-1 has-tooltip">
+                                &nbsp;
+                                <span class="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8">
+                                  Some Nice Tooltip Text
+                                </span>
+                              </span>
+                              <span className="bg-[#cacbbf] rounded-full w-[10px] h-[10px] block mx-1 has-tooltip">
+                                &nbsp;
+                                <span class="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8">
+                                  Some Nice Tooltip Text
+                                </span>
+                              </span>
                             </div>
                           </Link>
                         </div>

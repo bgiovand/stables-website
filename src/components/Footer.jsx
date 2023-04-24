@@ -47,11 +47,11 @@ const footerSection = {
       href: "https://www.instagram.com/getstables/",
       icon: "instagram",
     },
-    {
-      name: "Discord",
-      href: "https://discord.gg/YfsVtC8C",
-      icon: "discord",
-    },
+    // {
+    //   name: "Discord",
+    //   href: "https://discord.gg/YfsVtC8C",
+    //   icon: "discord",
+    // },
     {
       name: "TikTok",
       href: "https://www.tiktok.com/@getstables",
@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex w-5/12 justify-between flex-col md:flex-row">
+        <div className="flex w-4/12 flex-col mt-10 md:flex-row justify-between">
           <div>
             <h2 className="mb-6 text-xl font-semibold text-stablesBrown/60">
               Stables

@@ -7,26 +7,31 @@ import imageUrlBuilder from "@sanity/image-url"
 import { PortableText } from "@portabletext/react"
 import { H1, H2, H3, H4 } from "../../src/components/Typography"
 import Link from "next/link"
+import ContactForm from "../../src/components/Contactform"
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
 
 const custom = [
-  {
-    title: "Wrap",
-    image: "/custom-wrap.svg",
-  },
-  {
-    title: "Band",
-    image: "/custom-band.svg",
-  },
+  // {
+  //   title: "Wrap",
+  //   image: "/custom-wrap.svg",
+  // },
+  // {
+  //   title: "Band",
+  //   image: "/custom-band.svg",
+  // },
   {
     title: "Filter",
     image: "/custom-filter.svg",
   },
   {
     title: "Watermarking",
+    image: "/custom-watermarking.svg",
+  },
+  {
+    title: "Size",
     image: "/custom-watermarking.svg",
   },
   {
@@ -101,75 +106,73 @@ const Product = ({ product = {} }) => {
   return (
     <div className="bgTexture" key={_id}>
       <Head>
-        <title>Stables</title>
-        <meta name="description" content="Stables is The Cone Company" />
+        <title>{`Stables • ${title}`}</title>
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
       <main>
-         <article>
-          <H1 title={title} />
-          <H3 title={industryName} />
-          <div className="block h-20">
+        <article>
+          <H1 title={title} className="pb-2" />
+          <H3
+            title={` ${industryName} • ${product.lengthFull}/${product.lengthFilter}`}
+            className="font-thin text-[2rem]"
+          />
+          <div className="">
+            <Image
+              src={image ? image : ""}
+              alt={title}
+              width={600}
+              height={40}
+              priority
+              className="mx-auto  origin-center p-10  "
+            />
+          </div>
+
+          <div className="mx-auto w-7/12 center text-center text-2xl font-light leading-relaxed">
+            <PortableText value={description} />
+          </div>
+
+          <div className="relative my-10 py-10">
             <div className="mx-auto flex absolute text-center left-[50%] transform -translate-x-1/2">
               <Link
                 href="/product"
-                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-45"
+                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-40"
               >
                 Back to Products
               </Link>
             </div>
           </div>
-          <div className="mx-auto w-8/12 center text-center text-2xl">
-            <PortableText value={description} />
-          </div>
 
-          <section className="container flex flex-row items-center justify-center p-4 mx-auto">
-            <div className="flex flex-col">
+          <section className="flex justify-center my-10 py-10 bg-stablesBlue/90">
+            <div className="flex flex-col w-10/12">
+              <h2 className="text-[#667e76] text-2xl font-light mt-2 font-mono tracking-tighter uppercase text-center my-10">
+                Specifications
+              </h2>
+
               <Image
-                src={image ? image : ""}
-                alt={title}
-                width={500}
-                height={500}
-                priority
+                src="/conte-test.svg"
+                width={600}
+                height={100}
+                alt=""
+                className="flex justify-center mx-auto mb-10"
               />
-            </div>
-            <div className="flex flex-col">
-              <ul>
+
+              <ul className=" grid grid-cols-3 gap-x-10 gap-y-4 ">
                 {meta.map(({ title, value }, index) => (
-                  <li key={index}>
-                    <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
+                  <li
+                    key={index}
+                    className="border-t-[1px] border-[#88ada1] pt-2 pb-6"
+                  >
+                    <span className="font-mono font-thin text-black">
+                      {value}
+                    </span>
+                    <h4 className="text-[#667e76] text-xs font-light mt-0 font-mono tracking-tighter uppercase">
                       {title}
                     </h4>
-                    <span className="font-mono font-thin ">{value}</span>
                   </li>
                 ))}
-                <li>
-                  <h4 className="text-stablesBrown text-sm font-light mt-2 font-mono tracking-tighter uppercase">
-                    Paper Types
-                  </h4>
-                  <ul className="flex flex-row">
-                    {paperType.map(
-                      ({ title, color }, index) => (
-                        <li
-                          key={index}
-                          className="center text-center mr-5 w-1/3"
-                        >
-                          <div
-                            className={`w-[50px] h-[50px] object-contain object-center rounded-full bgTexture border-[3px] border-stablesBrown/90 mx-auto`}
-                            style={{
-                              backgroundColor: color, // becuse i had to
-                            }}
-                          ></div>
-                          <span className="font-light font-sm text-gray-300">
-                            {title}
-                          </span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </li>
               </ul>
             </div>
           </section>
@@ -207,9 +210,9 @@ const Product = ({ product = {} }) => {
 
         <section className="flex flex-col items-center justify-center bg-stablesBrown/20 pb-16 bgTexture">
           <div className="mt-20">
-            <H3 title="Customize This Cone" />
+            <H3 title="Customize This Cone" className="text-stablesBlack"/>
             <ul className="flex flex-row justify-center flex-wrap">
-              {custom.map(({ title, description, image, color}, index) => (
+              {custom.map(({ title, description, image, color }, index) => (
                 <li key={index} className="center text-center mx-5 my-3">
                   <Image
                     src={image}
@@ -229,29 +232,22 @@ const Product = ({ product = {} }) => {
               }
             </p>
 
-            <div className="flex flex-row justify-center">
+            {/* <div className="flex flex-row justify-center">
               <Link
                 href="/contact"
                 className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-2xl text-white bg-stablesOrange rounded-full"
               >
                 Get in touch
               </Link>
-            </div>
+            </div> */}
           </div>
         </section>
 
         <section className="flex flex-col items-center justify-center bg-stablesBlue bgTexture pb-16">
-          <div className="mt-20">
-            <H3 title="Ready to order?" />
-            <H4 title="Get in touch today and let's get started!" />
-            <div className="flex flex-row justify-center">
-              <Link
-                href="/contact"
-                className="flex flex-row items-center justify-center px-8 py-3 mt-5 text-2xl text-white bg-stablesOrange rounded-full"
-              >
-                Contact Us
-              </Link>
-            </div>
+          <div className="mt-20 text-black/40">
+            <H3 title="Ready to order?" className="text-[#365b59]" />
+            <p>{`Get in touch today and let's get started!`}</p>
+            <ContactForm />
           </div>
         </section>
       </main>
