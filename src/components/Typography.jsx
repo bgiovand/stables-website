@@ -9,11 +9,6 @@ const H1 = (props) => {
         "text-stablesOrange text-7xl text-center font-semibold mb-2 pt-10 peer " +
         props.className
       }
-      clsx={[
-        "mb-2 pt-10 peer",
-        "text-stablesOrange text-7xl text-center font-semibold",
-        props.className,
-      ]}
     >
       <Balancer>{props.title}</Balancer>
     </h1>

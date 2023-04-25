@@ -9,8 +9,6 @@ import ContactForm from "../src/components/Contactform"
 import Compatible from "@/components/Compatible"
 
 export default function About() {
-  
-
   const certifications = [
     {
       name: "9001:2015",
@@ -142,10 +140,7 @@ export default function About() {
 
           <div className="flex flex-col md:flex-row justify-around my-10">
             {team.map((principal, index) => (
-              <div
-                key={principal.name}
-                className="flex flex-col items-center"
-              >
+              <div key={principal.name} className="flex flex-col items-center">
                 <div className={`  `}>
                   <Image
                     src={principal.image ? principal.image : "placeholder.png"}
@@ -156,11 +151,11 @@ export default function About() {
                   />
                   <H3
                     title={principal.name}
-                    className=" mb-0 p-0 text-[1.2rem] "
+                    className="text-stablesBlue mb-0 p-0 text-[1.5rem]  leading-none"
                   />
                   <H4
                     title={principal.title}
-                    className=" mt-0 p-0 text-stablesBrown text-lg leading-none"
+                    className=" mt-0 p-0 text-stablesBlue text-lg leading-none"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center w-full md:w-1/2 flex-2">
@@ -180,11 +175,13 @@ export default function About() {
         <section className="mx-auto py-20 bg-stablesBlue ">
           <div className="container mx-auto">
             <H2 title="Our Values" className="" />
-            <ul className="flex flex-col md:flex-row">
+            <ul className="grid md:grid-cols-3 gap-10 mt-10">
               {values.map((value) => (
-                <li key={value.name} className="flex flex-col items-center m-5">
-                  <H3 title={value.name} />
-                  <p className="">{value.description}</p>
+                <li key={value.name} className="">
+                  <h3 className="text-stablesOrange text-3xl text-center mb-3">
+                    {value.name}
+                  </h3>
+                  <p className="text-stablesBrown">{value.description}</p>
                 </li>
               ))}
             </ul>
