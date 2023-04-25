@@ -7,6 +7,7 @@ import Image from "next/image"
 import Header from "../../src/components/Header"
 import Footer from "../../src/components/Footer"
 import { H1, H2, H3 } from "../../src/components/Typography"
+import ProductCard from "../../src/components/ProductCard"
 
 const Product = ({ products }) => {
   const router = useRouter()

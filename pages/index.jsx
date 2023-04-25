@@ -7,6 +7,7 @@ import Link from "next/link"
 import { H1, H2, H3, H4 } from "@/components/Typography"
 import { Badge } from "@/components/svg/Badge"
 import Newsletter from "@/components/Mewsletter"
+import ProductCard from "@/components/ProductCard"
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
                 className="mx-auto m-10 bgTexture bg-stablesBlue"
               />
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center pb-20">
               <p className="text-stablesBrown w-8/12 text-2xl font-light">
                 {
                   "At Stables, we deliver an unparalleled experience, exceptional quality, and service that exceeds expectations. From inception to inhalation, we ensure the highest quality product at a price point that allows you to stay competitive."
@@ -62,8 +63,23 @@ export default function Home() {
         </section> */}
 
         <section className="py-10 pb-24 bg-stablesBrown/40 bgTexture">
-        <H1 title="Popular Cones" />
-        
+          <H1 title="Popular Cones" />
+          <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 ">
+            <ProductCard product={"monroe"} />
+            <ProductCard product={"monroe"} />
+            <ProductCard product={"monroe"} />
+          </div>
+
+          <div className="relative my-10 py-10">
+            <div className="mx-auto flex absolute text-center left-[50%] transform -translate-x-1/2">
+              <Link
+                href="/product"
+                className="flex flex-col bg-stablesBlue/10 hover:bg-stablesBlue/20 text-stablesBlue rounded-full transition-all after:transition-all bg-opacity-20 pr-6 pl-12 py-3 after:content-['←'] after:translate-x-5 hover:after:translate-x-3 after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:text-2xl after:text-stablesBlue/40 hover:after:text-stablesBlue/80 after:font-bold after:rotate-40"
+              >
+                All Cones
+              </Link>
+            </div>
+          </div>
         </section>
 
         <section className="py-10 pb-24 bg-stablesYellow bgTexture">
@@ -73,7 +89,9 @@ export default function Home() {
             className="mb-5 text-stablesBrown"
           />
           <p className="font-light text-center mb-8 text-stablesBrown text-xl">
-            {"Get industry hot takes, news, and analysis delivered to your inbox."}
+            {
+              "Get industry hot takes, news, and analysis delivered to your inbox."
+            }
           </p>
           <Newsletter className="block w-10/12 md:w-8/12 lg:w-4/12 mx-auto" />
         </section>
