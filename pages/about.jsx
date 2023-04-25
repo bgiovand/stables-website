@@ -112,7 +112,7 @@ export default function About() {
       <main className="max-w-max min-w-full md:max-w-lg">
         <section className="pb-0 mb-20">
           <div className="bg-stablesYellow pb-0 mb-20 bgTexture">
-            <Header />
+            <Header className="text-stablesBrown"/>
             <H1 title="Built by Coneisseurs" />
             <h2 className="text-center text-3xl font-normal text-stablesBrown">
               for Coneisseurs

@@ -3,7 +3,10 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
 
-const Header = () => {
+const Header = ( 
+  {className = ""}
+
+  ) => {
   const menu = [
     { name: "Home", url: "/" },
     { name: "Cones", url: "/product" },
@@ -22,7 +25,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="w-100 p-5">
+      <nav className={"w-100 p-5" + " " + className} >
         <div className="flex flex-row justify-between w-100  md:flex-col ">
           <Link href="/" className="text-stablesOrange text-5xl md:text-center font-semibold">
             Stables
@@ -72,7 +75,7 @@ const Header = () => {
                   ${
                     currentRoute.split("/")[1] == page.url.split("/")[1]
                       ? "text-stablesOrange"
-                      : "text-stablesBlue"
+                      : "text-current"
                   }
                     `}
                 >

@@ -20,7 +20,7 @@ export default function Home() {
 
       <main className="">
         <section className="max-w-max min-w-full bgTexture bg-stablesBlue">
-          <Header />
+          <Header className="text-stablesBrown" />
           <div className="px-10 py-0">
             <H1 title="Smoke Easy" className="p-0 m-0" />
             <div className="block">
