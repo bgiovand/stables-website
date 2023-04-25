@@ -24,10 +24,9 @@ const Product = ({ products }) => {
       <main>
         <div className="container mx-auto">
           <div className="mx-auto">
-            <H1 title="Products" />
-            <H3 title="Cones" />
+            <H1 title="Cones" />
 
-            <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 ">
               {products.length > 0 &&
                 products.map(
                   ({
@@ -51,19 +50,23 @@ const Product = ({ products }) => {
                             href="/product/[slug]"
                             as={`/product/${slug.current}`}
                           >
-                            <div className="p-4 flex justify-between align-baseline">
-                              <h3 className="text-2xl text-white/80 group-hover:text-stablesOrange">
-                                {title}
-                              </h3>
+                            <h3 className="text-4xl text-stablesOrange group-hover:text-stablesOrange text-center p-5">
+                              {title}
+                            </h3>
+                            <span className="block text-center mx-auto">
+                              {industryName + " "}
+                              &middot;
+                              {" " + lengthFull + "/" + lengthFilter}
+                            </span>
+                            
+
+                            {/* <div className="p-0 flex justify-between align-baseline">
                               <div className=" text-lg text-stablesBrown/100 font-light">
-                                <span className="">
-                                  {lengthFull + "/" + lengthFilter}
-                                </span>
                                 <span className="text-stablesBrown/100 font-light ml-2">
-                                  {industryName}
+                                 
                                 </span>
                               </div>
-                            </div>
+                            </div> */}
 
                             <div className="flex justify-center w-300 h-300 p-10 py-20">
                               <Image

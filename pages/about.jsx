@@ -5,52 +5,11 @@ import Header from "../src/components/Header"
 import Footer from "../src/components/Footer"
 import Link from "next/link"
 import { H1, H2, H3, H4 } from "../src/components/Typography"
+import ContactForm from "../src/components/Contactform"
+import Compatible from "@/components/Compatible"
 
 export default function About() {
-  const compatibility = [
-    {
-      name: "Futurola",
-      logo: "futurola.png",
-      link: "https://futurola.com",
-      description: "",
-      models: ["Knockbox"],
-    },
-    {
-      name: "STM",
-      logo: "stm.png",
-      link: "https://stmcanna.com/rocketbox-2-0-commercial-joint-rolling-machine/",
-      description: "",
-      models: ["STM RocketBox 2.0"],
-    },
-    {
-      name: "Canapa",
-      logo: "canapa.png",
-      link: "https://www.canapasolutions.com/pre-roll-packaging-machine/",
-      description: "",
-      models: ["Juanaroll"],
-    },
-    {
-      name: "PreRoll-Er",
-      logo: "preroll-er.png",
-      link: "https://preroll-er.com/#",
-      description: "",
-      models: ["PREROLL-ER 50", "PREROLL-ER 100", "PREROLL-ER 200"],
-    },
-    {
-      name: "Procepack",
-      logo: "procepack.png",
-      link: "",
-      description: "",
-      models: ["Procepak"],
-    },
-    {
-      name: "AutoCone",
-      logo: "autocone.png",
-      link: "",
-      description: "",
-      models: ["AutoCone"],
-    },
-  ]
+  
 
   const certifications = [
     {
@@ -75,19 +34,19 @@ export default function About() {
     {
       name: "Brett Young",
       title: "CEO",
-      image: "/brett.png",
+      image: "/principals/brett.jpg",
       bio: "Brett Young is an accomplished Operations Executive and Automation Expert from the Food and Beverage and Cannabis industries. He holds 20 years of experience driving profitability and operational cost reduction in many of his past roles. Over the last six years, Brett has operated his own companies, delivering key Automation Technology and Consulting Services to the Food and Beverage and Cannabis Industry. Brett’s Cannabis portfolio includes over 15 million in turnkey Automaton Lines sold and installed, including a few Pre-Roll Operations that resulted in more than 30 million joints filled and sold to the provinces. Brett prides himself on Lean Management, Customer Services, Project Management and Execution. Brett’s passion outside of the office is the Outdoors, Growing and consuming Cannabis, Cottaging and Fishing trips, especially Fall Musky.",
     },
     {
       name: "Tyler Kibler",
       title: "COO",
-      image: "/tyler.png",
-      bio: "Tyler Kibler is an accomplished inventor, trailblazer, collaborator, innovator, and farmer. Focused on building a self-sustaining, soil-enriching licensed hemp farmstead, Kibler’s passion is Cannabis. Since his first cannabis invention in 2016,he’s never looked back. Today he holds an array of cannabis-related patents and launched first-to-market products in Canada that have helped shaped the industry and enriched the lives of many consumers. Tyler's approach is always client first, whether an end-user or process integrator, an internal collaborator or external customer, his focus is their focus. Having scaled multiple Licensed Producers to manufacture over 1 million pre-rolls per month each, he’s a knowledge powerhouse when it comes to making the perfect pre-roll at scale. From Dog Walkers to Cannagars, and dried flower to terpene-enriched extract pre-rolls he’s a true pre-roll professional. He is happiest with his wife, Annaliese, sharing a fine pre-roll in their hot tub overlooking the farm, and watching the animals roam.",
+      image: "/principals/tyler.jpg",
+      bio: "Tyler Kibler is an accomplished inventor, trailblazer, collaborator, innovator, and farmer. Focused on building a self-sustaining, soil-enriching licensed hemp farmstead, Kibler’s passion is Cannabis. Since his first cannabis invention in 2016,he’s never looked back. Today he holds an array of cannabis-related patents and launched first-to-market products in Canada that have helped shaped the industry and enriched the lives of many consumers. Tyler's approach is always client first, whether an end-user or process integrator, an internal collaborator or external customer, his focus is their focus. Having scaled multiple Licensed Producers to manufacture over 1 million pre-rolls per month each, he’s a knowledge powerhouse when it comes to making the perfect pre-roll at scale. From Dog Walkers to Cannagars, and dried flower to terpene-enriched extract pre-rolls he’s a true pre-roll professional. He is happiest with his wife, Annaliese, sharing a fine pre-roll in their hot tub overlooking the farm, and watching the animals roam.",
     },
     {
       name: "Bruce Giovando",
       title: "CMO",
-      image: "/bruce.png",
+      image: "/principals/bruce.jpg",
       bio: "Bruce has an extensive background in creative direction and entrepreneurship. Notable clients include: NASA, MTV, Red Bull, Rocky Mountain Bikes, Google and author/artist Douglas Coupland. Recently he worked with Tyler at Aurora Cannabis as the Director of Innovation and Best Practices. An early hire through the acqui-hire of his startup Canlio he brought many of Aurora’s initial product offerings to market, developed the first mobile app for medical patients (bringing in excess of 30 million revenue) and realized millions in cost savings applying lean manufacturing principals. A contributing member of the GS1 Cannabis work group, he improved the standards for packaging and barcoding in the medical and recreational cannabis space. Bruce is passionate about entrepreneurship, the outdoors, and technology.",
     },
   ]
@@ -112,10 +71,15 @@ export default function About() {
 
   const clients = [
     {
-      name: "Alefia Health",
-      logo: "alefia.svg",
-      link: "https://aleafiahealth.com/",
-    }
+      name: "Tilray",
+      logo: "tilray.png",
+      link: "https://tilraymedical.ca",
+    },
+    {
+      name: "Illicit",
+      logo: "illicit.png",
+      link: "https://www.illicitgardens.com",
+    },
   ]
 
   const testimonials = [
@@ -147,11 +111,10 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-
       <main className="max-w-max min-w-full md:max-w-lg">
         <section className="pb-0 mb-20">
           <div className="bg-stablesYellow pb-0 mb-20 bgTexture">
+            <Header />
             <H1 title="Built by Coneisseurs" />
             <h2 className="text-center text-3xl font-normal text-stablesBrown">
               for Coneisseurs
@@ -162,52 +125,56 @@ export default function About() {
               width={500}
               height={558}
               alt="hand"
+              priority
             />
           </div>
         </section>
 
-        <section className="bgTexture">
-          <H2 title="The Principals" />
-          <div className="container mx-auto">
+        <section className="bgTexture flex flex-row">
+          <div className="flex flex-col w-4/12 dev">
+            <H2 title="The Principals" className="dev leading-none p-0 m-0 " />
+            <p className="">
+              {
+                "Our team of Coneisseurs have innovated, produced, and shipped over 100+ million pre-rolls in the current market. With 30+ years of collective experience in the trenches, we have been instrumental in growing the industry to where it is today."
+              }
+            </p>
+          </div>
+
+          <div className="container mx-auto flex w-8/12 md:flex-row flex-col">
             {team.map((principal, index) => (
-              <div key={principal.name} className="mx-10 my-20">
-                <div className="flex flex-col md:flex-row">
-                  <div
-                    className={`flex flex-col items-center justify-center w-full md:w-1/2 ${
-                      index % 2 ? "md:order-2" : ""
-                    }`}
-                  >
-                    <Image
-                      src={
-                        principal.image ? principal.image : "placeholder.png"
-                      }
-                      alt={principal.name}
-                      width={200}
-                      height={200}
-                      className=""
-                    />
-                    <H3 title={principal.name} className=" mb-0 p-0" />
-                    <H4
-                      title={principal.title}
-                      className=" mt-0 p-0 text-stablesBrown"
-                    />
-                  </div>
-                  <div className="flex flex-col items-center justify-center w-full md:w-1/2 flex-2">
-                    <p className=" text-lg font-light mt-2">{principal.bio}</p>
-                  </div>
+              <div key={principal.name} className="flex  w-full">
+                <div className={`flex-col w-full p-5  `}>
+                  <Image
+                    src={principal.image ? principal.image : "placeholder.png"}
+                    alt={principal.name}
+                    width={500}
+                    height={580}
+                    className="rounded-full object-cover w-64 h-80 bg-white mb-5 aspect-2"
+                  />
+                  <H3
+                    title={principal.name}
+                    className=" mb-0 p-0 text-[1.2rem] "
+                  />
+                  <H4
+                    title={principal.title}
+                    className=" mt-0 p-0 text-stablesBrown text-lg leading-none"
+                  />
+                </div>
+                <div className="flex flex-col items-center justify-center w-full md:w-1/2 flex-2">
+                  {/* <p className=" text-lg font-light mt-2">{principal.bio}</p> */}
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="bgTexture bg-stablesBlue py-24 text-stablesBrown">
-          <p className="container px-10 mx-auto text-4xl leading-snug">
-            {about.intro}
-          </p>
-        </section>
+        {/* <section className="bgTexture bg-stablesBlue py-24 text-stablesBrown">
+  <p className="container px-10 mx-auto text-4xl leading-snug">
+    {about.intro}
+  </p>
+</section> */}
 
-        <section className="mx-auto py-20 ">
+        <section className="mx-auto py-20 bg-stablesBlue ">
           <div className="container mx-auto">
             <H2 title="Our Values" className="" />
             <ul className="flex flex-col md:flex-row">
@@ -222,21 +189,23 @@ export default function About() {
         </section>
 
         <section className="mx-auto py-20">
-          <H2 title="Clients & Testimonials" />
+          <H2 title="Clients" />
           <ul className="flex flex-col md:flex-row justify-center">
             {clients.map((client) => (
-              <li key={client.name} className="flex flex-col items-center m-5">
+              <li key={client.name} className="flex flex-col m-5 justify-end ">
                 <Link href={client.link}>
                   <Image
                     src={client.logo ? "/brands/" + client.logo : ""}
                     alt={client.name}
                     width={240}
                     height={200}
+                    className="grayscale hover:grayscale-0 transition-all duration-00 ease-in-out"
                   />
                 </Link>
               </li>
             ))}
           </ul>
+          {/*
           <ul className="flex flex-col md:flex-row justify-center">
             {testimonials.map((testimonial) => (
               <li
@@ -264,6 +233,7 @@ export default function About() {
               </li>
             ))}
           </ul>
+          */}
         </section>
 
         <section className="mx-auto py-20 ">
@@ -271,25 +241,29 @@ export default function About() {
 
           <div className="flex flex-col">
             <p className="font-semibold text-2xl w-8/12 text-center my-5 m-auto">
-              Everyone says they have the best slow burn cones but, is it really
-              true if said quality isn’t consistent. With our expertise in
-              manufacturing we can assure you that our quality is the most
-              consistent.
+              {"We are proud to say that all of our raw materials are tested in ISO-certified laboratories in Canada and the USA. We work closely with our clients and raw material suppliers to ensure that our standards meet the required local regulations."}
               {"Our cones and blunts don't canoe (burn unevenly)"}
             </p>
           </div>
 
+          <H3 title="Compliance" />
+
+          {
+            "At Stables, we prioritize transparency, providing all necessary information for our clients. With every order, we provide the Certificate of Analysis (CoA), Certificate of Compliance (CoC), Safety Data Sheet (SDS), and batch/lot numbers. We believe that this level of transparency allows our clients to have confidence in our products and services."
+          }
+
+          {/* 
           <h3 className="text-stablesYellow text-5xl  text-center font-normal m-20 mb-10">
             Certifications
-          </h3>
+          </h3> */}
           <div className="mx-auto">
-            <ul className="flex flex-col md:flex-row justify-center align-middle">
+            {/* <ul className="flex flex-col md:flex-row justify-center align-middle">
               {certifications.map((cert) => (
                 <li
                   key={cert.name}
                   className="flex flex-col items-center justify-top text-center m-5 md:w-2/12 bg-black/10 h-max p-10 my-5 rounded-2xl max-h-max"
                 >
-                  {/* {cert.type} */}
+                
                   <svg
                     data-name="ISO"
                     xmlns="http://www.w3.org/2000/svg"
@@ -308,62 +282,10 @@ export default function About() {
                   </span>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
-
-          <h3 className="text-stablesYellow text-5xl  text-center font-normal m-20 mb-10">
-            Compatible Equipment
-          </h3>
-          <p className="font-semibold text-2xl w-8/12 text-center  my-5 m-auto">
-            Universal compatibility with automation equipment.
-          </p>
-          <p className="font-light text-2xl w-8/12 text-center  my-5 m-auto">
-            We’ve done rigorous testing on the most common equipment to make
-            sure there’s no disruption to your product lines.
-          </p>
-          <ul className="font-light flex flex-col md:flex-row flex-3 flex-wrap mx-auto justify-center">
-            {compatibility.map((brand) => (
-              <li
-                key={brand.name}
-                className="flex flex-col md:flex-row mx-5 bg-black/10 h-max p-10 my-5 rounded-2xl max-h-max"
-              >
-                <div className="flex flex-col w-full">
-                  <Link
-                    href={brand.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=""
-                  >
-                    <Image
-                      src={"/brands/" + brand.logo}
-                      alt={brand.name}
-                      width={200}
-                      height={50}
-                      className="grayscale w-30 h-20 object-contain mx-auto mb-5"
-                    />
-                    <span className="text-gray-100 sr-only">{brand.name}</span>
-                  </Link>
-                  <ul className="text-gray-100">
-                    {brand.models.map((model) => (
-                      <li
-                        key={model}
-                        className="font-light text-gray-400 text-lg text-center"
-                      >
-                        {model}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <H4 title="Don't see your equipment?" />
-          <p className="text-gray-100 text-lg text-center">
-            {"We're constantly adding new equipment to our compatibility list. If you don't see your equipment and would like to see it added, please contact us."}
-          </p>
-          <Link href="/contact?subject=Equipment Validation" className="text-center">
-            Contact us
-          </Link>
+            <Compatible />
+      
         </section>
       </main>
 
