@@ -8,7 +8,6 @@ import { H1, H2, H3, H4 } from "@/components/Typography"
 import { Badge } from "@/components/svg/Badge"
 import Newsletter from "@/components/Mewsletter"
 
-
 export default function Home() {
   return (
     <div className="bgTexture">
@@ -18,26 +17,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-
       <main className="">
         <section className="max-w-max min-w-full bgTexture bg-stablesBlue">
-          <div className="px-10 py-10">
-            <H1 title="Stables" className="p-0 m-0" />
-            <H2 title="Smoke Easy" />
+          <Header />
+          <div className="px-10 py-0">
+            <H1 title="Smoke Easy" className="p-0 m-0" />
             <div className="block">
               <Image
                 src="/cone.svg"
                 alt="Picture of the author"
-                width={500}
+                width={400}
                 height={500}
                 className="mx-auto m-10 bgTexture bg-stablesBlue"
               />
-              {/* <Badge title="new" /> */}
             </div>
             <div className="flex justify-center">
-              <p className="text-white text-2xl font-light">
-                {/* {"The Most Interesting Cone in the World"} */}
+              <p className="text-stablesBrown w-8/12 text-2xl font-light">
+                {
+                  "At Stables, we deliver an unparalleled experience, exceptional quality, and service that exceeds expectations. From inception to inhalation, we ensure the highest quality product at a price point that allows you to stay competitive."
+                }
               </p>
             </div>
           </div>
@@ -63,15 +61,19 @@ export default function Home() {
           </svg>
         </section> */}
 
-        <section className=" py-20 bg-stablesBlue bgTexture">
+        <section className="py-10 pb-24 bg-stablesBrown/40 bgTexture">
+        <H1 title="Popular Cones" />
+        
+        </section>
+
+        <section className="py-10 pb-24 bg-stablesYellow bgTexture">
           <H1 title="The Filter" className="mt-0 pt-0" />
           <H2
             title="A Cannabis Industry Newsletter"
             className="mb-5 text-stablesBrown"
           />
-          <p className="font-light text-center mb-8 text-stablesBrown">
-            Get industry hot takes, news, and analysis delivered to your inbox
-            every week.
+          <p className="font-light text-center mb-8 text-stablesBrown text-xl">
+            {"Get industry hot takes, news, and analysis delivered to your inbox."}
           </p>
           <Newsletter className="block w-10/12 md:w-8/12 lg:w-4/12 mx-auto" />
         </section>
@@ -203,8 +205,6 @@ export default function Home() {
         </section> */}
 
         <Footer className="bg-gray-200" />
-
-        
       </main>
     </div>
   )
