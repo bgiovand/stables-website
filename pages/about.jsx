@@ -130,20 +130,23 @@ export default function About() {
           </div>
         </section>
 
-        <section className="bgTexture flex flex-row">
-          <div className="flex flex-col w-4/12 dev">
-            <H2 title="The Principals" className="dev leading-none p-0 m-0 " />
-            <p className="">
+        <section className="bgTexture flex flex-col">
+          <div className="flex flex-col w-full">
+            <H2 title="The Principals" className=" leading-none p-0 m-0 " />
+            <p className="w-8/12 mx-auto">
               {
                 "Our team of Coneisseurs have innovated, produced, and shipped over 100+ million pre-rolls in the current market. With 30+ years of collective experience in the trenches, we have been instrumental in growing the industry to where it is today."
               }
             </p>
           </div>
 
-          <div className="container mx-auto flex w-8/12 md:flex-row flex-col">
+          <div className="flex flex-col md:flex-row justify-around my-10">
             {team.map((principal, index) => (
-              <div key={principal.name} className="flex  w-full">
-                <div className={`flex-col w-full p-5  `}>
+              <div
+                key={principal.name}
+                className="flex flex-col items-center"
+              >
+                <div className={`  `}>
                   <Image
                     src={principal.image ? principal.image : "placeholder.png"}
                     alt={principal.name}
@@ -241,7 +244,9 @@ export default function About() {
 
           <div className="flex flex-col">
             <p className="font-semibold text-2xl w-8/12 text-center my-5 m-auto">
-              {"We are proud to say that all of our raw materials are tested in ISO-certified laboratories in Canada and the USA. We work closely with our clients and raw material suppliers to ensure that our standards meet the required local regulations."}
+              {
+                "We are proud to say that all of our raw materials are tested in ISO-certified laboratories in Canada and the USA. We work closely with our clients and raw material suppliers to ensure that our standards meet the required local regulations."
+              }
               {"Our cones and blunts don't canoe (burn unevenly)"}
             </p>
           </div>
@@ -284,8 +289,7 @@ export default function About() {
               ))}
             </ul> */}
           </div>
-            <Compatible />
-      
+          <Compatible />
         </section>
       </main>
 
