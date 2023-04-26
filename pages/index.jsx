@@ -8,6 +8,8 @@ import { H1, H2, H3, H4 } from "@/components/Typography"
 import { Badge } from "@/components/svg/Badge"
 import Newsletter from "@/components/Mewsletter"
 import ProductCard from "@/components/ProductCard"
+import { Button } from "@/components/buttons"
+import { Coney } from "@/components/svg/Coney"
 
 export default function Home() {
   return (
@@ -24,13 +26,15 @@ export default function Home() {
           <div className="px-10 py-0">
             <H1 title="Smoke Easy" className="p-0 m-0" />
             <div className="block">
-              <Image
+              {/* <Image
                 src="/cone.svg"
                 alt="Picture of the author"
                 width={400}
                 height={500}
-                className="mx-auto m-10 bgTexture bg-stablesBlue"
-              />
+                
+              /> */}
+
+              <Coney className="p-20 dev as" />
             </div>
             <div className="flex justify-center pb-20">
               <p className="text-stablesBrown w-8/12 text-2xl font-light">
@@ -42,26 +46,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section className="md:m-20">
-          <p className="font-normal text-3xl mx-0 md:mx-5 md:text-5xl leading-tight font-mellow">
-            {
-              "In Cannabis, the Smokers are represented by two separate, yet equally important groups. The Licensed Producers who grow the crop and the Cone Manufacturers, who provide the papers. These are their stories…"
-            }
-          </p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 238.83 72.53"
-            className="fill-stablesOrange w-1/4 mx-auto my-20"
-          >
-            <path d="M0,71.85c0-.8,1.27-1.03,1.27-3V3.38C1.27,1.41,0,1.18,0,.38,0,.11,.33,0,.77,0H15.91c11.66,0,22.1,49.74,22.1,58.93s-10.44,13.3-22.1,13.3H.77c-.44,0-.77-.11-.77-.38Zm15.8-3.12c5.58,0,8.51-4.64,8.51-9.8S21.38,3.5,15.8,3.5c-1.44,0-2.04,.61-2.04,1.67v61.9c0,1.06,.61,1.67,2.04,1.67Z" />
-            <path d="M40.96,62.5V3.38c0-1.98-1.22-2.2-1.22-3,0-.27,.28-.38,.72-.38h13.48c.39,0,.72,.11,.72,.38,0,.8-1.22,1.03-1.22,3V62.5c0,4.45,3.04,6.38,7.57,6.38s6.96-2.62,6.96-6.38V3.19c0-2.05-1.21-2.01-1.21-2.81,0-.27,.33-.38,.83-.38h5.86c.55,0,.83,.11,.83,.38,0,.8-1.22,.76-1.22,2.81V62.5c0,4.94-3.98,10.03-14.81,10.03s-17.29-4.45-17.29-10.03Z" />
-            <path d="M77.15,71.85c0-.8,1.22-.76,1.22-2.81V3.38c0-1.98-1.22-2.2-1.22-3,0-.27,.28-.38,.72-.38h9.06c2.32,0,3.26,.46,4.42,1.52l15.14,60.19V3.19c0-2.05-1.27-2.01-1.27-2.81,0-.27,.33-.38,.83-.38h5.86c.55,0,.88,.11,.88,.38,0,.8-1.27,.76-1.27,2.81V70.44c0,1.1-1.05,1.79-2.71,1.79h-3.31c-2.38,0-3.48-.72-4.25-1.44-.88-.87-12.43-57.11-17.79-62.05v60.3c0,2.05,1.22,2.01,1.22,2.81,0,.27-.33,.38-.83,.38h-5.86c-.55,0-.83-.11-.83-.38Z" />
-            <path d="M126.05,71.85c0-.8,1.27-1.03,1.27-3V3.38c0-1.98-1.27-2.2-1.27-3,0-.27,.33-.38,.77-.38h15.14c11.66,0,22.1,49.74,22.1,58.93s-10.44,13.3-22.1,13.3h-15.14c-.44,0-.77-.11-.77-.38Zm15.8-3.12c5.58,0,8.51-4.64,8.51-9.8s-2.93-55.44-8.51-55.44c-1.44,0-2.04,.61-2.04,1.67v61.9c0,1.06,.61,1.67,2.04,1.67Z" />
-            <path d="M167.01,62.5V3.38c0-1.98-1.22-2.2-1.22-3,0-.27,.28-.38,.72-.38h13.48c.39,0,.72,.11,.72,.38,0,.8-1.22,1.03-1.22,3V62.5c0,4.45,3.04,6.38,7.57,6.38s6.96-2.62,6.96-6.38V3.19c0-2.05-1.22-2.01-1.22-2.81,0-.27,.33-.38,.83-.38h5.86c.55,0,.83,.11,.83,.38,0,.8-1.22,.76-1.22,2.81V62.5c0,4.94-3.98,10.03-14.81,10.03s-17.29-4.45-17.29-10.03Z" />
-            <path d="M203.2,71.85c0-.8,1.22-.76,1.22-2.81V3.38c0-1.98-1.22-2.2-1.22-3,0-.27,.28-.38,.72-.38h9.06c2.32,0,3.26,.46,4.42,1.52l15.14,60.19V3.19c0-2.05-1.27-2.01-1.27-2.81,0-.27,.33-.38,.83-.38h5.86c.55,0,.88,.11,.88,.38,0,.8-1.27,.76-1.27,2.81V70.44c0,1.1-1.05,1.79-2.71,1.79h-3.31c-2.38,0-3.48-.72-4.25-1.44-.88-.87-12.43-57.11-17.79-62.05v60.3c0,2.05,1.22,2.01,1.22,2.81,0,.27-.33,.38-.83,.38h-5.86c-.55,0-.83-.11-.83-.38Z" />
-          </svg>
-        </section> */}
-
         <section className="py-10 pb-24 bg-stablesBrown/40 bgTexture">
           <H1 title="Popular Cones" />
           <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 ">
@@ -70,16 +54,10 @@ export default function Home() {
             <ProductCard product={"monroe"} />
           </div>
 
-          <div className="relative my-10 py-10">
-            <div className="mx-auto flex absolute text-center left-[50%] transform -translate-x-1/2">
-              <Link
-                href="/product"
-                className="flex flex-col bg-stablesBlue/10 hover:bg-stablesBlue/20 text-stablesBlue rounded-full transition-all after:transition-all bg-opacity-20 pr-6 pl-12 py-3 after:content-['←'] after:translate-x-5 hover:after:translate-x-3 after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:text-2xl after:text-stablesBlue/40 hover:after:text-stablesBlue/80 after:font-bold after:rotate-40"
-              >
-                All Cones
-              </Link>
-            </div>
-          </div>
+          <div className="relative my-10 py-10"></div>
+          <Button icon="→" type="after" color="Blue">
+            All Cones
+          </Button>
         </section>
 
         <section className="py-10 pb-24 bg-stablesYellow bgTexture">
