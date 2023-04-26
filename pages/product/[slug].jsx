@@ -1,13 +1,13 @@
-import client from "../../src/utils/client"
+import client from "@/utils/client"
 import Head from "next/head"
 import Image from "next/image"
-import Header from "../../src/components/Header"
-import Footer from "../../src/components/Footer"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 import imageUrlBuilder from "@sanity/image-url"
 import { PortableText } from "@portabletext/react"
-import { H1, H2, H3, H4 } from "../../src/components/Typography"
+import { H1, H2, H3, H4 } from "@/components/Typography"
 import Link from "next/link"
-import ContactForm from "../../src/components/Contactform"
+import ContactForm from "@/components/Contactform"
 import Compatible from "@/components/Compatible"
 
 function urlFor(source) {

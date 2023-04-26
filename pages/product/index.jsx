@@ -27,7 +27,7 @@ const Product = ({ products }) => {
           <div className="mx-auto">
             <H1 title="Cones" />
 
-            <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-6">
               {products.length > 0 &&
                 products.map(
                   ({
@@ -42,16 +42,16 @@ const Product = ({ products }) => {
                     _id && (
                       <div
                         key={_id}
-                        className="group flex flex-col justify-center rounded-lg shadow-lg bg-stablesBrown/10
+                        className="group flex  rounded-lg shadow-lg bg-stablesBrown/10
                         hover:bg-stablesBrown/20 transition-all
-                        hover:shadow-2xl hover:border-stablesOrange/20 border-2 border-stablesBrown/10"
+                        hover:shadow-2xl hover:border-stablesOrange/20 border-2 border-stablesBrown/10 cursor-pointer z-50"
                       >
                         <div>
                           <Link
                             href="/product/[slug]"
                             as={`/product/${slug.current}`}
                           >
-                            <h3 className="text-4xl text-stablesOrange group-hover:text-stablesOrange text-center p-5">
+                            <h3 className="text-4xl text-stablesOrange group-hover:text-stablesOrange text-center pt-8 pb-2">
                               {title}
                             </h3>
                             <span className="block text-center mx-auto">
@@ -59,17 +59,8 @@ const Product = ({ products }) => {
                               &middot;
                               {" " + lengthFull + "/" + lengthFilter}
                             </span>
-                            
 
-                            {/* <div className="p-0 flex justify-between align-baseline">
-                              <div className=" text-lg text-stablesBrown/100 font-light">
-                                <span className="text-stablesBrown/100 font-light ml-2">
-                                 
-                                </span>
-                              </div>
-                            </div> */}
-
-                            <div className="flex justify-center w-300 h-300 p-10 py-20">
+                            <div className="flex justify-center w-300 h-300 p-10 py-14">
                               <Image
                                 src={image ? image : ""}
                                 alt={title}
@@ -78,27 +69,28 @@ const Product = ({ products }) => {
                                 className="object-scale-down"
                               />
                             </div>
-                            <div className="flex justify-center pb-5">
-                              {/* Hemp */}
+
+                            {/* <div className="flex justify-center pb-5">
+                              
                               <span className="bg-[#ffffff] rounded-full w-[10px] h-[10px] block mx-1 has-tooltip ">
                                 &nbsp;
-                                <span class="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8">
+                                <span className="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8">
                                   Some Nice Tooltip Text
                                 </span>
                               </span>
                               <span className="bg-[#b0b1a2] rounded-full w-[10px] h-[10px] block mx-1 has-tooltip">
                                 &nbsp;
-                                <span class="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8">
+                                <span className="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8">
                                   Some Nice Tooltip Text
                                 </span>
                               </span>
                               <span className="bg-[#cacbbf] rounded-full w-[10px] h-[10px] block mx-1 has-tooltip">
                                 &nbsp;
-                                <span class="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8">
+                                <span className="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8">
                                   Some Nice Tooltip Text
                                 </span>
                               </span>
-                            </div>
+                            </div> */}
                           </Link>
                         </div>
                       </div>

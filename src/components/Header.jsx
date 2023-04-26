@@ -3,18 +3,15 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
 
-const Header = ( 
-  {className = ""}
-
-  ) => {
+const Header = ({ className = "" }) => {
   const menu = [
     { name: "Home", url: "/" },
     { name: "Cones", url: "/product" },
     // { name: "Blunts", url: "/product/blunts" },
     // { name: "Custom", url: "/product/custom" },
     // { name: "Blog", url: "/blog" },
-    { name: "Contact", url: "/contact" },
     { name: "About", url: "/about" },
+    { name: "Contact", url: "/contact" },
   ]
 
   const router = useRouter()
@@ -25,9 +22,12 @@ const Header = (
 
   return (
     <header>
-      <nav className={"w-100 p-5" + " " + className} >
+      <nav className={"w-100 p-5" + " " + className}>
         <div className="flex flex-row justify-between w-100  md:flex-col ">
-          <Link href="/" className="text-stablesOrange text-5xl md:text-center font-semibold">
+          <Link
+            href="/"
+            className="text-stablesOrange text-5xl md:text-center font-semibold"
+          >
             Stables
           </Link>
 
@@ -62,7 +62,7 @@ const Header = (
           `}
         >
           <ul
-            className="flex flex-col bg-stablesBlack/80 rounded-2xl p-2
+            className="flex flex-col bg-stablesBlack/10 rounded-2xl p-2
           md:flex-row md:bg-stablesBlack/0"
           >
             {menu.map((page, index) => (

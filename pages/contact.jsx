@@ -9,10 +9,6 @@ import Contactform from "@/components/Contactform"
 import React, { useEffect } from "react"
 
 export default function Contact() {
-
-
-  
-
  
   return (
     <div className="bgTexture">
@@ -26,11 +22,20 @@ export default function Contact() {
 
       <main className="">
         <H1 title="Contact" />
-        <H2 title="Get in touch" />
+        <H2 title="Work with us" />
+
+        <section className="container flex justify-around">
+          <ul className="list-disc list-inside">
+            <li>Only the finest, ultra-thin European Paper</li>
+            <li>Compatible with every pre-roll machine</li>
+            <li>Industry-leading quality and consistency</li>
+            <li>15+ yearsdeveloping Pre-Rolls</li>
+            <li>Sustainably sourced materials</li>
+          </ul>
+        </section>
 
         <section className="">
           <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-            
             <Contactform />
           </div>
         </section>
