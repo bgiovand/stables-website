@@ -26,15 +26,15 @@ export default function Home() {
           <div className="px-10 py-0">
             <H1 title="Smoke Easy" className="p-0 m-0" />
             <div className="block">
-              {/* <Image
+              <Image
                 src="/cone.svg"
                 alt="Picture of the author"
                 width={400}
                 height={500}
-                
-              /> */}
+                className="mx-auto m-10 bgTexture bg-stablesBlue"
+              />
 
-              <Coney className="p-20 dev as" />
+              {/* <Coney className="p-20 dev as" /> */}
             </div>
             <div className="flex justify-center pb-20">
               <p className="text-stablesBrown w-8/12 text-2xl font-light">
