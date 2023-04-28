@@ -152,13 +152,16 @@ const Product = ({ product = {} }) => {
                 Specifications
               </h2>
 
-              <Image
-                src={`/spec/${slug.current}.svg`}
-                width={600}
-                height={100}
-                alt=""
-                className="flex justify-center mx-auto mb-10"
-              />
+              {/* only show image if slug has value */}
+              {slug && (
+                <Image
+                  src={`/spec/${slug.current}.svg`}
+                  width={600}
+                  height={100}
+                  alt=""
+                  className="flex justify-center mx-auto mb-10"
+                />
+              )}
 
               {/* <div>
                 <svg
