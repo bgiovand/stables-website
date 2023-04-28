@@ -1,36 +1,34 @@
-import { useState } from "react"
+import React, { useState } from "react"
 
 const Newsletter = (props) => {
-  const [mail, setMail] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [mail, setMail] = useState("")
+  const [loading, setLoading] = useState(true)
 
-  const subscribe = () => {
+  const subscribe = async () => {
     setLoading(true)
-    fetch("/api/subscribe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: mail }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setLoading(false)
-        if (data.error) {
-          alert(data.error)
-        } else {
-          alert("You're in! We'll keep you posted.")
-        }
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: mail }),
       })
-      .catch((err) => {
-        setLoading(false)
-        alert(err)
-        
-      })
+      const data = await response.json()
+      setLoading(false)
+      if (data.error) {
+        alert(data.error)
+      } else {
+        alert("You're in! We'll keep you posted.")
+      }
+    } catch (error) {
+      setLoading(false)
+      alert(error)
+    }
   }
 
   return (
-    <div className={"flex" + props.className}>
+    <div className={props.className}>
       <form className="flex flex-row">
         <input
           onChange={(e) => {
@@ -42,8 +40,9 @@ const Newsletter = (props) => {
         />
         <button
           onClick={subscribe}
-          className={`bg-stablesOrange text-white px-5 py-2 rounded-md -ml-1 border-white border-2
-            ${loading ? "btn-disabled loading" : "btn-primary"}`}
+          className={`bg-stablesOrange text-white px-5 py-2 rounded-md -ml-1 border-white border-2 ${
+            loading ? "btn-disabled loading" : "btn-primary"
+          }`}
         >
           {"Subscribe*"}
         </button>
