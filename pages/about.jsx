@@ -244,7 +244,7 @@ export default function About() {
               {
                 "We are proud to say that all of our raw materials are tested in ISO-certified laboratories in Canada and the USA. We work closely with our clients and raw material suppliers to ensure that our standards meet the required local regulations."
               }
-              {"Our cones and blunts don't canoe (burn unevenly)"}
+              {/* {"Our cones and blunts don't canoe (burn unevenly)"} */}
             </p>
           </div>
 
