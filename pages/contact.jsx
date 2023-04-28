@@ -29,7 +29,7 @@ export default function Contact() {
             <li>Only the finest, ultra-thin European Paper</li>
             <li>Compatible with every pre-roll machine</li>
             <li>Industry-leading quality and consistency</li>
-            <li>15+ yearsdeveloping Pre-Rolls</li>
+            <li>15+ years developing Pre-Rolls</li>
             <li>Sustainably sourced materials</li>
           </ul>
         </section>
