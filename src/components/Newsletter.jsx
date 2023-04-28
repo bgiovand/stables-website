@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { H1, H2, H3 } from "./Typography"
 
 const Newsletter = (props) => {
   const [mail, setMail] = useState(null)
@@ -7,7 +6,7 @@ const Newsletter = (props) => {
 
   const subscribe = () => {
     setLoading(true)
-    fetch("/api/newsletter", {
+    fetch("/api/subscribe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

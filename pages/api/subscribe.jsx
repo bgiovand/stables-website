@@ -3,6 +3,7 @@ const client = new Client()
 client.setApiKey(process.env.SENDGRID_API_KEY)
 
 export default async function handler(req, res) {
+  console.log("hello")
   if (req.method === "POST") {
     try {
       const request = {

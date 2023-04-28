@@ -9,17 +9,17 @@ module.exports = {
       { hostname: "source.unsplash.com" },
     ],
   },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "x-robots-tag",
-            value: "noindex, nofollow",
-          },
-        ],
-      },
-    ]
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: "/(.*)",
+  //       headers: [
+  //         {
+  //           key: "x-robots-tag",
+  //           value: "noindex, nofollow",
+  //         },
+  //       ],
+  //     },
+  //   ]
+  // },
 }

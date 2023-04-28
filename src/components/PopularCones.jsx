@@ -75,6 +75,4 @@ const PopularCones = () => {
   )
 }
 
-
-
 export default PopularCones
