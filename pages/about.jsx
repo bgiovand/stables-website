@@ -188,7 +188,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="mx-auto py-20">
+        {/* <section className="mx-auto py-20">
           <H2 title="Clients" />
           <ul className="flex flex-col md:flex-row justify-center">
             {clients.map((client) => (
@@ -205,7 +205,7 @@ export default function About() {
               </li>
             ))}
           </ul>
-          {/*
+          
           <ul className="flex flex-col md:flex-row justify-center">
             {testimonials.map((testimonial) => (
               <li
@@ -233,8 +233,8 @@ export default function About() {
               </li>
             ))}
           </ul>
-          */}
-        </section>
+         
+        </section> */}
 
         <section className="mx-auto py-20 ">
           <H2 title="Quality &amp; Automation" />
