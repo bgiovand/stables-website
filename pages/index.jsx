@@ -10,6 +10,7 @@ import Newsletter from "@/components/Mewsletter"
 import ProductCard from "@/components/ProductCard"
 import { Button } from "@/components/buttons"
 import { Coney } from "@/components/svg/Coney"
+import PopularCones from "@/components/PopularCones"
 
 export default function Home() {
   return (
@@ -48,11 +49,7 @@ export default function Home() {
 
         <section className="py-10 pb-24 bg-stablesBrown/40 bgTexture">
           <H1 title="Popular Cones" />
-          <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 ">
-            <ProductCard product={"monroe"} />
-            <ProductCard product={"monroe"} />
-            <ProductCard product={"monroe"} />
-          </div>
+          <PopularCones  />
 
           <div className="relative my-10 py-10"></div>
           <Button icon="→" type="after" color="Blue">
@@ -204,4 +201,24 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+
+export async function getStaticProps() {
+  const products = await client.fetch(groq`
+      *[_type == "product"] | order(publishedAt desc){
+        _id,
+        title,
+        slug,
+        lengthFull,
+        lengthFilter,
+        industryName,
+        "image": mainImage.asset->url
+      }
+    `)
+  return {
+    props: {
+      products,
+    },
+  }
 }
