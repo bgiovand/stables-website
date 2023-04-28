@@ -202,23 +202,3 @@ export default function Home() {
     </div>
   )
 }
-
-
-export async function getStaticProps() {
-  const products = await client.fetch(groq`
-      *[_type == "product"] | order(publishedAt desc){
-        _id,
-        title,
-        slug,
-        lengthFull,
-        lengthFilter,
-        industryName,
-        "image": mainImage.asset->url
-      }
-    `)
-  return {
-    props: {
-      products,
-    },
-  }
-}
