@@ -1,7 +1,7 @@
 const client = require("@sendgrid/client")
 client.setApiKey(process.env.SENDGRID_API_KEY)
 
-export default async function handler(req, res) {
+export default async function subscribe(req, res) {
   try {
     const data = {
       contacts: [{ email: req.body.email }],

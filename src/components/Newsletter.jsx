@@ -2,7 +2,17 @@ import React, { useState } from "react"
 
 const Newsletter = (props) => {
   const [mail, setMail] = useState("")
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
+
+  const load = async (response) => {
+    const data = await response.json()
+    setLoading(false)
+    if (data.error) {
+      alert(data.error)
+    } else {
+      alert("You're in! We'll keep you posted.")
+    }
+  }
 
   const subscribe = async () => {
     setLoading(true)
@@ -11,16 +21,11 @@ const Newsletter = (props) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Cors-Origin": "https://getstables.com",
         },
         body: JSON.stringify({ email: mail }),
       })
-      const data = await response.json()
-      setLoading(false)
-      if (data.error) {
-        alert(data.error)
-      } else {
-        alert("You're in! We'll keep you posted.")
-      }
+      await load(response)
     } catch (error) {
       setLoading(false)
       alert(error)
