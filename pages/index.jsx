@@ -49,11 +49,11 @@ export default function Home() {
 
         <section className="py-10 pb-24 bg-stablesBrown/40 bgTexture">
           <H1 title="Popular Cones" />
-          <PopularCones  />
+          <PopularCones />
 
-          <div className="relative my-10 py-10"></div>
-          <Button icon="→" type="after" color="Blue">
-            All Cones
+          <div className="relative my-10"></div>
+          <Button icon="→" iconPosition="right">
+            All Products
           </Button>
         </section>
 
