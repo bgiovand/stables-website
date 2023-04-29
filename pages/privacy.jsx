@@ -17,7 +17,7 @@ export default function Privacy() {
 
       <main className="">
         <section className="max-w-max min-w-full ">
-          <div className="px-20 py-10">
+          <div className="px-20 py-10 prose mx-auto text-white">
             <h1 className="text-white text-5xl font-bold">Privacy Policy</h1>
             <p>
               This Privacy Policy governs the manner in which Stables collects,
@@ -26,7 +26,7 @@ export default function Privacy() {
               (&quot;Site&quot;). This privacy policy applies to the Site and
               all products and services offered by Stables.
             </p>
-            <h2>PERSONAL IDENTIFICATION INFORMATION</h2>
+            <h3 className="text-white">PERSONAL IDENTIFICATION INFORMATION</h3>
             <p>
               We may collect personal identification information from Users in a
               variety of ways, including, but not limited to, when Users visit
@@ -41,7 +41,7 @@ export default function Privacy() {
               identification information, except that it may prevent them from
               engaging in certain Site-related activities.
             </p>
-            <h2>NON-PERSONAL IDENTIFICATION INFORMATION</h2>
+            <h3 className="text-white">NON-PERSONAL IDENTIFICATION INFORMATION</h3>
             <p>
               We may collect non-personal identification information about Users
               whenever they interact with our Site. Non-personal identification
@@ -50,7 +50,7 @@ export default function Privacy() {
               such as the operating system and the Internet service providers
               utilized and other similar information.
             </p>
-            <h2>WEB BROWSERCOOKIES</h2>
+            <h3 className="text-white">WEB BROWSERCOOKIES</h3>
             <p>
               Our Site may use &quot;cookies&quot; to enhance User experience.
               Users web browser places cookies on their hard drive for
@@ -59,7 +59,7 @@ export default function Privacy() {
               or to alert you when cookies are being sent. If they do so, note
               that some parts of the Site may not function properly.
             </p>
-            <h2>HOW WE USE COLLECTED INFORMATION</h2>
+            <h3 className="text-white">HOW WE USE COLLECTED INFORMATION</h3>
             <p>
               Stables may collect and use Users personal information for the
               following purposes: - To improve customer service To personalize
@@ -76,7 +76,7 @@ export default function Privacy() {
               unsubscribe from receiving future emails, we include detailed
               unsubscribe instructions at the bottom of each email.
             </p>
-            <h2>HOW WE PROTECT YOUR INFORMATION</h2>
+            <h3 className="text-white">HOW WE PROTECT YOUR INFORMATION</h3>
             <p>
               We adopt appropriate data collection, storage and processing
               practices and security measures to protect against unauthorized
@@ -84,7 +84,7 @@ export default function Privacy() {
               information, username, password, transaction information, and data
               stored on our Site.
             </p>
-            <h2>SHARING YOUR PERSONAL INFORMATION</h2>
+            <h3 className="text-white">SHARING YOUR PERSONAL INFORMATION</h3>
             <p>
               We do not sell, trade, or rent Users personal identification
               information to others. We may share generic aggregated demographic
@@ -92,7 +92,7 @@ export default function Privacy() {
               regarding visitors and users with our business partners, trusted
               affiliates and advertisers for the purposes outlined above.
             </p>
-            <h2>THIRD PARTY WEBSITES</h2>
+            <h3 className="text-white">THIRD PARTY WEBSITES</h3>
             <p>
               Users may find advertising or other content on our Site that link
               to the sites and services of our partners, suppliers, advertisers,
@@ -106,7 +106,7 @@ export default function Privacy() {
               including websites which have a link to our Site, is subject to
               that websites own terms and policies.
             </p>
-            <h2>GOOGLE ANALYTICS</h2>
+            <h3 className="text-white">GOOGLE ANALYTICS</h3>
             <p>
               Our Site uses Google Analytics, a web analytics service provided
               by Google, Inc. (&quot;Google&quot;). Google Analytics uses
@@ -128,7 +128,7 @@ export default function Privacy() {
               By using this website, you consent to the processing of data about
               you by Google in the manner and for the purposes set out above.
             </p>
-            <h2>CHANGES TO THIS PRIVACY POLICY</h2>
+            <h3 className="text-white">CHANGES TO THIS PRIVACY POLICY</h3>
             <p>
               Stables has the discretion to update this privacy policy at any
               time. When we do, we will revise the updated date at the bottom of
@@ -138,14 +138,14 @@ export default function Privacy() {
               that it is your responsibility to review this privacy policy
               periodically and become aware of modifications.
             </p>
-            <h2> YOUR ACCEPTANCE OF THESE TERMS</h2>
+            <h3 className="text-white"> YOUR ACCEPTANCE OF THESE TERMS</h3>
             <p>
               By using this Site, you signify your acceptance of this policy. If
               you do not agree to this policy, please do not use our Site. Your
               continued use of the Site following the posting of changes to this
               policy will be deemed your acceptance of those changes.
             </p>
-            <h2>CONTACTING US</h2>
+            <h3 className="text-white">CONTACTING US</h3>
             <p>
               If you have any questions about this Privacy Policy, the practices
               of this site, or your dealings with this site, please contact us
