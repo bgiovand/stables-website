@@ -135,24 +135,23 @@ const Product = ({ product = {} }) => {
             <PortableText value={description} />
           </div>
 
-          {/* <div className="relative my-10 py-10">
-            <div className="mx-auto flex absolute text-center left-[50%] transform -translate-x-1/2">
+          <div className="relative my-10 py-10 pb-20">
+            <div className="mx-auto flex absolute text-center left-[50%] transform -translate-x-1/2 ">
               <Link
                 href="/product"
-                className="flex flex-col bg-stablesBrown/10 hover:bg-stablesBrown/20 text-stablesBrown rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBrown/40 hover:before:text-stablesBrown/80 before:font-bold before:rotate-40"
+                className="flex flex-col bg-stablesBlue/10 hover:bg-stablesBlue/20 text-stablesBlue rounded-full transition-all before:transition-all bg-opacity-20 pr-6 pl-12 py-3 before:content-['←'] before:translate-x-5 hover:before:translate-x-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-2xl before:text-stablesBlue/40 hover:before:text-stablesBlue/80 before:font-bold before:rotate-40"
               >
                 Back to Products
               </Link>
             </div>
-          </div> */}
+          </div>
 
-          <section className="flex justify-center my-10 py-10 bg-stablesBlue/80">
+          <section className="flex justify-center my-10 py-10 pb-20 mb-0 bg-stablesBlue/80">
             <div className="flex flex-col w-10/12">
               <h2 className="text-[#667e76] text-2xl font-light mt-2 font-mono tracking-tighter uppercase text-center my-10">
                 Specifications
               </h2>
 
-              {/* only show image if slug has value */}
               {slug && (
                 <Image
                   src={`/spec/${slug.current}.svg`}
@@ -414,7 +413,10 @@ const Product = ({ product = {} }) => {
 
           <section className="flex flex-col items-center justify-center bg-stablesBlue bgTexture pb-16">
             <div className="mt-20 text-black/40">
-              <H3 title="Ready to order?" className="text-[#365b59]" />
+              <h3 className="text-[#365b59] text-5xl text-center font-normal mb-5 ">
+                {`Ready to Order?`}
+              </h3>
+
               <p>{`Get in touch today and let's get started!`}</p>
               <ContactForm />
             </div>

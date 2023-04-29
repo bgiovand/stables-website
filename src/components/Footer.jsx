@@ -80,9 +80,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex w-4/12 flex-col mt-10 md:flex-row justify-between">
+        <div className="flex w-4/12 flex-col md:flex-row justify-between">
           <div>
-            <h2 className="mb-6 text-xl font-semibold text-stablesBrown/60">
+            <h2 className="mb-6 text-xl font-semibold text-stablesOrange">
               Stables
             </h2>
             <ul className="text-stablesYellow">
@@ -110,7 +110,7 @@ const Footer = () => {
             </ul>
           </div> */}
           <div>
-            <h2 className="mb-6 text-xl font-semibold text-stablesBrown/60">
+            <h2 className="mb-6 text-xl font-semibold text-stablesOrange">
               Community
             </h2>
             <ul className="text-stablesYellow">
