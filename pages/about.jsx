@@ -112,7 +112,7 @@ export default function About() {
       <main className="max-w-max min-w-full md:max-w-lg">
         <section className="pb-0 mb-20">
           <div className="bg-stablesYellow pb-0 mb-20 bgTexture">
-            <Header className="text-stablesBrown"/>
+            <Header className="text-stablesBrown" />
             <H1 title="Built by Coneisseurs" className="flex justify-around" />
             <h2 className="text-center text-3xl font-normal text-stablesBrown">
               for Coneisseurs
@@ -236,11 +236,11 @@ export default function About() {
          
         </section> */}
 
-        <section className="mx-auto py-20 ">
+        <section className="mx-auto container py-20 ">
           <H2 title="Quality &amp; Automation" />
 
           <div className="flex flex-col">
-            <p className="font-semibold text-2xl w-8/12 text-center my-5 m-auto">
+            <p className="font-semibold text-2xl w-10/12 text-center my-5 m-auto">
               {
                 "We are proud to say that all of our raw materials are tested in ISO-certified laboratories in Canada and the USA. We work closely with our clients and raw material suppliers to ensure that our standards meet the required local regulations."
               }
@@ -248,17 +248,19 @@ export default function About() {
             </p>
           </div>
 
-          <H3 title="Compliance" />
+          <H3 title="Compliance" className="py-10 pb-5"/>
+          <p className="text-center w-10/12 m-auto">
 
           {
             "At Stables, we prioritize transparency, providing all necessary information for our clients. With every order, we provide the Certificate of Analysis (CoA), Certificate of Compliance (CoC), Safety Data Sheet (SDS), and batch/lot numbers. We believe that this level of transparency allows our clients to have confidence in our products and services."
           }
+          </p>
 
           {/* 
           <h3 className="text-stablesYellow text-5xl  text-center font-normal m-20 mb-10">
             Certifications
           </h3> */}
-          <div className="mx-auto">
+          {/* <div className="mx-auto"> */}
             {/* <ul className="flex flex-col md:flex-row justify-center align-middle">
               {certifications.map((cert) => (
                 <li
@@ -285,9 +287,10 @@ export default function About() {
                 </li>
               ))}
             </ul> */}
-          </div>
-          <Compatible />
+          {/* </div> */}
         </section>
+
+        <Compatible />
       </main>
 
       <Footer />
