@@ -44,7 +44,7 @@ export default function Compatible() {
       {
         name: "AutoCone",
         logo: "autocone.png",
-        link: "",
+        link: "https://www.autoconesystems.com",
         description: "",
         models: ["AutoCone"],
       },
@@ -98,11 +98,14 @@ export default function Compatible() {
               </li>
             ))}
           </ul>
-          <H4 title="Don't see your equipment?" />
-          <p className="text-gray-100 text-lg text-center">
+          <H4 title="Don't see your equipment?" className="pt-10" />
+          <p className="text-gray-100 text-lg text-center container mx-auto">
             {
-              "We're constantly adding new equipment to our compatibility list. If you don't see your equipment and would like to see it added, please contact us."
+              "We're constantly adding new equipment to our compatibility list. If you don't see your equipment and would like to see it added, please "
             }
+            <Link href="/contact">
+              Contact Us.
+            </Link>
           </p>
           <div className="flex justify-center mx-auto">
             <div className="w-8/12">
