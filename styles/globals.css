@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -14,29 +13,8 @@ html {
 
 @font-face {
   font-family: "Mellow";
-  src: url("/fonts/made-mellow-black.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Mellow";
-  src: url("/fonts/made-mellow-bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Mellow";
-  src: url("/fonts/made-mellow-semibold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Mellow";
-  src: url("/fonts/made-mellow-medium.woff2") format("woff2");
-  font-weight: 500;
+  src: url("/fonts/made-mellow-light.woff2") format("woff2");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -49,8 +27,29 @@ html {
 
 @font-face {
   font-family: "Mellow";
-  src: url("/fonts/made-mellow-light.woff2") format("woff2");
-  font-weight: 300;
+  src: url("/fonts/made-mellow-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mellow";
+  src: url("/fonts/made-mellow-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mellow";
+  src: url("/fonts/made-mellow-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mellow";
+  src: url("/fonts/made-mellow-black.woff2") format("woff2");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -84,16 +83,4 @@ body {
     outline: hsla(0, 100%, 50%, 0.65) solid 1px;
   }
 
-
 }
-
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: #1e1a16;
-  }
-} */

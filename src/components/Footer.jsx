@@ -116,18 +116,19 @@ const Footer = () => {
             <ul className="text-stablesYellow">
               {footerSection.community.map((item, index) => (
                 <li className="mb-4" key={index}>
-                  <Link href={item.href}
+                  <Link
+                    href={item.href}
                     className=" hover:underline flex flex-row"
                   >
                     {item.icon && (
                       <Image
                         loader={simpleIconLoader}
                         src={item.icon}
-                        className="float-left inline mr-2 mt-1 h-[18px] w-[18px]" 
+                        className="float-left inline mr-2 mt-1 h-[18px] w-[18px]"
                         alt="{item.name}"
                         width={18}
                         height={18}
-                        />
+                      />
                     )}
                     {item.name}
                   </Link>
@@ -143,13 +144,15 @@ const Footer = () => {
         </span>
         <div>
           <Link
-            href="/privacy"
+            href="/legal/privacy"
+            alt="Privacy Policy"
             className="text-sm text-center text-stablesBrown/80 font-light mr-2"
           >
             {"Privacy Policy"}
           </Link>
           <Link
-            href="/terms"
+            href="/legal/terms"
+            alt="Terms of Service"
             className="text-sm text-center text-stablesBrown/80 font-light"
           >
             {"Terms of Service"}

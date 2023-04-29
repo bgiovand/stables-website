@@ -12,9 +12,8 @@ export default function Contact() {
   return (
     <div className="bgTexture">
       <Head>
-        <title>Stables</title>
+        <title>Stables &middot; Contact</title>
         <meta name="description" content="Stables is The Cone Company" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />

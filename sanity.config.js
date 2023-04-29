@@ -27,8 +27,8 @@ const config = {
   name: "Stables",
   title: "Stables",
   basePath: "/admin",
-  projectId: process.env.SANITY_API_PROJECT_ID || "hwmnpy3d",
-  dataset: process.env.SANITY_API_DATASET || "production",
+  projectId: process.env.NEXT_PUBLIC_SANITY_API_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_API_DATASET,
   plugins: [
     deskTool({}),
     dashboardTool({

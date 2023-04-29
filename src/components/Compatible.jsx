@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { H1, H2, H3, H4 } from "../../src/components/Typography"
+import { H1, H2, H3, H4 } from "@/components/Typography"
 
 export default function Compatible() {
   const compatibility = [

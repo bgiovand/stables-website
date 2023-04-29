@@ -1,13 +1,12 @@
-import client from "../../src/utils/client"
+import client from "@/utils/client"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import groq from "groq"
 import Head from "next/head"
 import Image from "next/image"
-import Header from "../../src/components/Header"
-import Footer from "../../src/components/Footer"
-import { H1, H2, H3 } from "../../src/components/Typography"
-import ProductCard from "../../src/components/ProductCard"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+import { H1, H2, H3 } from "@/components/Typography"
 
 const Product = ({ products }) => {
   const router = useRouter()

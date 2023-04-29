@@ -1,15 +1,13 @@
 import Head from "next/head"
-import Image from "next/image"
-import Header from "../src/components/Header"
-import Footer from "../src/components/Footer"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
 export default function Terms() {
   return (
-    <div className={styles.container}>
+    <div className="">
       <Head>
         <title>Stables</title>
         <meta name="description" content="Stables is The Cone Company" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />

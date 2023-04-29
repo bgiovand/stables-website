@@ -14,9 +14,8 @@ const Blog = ({ posts }) => {
   return (
     <div className="bgTexture">
       <Head>
-        <title>Stables</title>
+        <title>Stables &middot; Blog</title>
         <meta name="description" content="Stables is The Cone Company" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
