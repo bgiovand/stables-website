@@ -10,7 +10,7 @@ const H1 = (props) => {
         props.className
       }
     >
-      <Balancer>{props.title}</Balancer>
+      {props.title}
     </h1>
   )
 }

@@ -113,12 +113,12 @@ export default function About() {
         <section className="pb-0 mb-20">
           <div className="bg-stablesYellow pb-0 mb-20 bgTexture">
             <Header className="text-stablesBrown"/>
-            <H1 title="Built by Coneisseurs" />
+            <H1 title="Built by Coneisseurs" className="flex justify-around" />
             <h2 className="text-center text-3xl font-normal text-stablesBrown">
               for Coneisseurs
             </h2>
             <Image
-              className="m-auto -mt-20 z-0"
+              className="m-auto -mt-20 z-0 object-fit"
               src="/hand.svg"
               width={500}
               height={558}
