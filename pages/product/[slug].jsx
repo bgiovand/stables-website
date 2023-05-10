@@ -81,6 +81,10 @@ const Product = ({ product = {} }) => {
         title: "Pitch Type",
         value: `${product.pitchType}`,
       },
+      {
+        title: "SKU",
+        value: `${product.sku}`,
+      },
     ],
     paperType = [
       {
@@ -450,6 +454,7 @@ export async function getStaticProps(context) {
       _id,
       slug,
       title,
+      sku,
       industryName,
       "image": mainImage.asset->url,
       description,
