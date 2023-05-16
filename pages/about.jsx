@@ -34,19 +34,19 @@ export default function About() {
       title: "Founder & CEO",
       image: "/principals/brett.jpg",
       bio: "Brett Young is an accomplished Operations Executive and Automation Expert from the Food and Beverage and Cannabis industries. He holds 20 years of experience driving profitability and operational cost reduction in many of his past roles. Over the last six years, Brett has operated his own companies, delivering key Automation Technology and Consulting Services to the Food and Beverage and Cannabis Industry. Brett’s Cannabis portfolio includes over 15 million in turnkey Automaton Lines sold and installed, including a few Pre-Roll Operations that resulted in more than 30 million joints filled and sold to the provinces. Brett prides himself on Lean Management, Customer Services, Project Management and Execution. Brett’s passion outside of the office is the Outdoors, Growing and consuming Cannabis, Cottaging and Fishing trips, especially Fall Musky.",
-    },
-    {
-      name: "Tyler Kibler",
-      title: "Founder & COO",
-      image: "/principals/tyler.jpg",
-      bio: "Tyler Kibler is an accomplished inventor, trailblazer, collaborator, innovator, and farmer. Focused on building a self-sustaining, soil-enriching licensed hemp farmstead, Kibler’s passion is Cannabis. Since his first cannabis invention in 2016,he’s never looked back. Today he holds an array of cannabis-related patents and launched first-to-market products in Canada that have helped shaped the industry and enriched the lives of many consumers. Tyler's approach is always client first, whether an end-user or process integrator, an internal collaborator or external customer, his focus is their focus. Having scaled multiple Licensed Producers to manufacture over 1 million pre-rolls per month each, he’s a knowledge powerhouse when it comes to making the perfect pre-roll at scale. From Dog Walkers to Cannagars, and dried flower to terpene-enriched extract pre-rolls he’s a true pre-roll professional. He is happiest with his wife, Annaliese, sharing a fine pre-roll in their hot tub overlooking the farm, and watching the animals roam.",
-    },
-    {
-      name: "Bruce Giovando",
-      title: "Founder & CMO",
-      image: "/principals/bruce.jpg",
-      bio: "Bruce has an extensive background in creative direction and entrepreneurship. Notable clients include: NASA, MTV, Red Bull, Rocky Mountain Bikes, Google and author/artist Douglas Coupland. Recently he worked with Tyler at Aurora Cannabis as the Director of Innovation and Best Practices. An early hire through the acqui-hire of his startup Canlio he brought many of Aurora’s initial product offerings to market, developed the first mobile app for medical patients (bringing in excess of 30 million revenue) and realized millions in cost savings applying lean manufacturing principals. A contributing member of the GS1 Cannabis work group, he improved the standards for packaging and barcoding in the medical and recreational cannabis space. Bruce is passionate about entrepreneurship, the outdoors, and technology.",
-    },
+    }
+    // {
+    //   name: "Tyler Kibler",
+    //   title: "Founder & COO",
+    //   image: "/principals/tyler.jpg",
+    //   bio: "Tyler Kibler is an accomplished inventor, trailblazer, collaborator, innovator, and farmer. Focused on building a self-sustaining, soil-enriching licensed hemp farmstead, Kibler’s passion is Cannabis. Since his first cannabis invention in 2016,he’s never looked back. Today he holds an array of cannabis-related patents and launched first-to-market products in Canada that have helped shaped the industry and enriched the lives of many consumers. Tyler's approach is always client first, whether an end-user or process integrator, an internal collaborator or external customer, his focus is their focus. Having scaled multiple Licensed Producers to manufacture over 1 million pre-rolls per month each, he’s a knowledge powerhouse when it comes to making the perfect pre-roll at scale. From Dog Walkers to Cannagars, and dried flower to terpene-enriched extract pre-rolls he’s a true pre-roll professional. He is happiest with his wife, Annaliese, sharing a fine pre-roll in their hot tub overlooking the farm, and watching the animals roam.",
+    // },
+    // {
+    //   name: "Bruce Giovando",
+    //   title: "Founder & CMO",
+    //   image: "/principals/bruce.jpg",
+    //   bio: "Bruce has an extensive background in creative direction and entrepreneurship. Notable clients include: NASA, MTV, Red Bull, Rocky Mountain Bikes, Google and author/artist Douglas Coupland. Recently he worked with Tyler at Aurora Cannabis as the Director of Innovation and Best Practices. An early hire through the acqui-hire of his startup Canlio he brought many of Aurora’s initial product offerings to market, developed the first mobile app for medical patients (bringing in excess of 30 million revenue) and realized millions in cost savings applying lean manufacturing principals. A contributing member of the GS1 Cannabis work group, he improved the standards for packaging and barcoding in the medical and recreational cannabis space. Bruce is passionate about entrepreneurship, the outdoors, and technology.",
+    // },
   ]
 
   const values = [
