@@ -1,4 +1,5 @@
 import { deskTool } from "sanity/desk"
+import { vercelDeployTool } from "sanity-plugin-vercel-deploy"
 import {
   dashboardTool,
   sanityTutorialsWidget,
@@ -31,6 +32,7 @@ const config = {
   dataset: process.env.NEXT_PUBLIC_SANITY_API_DATASET,
   plugins: [
     deskTool({}),
+    vercelDeployTool(),
     dashboardTool({
       widgets: [
         sanityTutorialsWidget(),
