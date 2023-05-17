@@ -6,7 +6,7 @@ export default async function sendEmail(req, res) {
     await sendgrid.send({
       to: "hi@getstables.com",
       from: {
-        email: "admin@getstables.com",
+        email: "hi@getstables.com",
         name: "Stables Contact Form",
       },
       cc: "bruce@getstables.com",
