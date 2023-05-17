@@ -41,7 +41,7 @@ const custom = [
   },
   {
     title: "Flavor",
-    image: "/flavor.svg",
+    image: "/custom-flavor.svg",
   },
 ]
 
