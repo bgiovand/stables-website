@@ -39,6 +39,10 @@ const custom = [
     title: "Color",
     image: "/colorwheel.svg",
   },
+  {
+    title: "Flavor",
+    image: "/flavor.svg",
+  },
 ]
 
 const Product = ({ product = {} }) => {
