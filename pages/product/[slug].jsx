@@ -81,10 +81,10 @@ const Product = ({ product = {} }) => {
         title: "Pitch Type",
         value: `${product.pitchType}`,
       },
-      {
-        title: "SKU",
-        value: `${product.sku}`,
-      },
+      // {
+      //   title: "SKU",
+      //   value: `${product.sku}`,
+      // },
     ],
     paperType = [
       {
