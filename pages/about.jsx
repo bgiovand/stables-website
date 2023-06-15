@@ -53,12 +53,12 @@ export default function About() {
     {
       name: "Quality",
       description:
-        "We are focused on providing the highest quality pre-rolled cones and blunts to our Customers. In doing so, we are bringing the first high quality North American Hemp Blunts to market. Our focus on quality extends beyond the product, making sure we’re doing the best to meet your Customers needs.",
+        "Our pre-rolled cones are crafted with regulations in mind, within a clean manufacturing and quality-controlled facility. We only use premium materials and provide documentation with every order, to ensure transparency and trust with our customers.",
     },
     {
       name: "Service",
       description:
-        "We see our product more as a service: we know the struggles you’re facing - we’ve lived them. Our job is done when your Customers have cone in hand. So, think of Stables more like a cone consultancy than simply a single commercial exchange.",
+        "At Stables, we offer more than just industry-leading experience and world-class quality. We provide process and automation experts to help optimize our customers' production processes. Our goal is to be a partner committed to your success, providing value-added services to streamline your production and maximize efficiency.",
     },
     {
       name: "Fun",

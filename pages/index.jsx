@@ -55,7 +55,7 @@ export default function Home() {
         <section className="py-10 pb-24 bg-stablesYellow bgTexture">
           <H1 title="The Filter" className="mt-0 pt-0" />
           <H2
-            title="A Cannabis Industry Newsletter"
+            title="An Industry Newsletter"
             className="mb-5 text-stablesBrown"
           />
           <p className="font-light text-center mb-8 text-stablesBrown text-xl">
