@@ -63,7 +63,7 @@ export default function About() {
     {
       name: "Fun",
       description:
-        "Fun natured at heart. We strive for it to be a part of our process. After all we’re in the Cannabis business; it should be fun. You should be able to reflect your brands uniqueness in the Cones you sell. That is why we’re here to customize to your hearts content.",
+        "Fun natured at heart. We strive for it to be a part of our process. You should be able to reflect your brands uniqueness in the Cones you sell. That is why we’re here to customize to your hearts content.",
     },
   ]
 
